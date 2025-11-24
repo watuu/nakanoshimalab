@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Events | クリエイティブアイランド中之島</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="format-detection" content="telephone=no"/>
+
+<!-- css -->
+  <link href="../assets/css/style.css" rel="stylesheet"/>
+
+<!-- vendor -->
+
+<script src="https://webfont.fontplus.jp/accessor/script/fontplus.js?J-fMHawjerA%3D&box=DNYyG7Qtq-k%3D&aa=1&ab=2"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+<a id="top"></a>
+  <div class="l-body-wrap">
+    <header class="l-header">
+      <div class="l-header__wrap">
+        <p class="l-header-logo"><a href="../">
+            <svg width="195" height="40" role="img" aria-label="クリエイティブアイランド中之島">
+              <use href="#logo"></use>
+            </svg></a></p>
+        <nav class="l-header-nav">
+          <ul class="l-header-nav__nav">
+            <li>
+              <button class="c-btn-header-about" data-micromodal-trigger="modal-about"><span class="c-btn-header-about__txt">中之島について</span><i class="c-btn-header-about__plus"></i></button>
+            </li>
+          </ul>
+          <ul class="l-header-nav__locale c-link-local">
+            <li>
+              <p class="js-split-text">JP</p>
+            </li>
+            <li><a class="js-split-text" href="#">EN</a></li>
+          </ul>
+        </nav>
+        <button class="l-header-menu c-btn-menu" aria-label="メニューを開く"><span>Menu</span><span>Close</span></button>
+      </div>
+      <div class="l-header-drawer is-section-dark">
+        <div class="l-header-drawer__bg"></div>
+        <div class="l-header-drawer__wrap">
+          <div class="l-header-drawer__inner">
+            <nav class="l-header-drawer__nav">
+              <div class="cm-nav-main">
+                <div class="cm-nav-main-block">
+                  <h3 class="cm-nav-main-block__head"><span>About Nakanoshima</span></h3>
+                  <div class="cm-nav-main-block__list">
+                    <ul>
+                      <li>
+                        <button data-micromodal-trigger="modal-about">中之島について</button>
+                      </li>
+                      <li><a href="../contact/">お問い合わせ</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="cm-nav-main-block">
+                  <h3 class="cm-nav-main-block__head"><a href="../creative/">Creative Contents</a></h3>
+                  <div class="cm-nav-main-block__list">
+                    <ul>
+                      <li><a href="../creative/creative_cat/artist-research/">アーティストリサーチ</a></li>
+                      <li><a href="../creative/creative_cat/exchange-program/">エクスチェンジプログラム</a></li>
+                      <li><a href="../creative/creative_cat/meeting-point/">ミーティングポイント</a></li>
+                      <li><a href="../creative/creative_cat/promotion/">中之島プロモーション</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="cm-nav-main-block">
+                  <h3 class="cm-nav-main-block__head"><a href="../posts/">All News</a></h3>
+                  <div class="cm-nav-main-block__list">
+                    <ul>
+                      <li><a href="../new/">News</a></li>
+                      <li><a href="../events/">Events</a></li>
+                      <li><a href="../exhibitions/">Exhibitions</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="cm-nav-main-block">
+                  <h3 class="cm-nav-main-block__head"><span>About Us</span></h3>
+                  <div class="cm-nav-main-block__list">
+                    <ul>
+                      <li><a href="../aboutus/">クリエイティブアイランド中之島について</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <div class="l-header-drawer-recommend">
+              <div class="l-header-drawer-recommend__head"><span>Recommend</span><span>おすすめコンテンツ</span></div>
+              <div class="l-header-drawer-recommend__list">
+                <div class="c-card-recommend"><a class="c-card-recommend__link" href="../single-news/">
+                    <figure class="c-card-recommend__pic"><img src="../assets/img/500x500.webp" alt=""/></figure>
+                    <div class="c-card-recommend__body">
+                      <h3 class="c-card-recommend__title">「中之島15の場所での物語」AR挿絵公募</h3>
+                      <ul class="c-card-recommend__tag">
+                        <li>#Events</li>
+                      </ul>
+                    </div></a></div>
+                <div class="c-card-recommend"><a class="c-card-recommend__link" href="../single-news/">
+                    <figure class="c-card-recommend__pic"><img src="../assets/img/500x500.webp" alt=""/></figure>
+                    <div class="c-card-recommend__body">
+                      <h3 class="c-card-recommend__title">「中之島15の場所での物語」AR挿絵公募</h3>
+                      <ul class="c-card-recommend__tag">
+                        <li>#Events</li>
+                      </ul>
+                    </div></a></div>
+                <div class="c-card-recommend"><a class="c-card-recommend__link" href="../single-news/">
+                    <figure class="c-card-recommend__pic"><img src="../assets/img/500x500.webp" alt=""/></figure>
+                    <div class="c-card-recommend__body">
+                      <h3 class="c-card-recommend__title">「中之島15の場所での物語」AR挿絵公募</h3>
+                      <ul class="c-card-recommend__tag">
+                        <li>#Events</li>
+                      </ul>
+                    </div></a></div>
+              </div>
+            </div>
+            <div class="l-header-drawer__cta"><a class="c-btn-ticket" href="#"><span class="c-btn-ticket__txt">Ticket購入</span><i class="c-btn-ticket__arrow">
+                  <svg class="js-clone" width="26" height="26">
+                    <use href="#ico-arrow"></use>
+                  </svg></i></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="l-main" id="main">
+      <div class="p-news">
+        <div class="l-container">
+          <div class="cm-section-header">
+            <div class="cm-section-header__bc">
+              <ul class="c-link-bc">
+                <li><a href="../">Top</a></li>
+                <li><span>Events</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="p-news__head">
+            <div class="c-heading-page">
+              <h1 class="c-heading-page__title">Events</h1><span class="c-heading-page__count">25</span>
+            </div>
+          </div>
+          <div class="p-news__list">
+            <p class="c-paragraph">中之島プロモーションとは中之島プロモーションとは中之島プロモーションとは中之島プロモーションとは中之島プロモーションとは</p>
+            <ul class="c-event-ex">
+              <li><svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.976 12.736H13.714V17.202C13.714 18.56 13.238 19.05 11.152 19.05C10.802 19.05 10.396 19.036 9.934 19.008C9.934 19.008 9.836 18.224 9.43 17.538C10.214 17.608 10.774 17.65 11.166 17.65C12.076 17.65 12.16 17.44 12.16 16.95V12.736C10.326 12.75 8.296 12.764 6.798 12.806V11.308C7.554 11.322 8.492 11.35 9.5 11.364C10.508 11.378 11.586 11.378 12.594 11.392C11.642 10.734 10.536 10.062 9.444 9.474L10.578 8.648C9.71 8.662 8.828 8.676 8.058 8.704V7.248C9.808 7.304 12.51 7.318 14.232 7.318H15.884C16.08 7.318 16.178 7.304 16.374 7.178C16.416 7.15 16.472 7.136 16.528 7.136C16.584 7.136 16.64 7.15 16.696 7.178C17.046 7.374 17.466 7.654 17.76 7.892C17.816 7.948 17.844 7.99 17.844 8.032C17.844 8.228 17.368 8.382 17.214 8.494C16.15 9.292 15.114 10.006 13.882 10.734L14.386 11.112L13.924 11.392H17.452C17.62 11.392 17.732 11.364 17.872 11.266C17.928 11.238 17.97 11.224 18.012 11.224C18.152 11.224 19.272 11.896 19.272 12.106C19.272 12.274 18.838 12.4 18.754 12.554C18.124 13.506 17.452 14.402 16.626 15.34C16.626 15.34 15.982 14.906 15.212 14.668C15.94 13.982 16.584 13.268 16.976 12.736ZM10.648 8.648C11.278 8.998 11.964 9.432 12.664 9.908C13.616 9.46 14.344 9.054 14.974 8.634C14.974 8.634 12.608 8.634 10.648 8.648Z" fill="#084CC2"/>
+<g style="mix-blend-mode:multiply">
+<path d="M13.16 25.3199C19.8758 25.3199 25.32 19.8757 25.32 13.1599C25.32 6.44413 19.8758 1 13.16 1C6.44422 1 1 6.44413 1 13.1599C1 19.8757 6.44422 25.3199 13.16 25.3199Z" stroke="#0073FF" stroke-width="2" stroke-miterlimit="10"/>
+</g>
+</svg><span>開催予定</span>
+              </li>
+              <li><svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.052 19.05H15.66C15.66 19.05 15.618 18.28 15.198 17.552C15.632 17.594 15.982 17.608 16.234 17.608C16.948 17.608 17.06 17.44 17.06 16.992V11.868H13.266V7.318H18.502V17.16C18.502 18.728 17.872 19.05 16.052 19.05ZM9.024 19.05H7.414C7.484 16.586 7.498 12.19 7.498 9.544V7.318H12.566V11.868H8.94C8.954 14.318 8.968 17.314 9.024 19.05ZM15.016 18.35H13.588C13.616 17.622 13.644 16.768 13.644 15.956H12.272C12.02 16.964 11.572 17.65 10.634 18.322C10.634 18.322 10.228 17.65 9.626 17.258C10.354 16.922 10.732 16.502 10.914 15.97C10.48 15.984 9.906 15.998 9.472 16.012V14.724C10.004 14.752 10.606 14.766 11.138 14.78C11.18 14.43 11.18 14.066 11.18 13.688C10.774 13.688 10.382 13.702 9.976 13.716V12.442C11.054 12.498 12.048 12.526 13.042 12.526C14.036 12.526 15.044 12.498 16.136 12.442V13.716C15.73 13.702 15.324 13.688 14.932 13.688V14.766C15.45 14.766 15.982 14.752 16.5 14.724V16.012L14.946 15.97C14.96 16.782 14.988 17.636 15.016 18.35ZM17.06 9.068V8.424H14.61V9.068H17.06ZM11.222 9.068V8.424H8.94V9.068H11.222ZM17.06 10.762V10.048H14.61V10.762H17.06ZM11.222 10.762V10.048H8.94V10.762H11.222ZM13.672 13.66H12.454C12.454 14.038 12.44 14.43 12.412 14.794H13.658C13.658 14.332 13.672 14.01 13.672 13.66Z" fill="#ED668A"/>
+<path d="M13.16 25.3199C19.8758 25.3199 25.32 19.8757 25.32 13.1599C25.32 6.44413 19.8758 1 13.16 1C6.44422 1 1 6.44413 1 13.1599C1 19.8757 6.44422 25.3199 13.16 25.3199Z" stroke="#ED668A" stroke-width="2" stroke-miterlimit="10"/>
+</svg><span>開催中</span>
+              </li>
+            </ul>
+            <div class="cm-section-masonry">
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x620_2.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x260.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x620_2.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">開</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x700.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x700_2.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x620_2.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x260.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x620_2.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">開</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x700.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x700_2.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x620_2.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x260.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x620_2.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">開</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x700.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x700_2.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x620_2.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x260.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x620_2.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">開</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x700.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+              <div class="c-card-event c-card-event--teaser"><a class="c-card-event__link" href="../single-news/">
+                  <div class="c-card-event__meta">
+                    <p class="c-card-event__type">Events</p>
+                    <ul class="c-card-event__category">
+                      <li>現代アート</li>
+                    </ul>
+                  </div>
+                  <p class="c-card-event__status">予</p>
+                  <figure class="c-card-event__pic"><img src="../assets/img/500x700_2.webp" alt=""/></figure>
+                  <h3 class="c-card-event__title">映像展示「ビルダーズ：工事記録にみる都市再考」</h3>
+                  <ul class="c-card-event__place">
+                    <li>graf studio</li>
+                    <li>アートエリアB1</li>
+                  </ul></a></div>
+            </div>
+          </div>
+          <div class="p-news__pagination">
+            <ul class="cm-nav-paginate">
+              <li class="cm-nav-paginate__ctrl"><a href="#">
+                  <svg class="js-clone" width="26" height="26">
+                    <use href="#ico-arrow"></use>
+                  </svg></a></li>
+              <li class="cm-nav-paginate__page is-current"><span>1</span></li>
+              <li class="cm-nav-paginate__page"><a href="#">2</a></li>
+              <li class="cm-nav-paginate__page"><a href="#">3</a></li>
+              <li class="cm-nav-paginate__dotted"><span>…</span></li>
+              <li class="cm-nav-paginate__page"><a href="#">17</a></li>
+              <li class="cm-nav-paginate__ctrl"><a href="#">
+                  <svg class="js-clone" width="26" height="26">
+                    <use href="#ico-arrow"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="l-footer">
+      <div class="l-container is-section-dark">
+        <div class="l-footer__wrap">
+          <div class="l-footer-nav">
+            <div class="cm-nav-main">
+              <div class="cm-nav-main-block">
+                <h3 class="cm-nav-main-block__head"><span>About Nakanoshima</span></h3>
+                <div class="cm-nav-main-block__list">
+                  <ul>
+                    <li>
+                      <button data-micromodal-trigger="modal-about">中之島について</button>
+                    </li>
+                    <li><a href="../contact/">お問い合わせ</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="cm-nav-main-block">
+                <h3 class="cm-nav-main-block__head"><a href="../creative/">Creative Contents</a></h3>
+                <div class="cm-nav-main-block__list">
+                  <ul>
+                    <li><a href="../creative/creative_cat/artist-research/">アーティストリサーチ</a></li>
+                    <li><a href="../creative/creative_cat/exchange-program/">エクスチェンジプログラム</a></li>
+                    <li><a href="../creative/creative_cat/meeting-point/">ミーティングポイント</a></li>
+                    <li><a href="../creative/creative_cat/promotion/">中之島プロモーション</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="cm-nav-main-block">
+                <h3 class="cm-nav-main-block__head"><a href="../posts/">All News</a></h3>
+                <div class="cm-nav-main-block__list">
+                  <ul>
+                    <li><a href="../new/">News</a></li>
+                    <li><a href="../events/">Events</a></li>
+                    <li><a href="../exhibitions/">Exhibitions</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="cm-nav-main-block">
+                <h3 class="cm-nav-main-block__head"><span>About Us</span></h3>
+                <div class="cm-nav-main-block__list">
+                  <ul>
+                    <li><a href="../aboutus/">クリエイティブアイランド中之島について</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="l-footer-nav__locale">
+              <li><a href="#">JP</a></li>
+              <li><a href="#">EN</a></li>
+            </div>
+          </div>
+          <div class="l-footer-logo"><svg width="452" height="165" viewBox="0 0 452 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.53 130V78.97H15.05L41.37 119.64H41.72L41.37 102.77V78.97H48.72V130H39.62L13.3 89.61H12.95L13.23 105.5V130H5.53ZM70.4473 130.63C68.2073 130.63 66.1307 130.187 64.2173 129.3C62.3507 128.413 60.7407 127.153 59.3873 125.52C58.034 123.887 56.984 121.903 56.2373 119.57C55.5373 117.19 55.1873 114.483 55.1873 111.45C55.1873 107.437 55.8173 104.007 57.0773 101.16C58.384 98.3133 60.1807 96.1433 62.4673 94.65C64.754 93.11 67.414 92.34 70.4473 92.34C72.5007 92.34 74.3673 92.6667 76.0473 93.32C77.7273 93.9733 79.1507 94.8833 80.3173 96.05C81.5307 97.17 82.394 98.5233 82.9073 100.11H83.3273L83.6073 92.97H90.4673V130H83.6073L83.3273 122.79H82.9073C82.0673 125.123 80.5507 127.013 78.3573 128.46C76.164 129.907 73.5273 130.63 70.4473 130.63ZM72.8973 124.68C75.1373 124.68 77.0273 124.167 78.5673 123.14C80.1073 122.113 81.274 120.76 82.0673 119.08C82.8607 117.4 83.2573 115.557 83.2573 113.55V109.35C83.2573 107.297 82.8373 105.43 81.9973 103.75C81.204 102.07 80.0373 100.74 78.4973 99.76C77.004 98.7333 75.184 98.22 73.0373 98.22C70.844 98.22 68.954 98.7567 67.3673 99.83C65.8273 100.903 64.6373 102.42 63.7973 104.38C63.004 106.34 62.6073 108.697 62.6073 111.45C62.6073 114.157 63.004 116.513 63.7973 118.52C64.5907 120.527 65.7573 122.067 67.2973 123.14C68.8373 124.167 70.704 124.68 72.8973 124.68ZM98.4572 130V78.97H105.737V110.68L108.957 107.18L122.747 92.97H131.707L117.357 107.39L132.267 130H123.797L114.557 116L112.317 112.29L105.737 118.66V130H98.4572ZM148.347 130.63C146.107 130.63 144.03 130.187 142.117 129.3C140.25 128.413 138.64 127.153 137.287 125.52C135.934 123.887 134.884 121.903 134.137 119.57C133.437 117.19 133.087 114.483 133.087 111.45C133.087 107.437 133.717 104.007 134.977 101.16C136.284 98.3133 138.08 96.1433 140.367 94.65C142.654 93.11 145.314 92.34 148.347 92.34C150.4 92.34 152.267 92.6667 153.947 93.32C155.627 93.9733 157.05 94.8833 158.217 96.05C159.43 97.17 160.294 98.5233 160.807 100.11H161.227L161.507 92.97H168.367V130H161.507L161.227 122.79H160.807C159.967 125.123 158.45 127.013 156.257 128.46C154.064 129.907 151.427 130.63 148.347 130.63ZM150.797 124.68C153.037 124.68 154.927 124.167 156.467 123.14C158.007 122.113 159.174 120.76 159.967 119.08C160.76 117.4 161.157 115.557 161.157 113.55V109.35C161.157 107.297 160.737 105.43 159.897 103.75C159.104 102.07 157.937 100.74 156.397 99.76C154.904 98.7333 153.084 98.22 150.937 98.22C148.744 98.22 146.854 98.7567 145.267 99.83C143.727 100.903 142.537 102.42 141.697 104.38C140.904 106.34 140.507 108.697 140.507 111.45C140.507 114.157 140.904 116.513 141.697 118.52C142.49 120.527 143.657 122.067 145.197 123.14C146.737 124.167 148.604 124.68 150.797 124.68ZM176.357 130V92.97H183.217L183.497 100.32H183.917C184.99 97.7067 186.67 95.7467 188.957 94.44C191.243 93.0867 193.74 92.41 196.447 92.41C198.36 92.41 200.11 92.69 201.697 93.25C203.33 93.81 204.73 94.72 205.897 95.98C207.11 97.1933 208.043 98.8033 208.697 100.81C209.35 102.77 209.677 105.173 209.677 108.02V130H202.467V109.49C202.467 106.97 202.163 104.893 201.557 103.26C200.95 101.58 200.017 100.343 198.757 99.55C197.497 98.7567 195.863 98.36 193.857 98.36C191.757 98.36 189.913 98.8733 188.327 99.9C186.787 100.927 185.597 102.303 184.757 104.03C183.917 105.71 183.497 107.623 183.497 109.77V130H176.357ZM233.487 130.63C230.78 130.63 228.307 130.187 226.067 129.3C223.873 128.413 221.983 127.13 220.397 125.45C218.81 123.77 217.573 121.763 216.687 119.43C215.8 117.097 215.357 114.483 215.357 111.59C215.357 107.763 216.08 104.427 217.527 101.58C219.02 98.6867 221.12 96.4467 223.827 94.86C226.58 93.2267 229.8 92.41 233.487 92.41C236.193 92.41 238.643 92.8533 240.837 93.74C243.077 94.58 244.99 95.84 246.577 97.52C248.163 99.2 249.377 101.23 250.217 103.61C251.103 105.943 251.547 108.58 251.547 111.52C251.547 115.3 250.823 118.637 249.377 121.53C247.93 124.377 245.853 126.617 243.147 128.25C240.44 129.837 237.22 130.63 233.487 130.63ZM233.487 124.61C235.633 124.61 237.5 124.12 239.087 123.14C240.72 122.113 241.98 120.62 242.867 118.66C243.753 116.7 244.197 114.32 244.197 111.52C244.197 109.42 243.94 107.577 243.427 105.99C242.96 104.357 242.26 102.98 241.327 101.86C240.393 100.693 239.273 99.83 237.967 99.27C236.66 98.6633 235.167 98.36 233.487 98.36C231.34 98.36 229.45 98.8733 227.817 99.9C226.23 100.927 224.97 102.42 224.037 104.38C223.15 106.293 222.707 108.697 222.707 111.59C222.707 113.643 222.94 115.487 223.407 117.12C223.92 118.707 224.643 120.06 225.577 121.18C226.557 122.3 227.7 123.163 229.007 123.77C230.36 124.33 231.853 124.61 233.487 124.61ZM270.421 130.7C268.088 130.7 265.964 130.42 264.051 129.86C262.184 129.3 260.574 128.507 259.221 127.48C257.868 126.453 256.818 125.217 256.071 123.77C255.371 122.277 254.998 120.667 254.951 118.94H262.091C262.184 120.387 262.581 121.6 263.281 122.58C264.028 123.56 265.031 124.283 266.291 124.75C267.598 125.217 269.044 125.45 270.631 125.45C273.151 125.45 275.064 124.983 276.371 124.05C277.724 123.07 278.401 121.717 278.401 119.99C278.401 118.683 278.098 117.68 277.491 116.98C276.931 116.233 276.021 115.65 274.761 115.23C273.501 114.81 271.844 114.46 269.791 114.18C266.711 113.713 264.144 113.107 262.091 112.36C260.038 111.567 258.498 110.47 257.471 109.07C256.444 107.623 255.931 105.757 255.931 103.47C255.931 101.23 256.538 99.2933 257.751 97.66C258.964 95.98 260.668 94.6733 262.861 93.74C265.054 92.76 267.621 92.27 270.561 92.27C273.454 92.27 275.951 92.7367 278.051 93.67C280.198 94.6033 281.878 95.91 283.091 97.59C284.304 99.27 284.958 101.277 285.051 103.61H277.981C277.888 102.163 277.514 100.997 276.861 100.11C276.254 99.2233 275.391 98.5933 274.271 98.22C273.198 97.8 271.914 97.59 270.421 97.59C268.134 97.59 266.338 98.0567 265.031 98.99C263.771 99.9233 263.141 101.183 263.141 102.77C263.141 103.983 263.468 104.963 264.121 105.71C264.774 106.41 265.778 106.97 267.131 107.39C268.531 107.763 270.304 108.113 272.451 108.44C275.298 108.813 277.724 109.397 279.731 110.19C281.738 110.983 283.231 112.103 284.211 113.55C285.238 114.997 285.751 116.933 285.751 119.36C285.751 121.787 285.121 123.84 283.861 125.52C282.601 127.2 280.804 128.483 278.471 129.37C276.184 130.257 273.501 130.7 270.421 130.7ZM291.463 130V78.97H298.603V100.32H299.023C300.096 97.7067 301.776 95.7467 304.063 94.44C306.35 93.0867 308.846 92.41 311.553 92.41C313.466 92.41 315.216 92.69 316.803 93.25C318.436 93.81 319.836 94.72 321.003 95.98C322.216 97.1933 323.15 98.8033 323.803 100.81C324.456 102.77 324.783 105.173 324.783 108.02V130H317.573V109.49C317.573 106.97 317.27 104.893 316.663 103.26C316.056 101.58 315.123 100.343 313.863 99.55C312.603 98.7567 310.97 98.36 308.963 98.36C306.863 98.36 305.02 98.8733 303.433 99.9C301.893 100.927 300.703 102.303 299.863 104.03C299.023 105.71 298.603 107.623 298.603 109.77V130H291.463ZM332.088 130V92.97H339.298V130H332.088ZM335.728 87.3C334.514 87.3 333.511 86.9733 332.718 86.32C331.924 85.6667 331.528 84.7567 331.528 83.59C331.528 82.4233 331.924 81.5133 332.718 80.86C333.511 80.2067 334.514 79.88 335.728 79.88C336.941 79.88 337.944 80.2067 338.738 80.86C339.531 81.5133 339.928 82.4233 339.928 83.59C339.928 84.7567 339.531 85.6667 338.738 86.32C337.944 86.9733 336.941 87.3 335.728 87.3ZM347.214 130V92.97H354.074L354.354 100.32H354.774C355.801 97.7067 357.411 95.7467 359.604 94.44C361.844 93.0867 364.318 92.41 367.024 92.41C369.731 92.41 372.158 93.0633 374.304 94.37C376.498 95.6767 378.061 97.9167 378.994 101.09H379.554C380.581 98.1967 382.261 96.0267 384.594 94.58C386.974 93.1333 389.634 92.41 392.574 92.41C395.001 92.41 397.171 92.9233 399.084 93.95C401.044 94.9767 402.584 96.6333 403.704 98.92C404.824 101.207 405.384 104.24 405.384 108.02V130H398.244V109.49C398.244 106.97 397.941 104.893 397.334 103.26C396.728 101.58 395.818 100.343 394.604 99.55C393.391 98.7567 391.804 98.36 389.844 98.36C387.838 98.36 386.088 98.8733 384.594 99.9C383.101 100.927 381.934 102.303 381.094 104.03C380.301 105.71 379.904 107.623 379.904 109.77V130H372.694V109.49C372.694 106.97 372.391 104.893 371.784 103.26C371.178 101.58 370.268 100.343 369.054 99.55C367.841 98.7567 366.278 98.36 364.364 98.36C362.311 98.36 360.538 98.8733 359.044 99.9C357.551 100.927 356.384 102.303 355.544 104.03C354.751 105.71 354.354 107.623 354.354 109.77V130H347.214ZM426.362 130.63C424.122 130.63 422.045 130.187 420.132 129.3C418.265 128.413 416.655 127.153 415.302 125.52C413.948 123.887 412.898 121.903 412.152 119.57C411.452 117.19 411.102 114.483 411.102 111.45C411.102 107.437 411.732 104.007 412.992 101.16C414.298 98.3133 416.095 96.1433 418.382 94.65C420.668 93.11 423.328 92.34 426.362 92.34C428.415 92.34 430.282 92.6667 431.962 93.32C433.642 93.9733 435.065 94.8833 436.232 96.05C437.445 97.17 438.308 98.5233 438.822 100.11H439.242L439.522 92.97H446.382V130H439.522L439.242 122.79H438.822C437.982 125.123 436.465 127.013 434.272 128.46C432.078 129.907 429.442 130.63 426.362 130.63ZM428.812 124.68C431.052 124.68 432.942 124.167 434.482 123.14C436.022 122.113 437.188 120.76 437.982 119.08C438.775 117.4 439.172 115.557 439.172 113.55V109.35C439.172 107.297 438.752 105.43 437.912 103.75C437.118 102.07 435.952 100.74 434.412 99.76C432.918 98.7333 431.098 98.22 428.952 98.22C426.758 98.22 424.868 98.7567 423.282 99.83C421.742 100.903 420.552 102.42 419.712 104.38C418.918 106.34 418.522 108.697 418.522 111.45C418.522 114.157 418.918 116.513 419.712 118.52C420.505 120.527 421.672 122.067 423.212 123.14C424.752 124.167 426.618 124.68 428.812 124.68Z" fill="white"/>
+<path d="M59.15 63.45C56.45 63.45 54 63.0333 51.8 62.2C49.6 61.3333 47.7 60.0833 46.1 58.45C44.5 56.8167 43.2667 54.85 42.4 52.55C41.5667 50.25 41.15 47.6667 41.15 44.8C41.15 41.9 41.5833 39.3 42.45 37C43.3167 34.7 44.5333 32.75 46.1 31.15C47.7 29.5167 49.6 28.2833 51.8 27.45C54 26.5833 56.45 26.15 59.15 26.15C62.15 26.15 64.8167 26.6667 67.15 27.7C69.5167 28.7333 71.4333 30.2 72.9 32.1C74.4 33.9667 75.3333 36.1833 75.7 38.75H70.2C69.8667 37.2167 69.2 35.8667 68.2 34.7C67.2 33.5 65.9333 32.5667 64.4 31.9C62.9 31.2 61.15 30.85 59.15 30.85C56.6167 30.85 54.4167 31.4 52.55 32.5C50.7167 33.6 49.3 35.1833 48.3 37.25C47.3 39.3167 46.8 41.8333 46.8 44.8C46.8 47 47.0833 48.9667 47.65 50.7C48.25 52.4333 49.0833 53.9 50.15 55.1C51.2167 56.2667 52.5 57.1667 54 57.8C55.5333 58.4333 57.25 58.75 59.15 58.75C61.1167 58.75 62.8667 58.4167 64.4 57.75C65.9667 57.0833 67.25 56.15 68.25 54.95C69.25 53.7167 69.9 52.2833 70.2 50.65H75.7C75.4 53.25 74.5 55.5167 73 57.45C71.5333 59.35 69.6 60.8333 67.2 61.9C64.8333 62.9333 62.15 63.45 59.15 63.45ZM79.6742 63V36.55H84.2742L84.5242 41.25H84.7742C85.3409 39.55 86.3242 38.2833 87.7242 37.45C89.1242 36.6167 90.6909 36.2 92.4242 36.2C92.7242 36.2 92.9909 36.2167 93.2242 36.25C93.4909 36.25 93.7409 36.2667 93.9742 36.3V41.15C93.7742 41.1167 93.5242 41.1 93.2242 41.1C92.9576 41.1 92.6742 41.1 92.3742 41.1C90.8076 41.1 89.4742 41.3667 88.3742 41.9C87.2742 42.4333 86.4242 43.2167 85.8242 44.25C85.2242 45.25 84.8742 46.4667 84.7742 47.9V63H79.6742ZM106.545 63.45C103.979 63.45 101.762 62.9 99.8953 61.8C98.062 60.6667 96.662 59.0833 95.6953 57.05C94.7286 55.0167 94.2453 52.6333 94.2453 49.9C94.2453 47.1 94.7286 44.6667 95.6953 42.6C96.662 40.5333 98.0453 38.95 99.8453 37.85C101.679 36.7167 103.862 36.15 106.395 36.15C109.162 36.15 111.445 36.7833 113.245 38.05C115.079 39.2833 116.395 41 117.195 43.2C117.995 45.4 118.295 47.9333 118.095 50.8H99.2953C99.3286 52.7333 99.6453 54.35 100.245 55.65C100.845 56.9167 101.679 57.8833 102.745 58.55C103.845 59.1833 105.112 59.5 106.545 59.5C108.279 59.5 109.679 59.1167 110.745 58.35C111.845 57.5833 112.579 56.5667 112.945 55.3H117.845C117.579 57 116.929 58.4667 115.895 59.7C114.862 60.9 113.545 61.8333 111.945 62.5C110.345 63.1333 108.545 63.45 106.545 63.45ZM99.3453 47.95L98.8453 47.3H113.545L113.045 48C113.079 46.1667 112.812 44.6667 112.245 43.5C111.712 42.3333 110.929 41.4833 109.895 40.95C108.895 40.3833 107.729 40.1 106.395 40.1C104.995 40.1 103.779 40.4 102.745 41C101.712 41.6 100.895 42.4833 100.295 43.65C99.6953 44.8167 99.3786 46.25 99.3453 47.95ZM131.779 63.45C130.179 63.45 128.695 63.1333 127.329 62.5C125.995 61.8667 124.845 60.9667 123.879 59.8C122.912 58.6333 122.162 57.2167 121.629 55.55C121.129 53.85 120.879 51.9167 120.879 49.75C120.879 46.8833 121.329 44.4333 122.229 42.4C123.162 40.3667 124.445 38.8167 126.079 37.75C127.712 36.65 129.612 36.1 131.779 36.1C133.245 36.1 134.579 36.3333 135.779 36.8C136.979 37.2667 137.995 37.9167 138.829 38.75C139.695 39.55 140.312 40.5167 140.679 41.65H140.979L141.179 36.55H146.079V63H141.179L140.979 57.85H140.679C140.079 59.5167 138.995 60.8667 137.429 61.9C135.862 62.9333 133.979 63.45 131.779 63.45ZM133.529 59.2C135.129 59.2 136.479 58.8333 137.579 58.1C138.679 57.3667 139.512 56.4 140.079 55.2C140.645 54 140.929 52.6833 140.929 51.25V48.25C140.929 46.7833 140.629 45.45 140.029 44.25C139.462 43.05 138.629 42.1 137.529 41.4C136.462 40.6667 135.162 40.3 133.629 40.3C132.062 40.3 130.712 40.6833 129.579 41.45C128.479 42.2167 127.629 43.3 127.029 44.7C126.462 46.1 126.179 47.7833 126.179 49.75C126.179 51.6833 126.462 53.3667 127.029 54.8C127.595 56.2333 128.429 57.3333 129.529 58.1C130.629 58.8333 131.962 59.2 133.529 59.2ZM159.886 63C158.419 63 157.269 62.8 156.436 62.4C155.602 61.9667 155.019 61.3333 154.686 60.5C154.352 59.6667 154.186 58.6667 154.186 57.5V40.75H149.186V36.55H154.186V28.9L159.286 28.3V36.55H175.436V63H170.286V40.75H159.286V56.55C159.286 57.45 159.452 58.05 159.786 58.35C160.152 58.6167 160.752 58.75 161.586 58.75H165.186V63H159.886ZM172.886 32.5C171.986 32.5 171.252 32.2667 170.686 31.8C170.152 31.3333 169.886 30.6833 169.886 29.85C169.886 29.0167 170.152 28.3667 170.686 27.9C171.252 27.4333 171.986 27.2 172.886 27.2C173.752 27.2 174.452 27.4333 174.986 27.9C175.552 28.3667 175.836 29.0167 175.836 29.85C175.836 30.6833 175.552 31.3333 174.986 31.8C174.452 32.2667 173.752 32.5 172.886 32.5ZM187.796 63L178.396 36.55H183.946L188.746 51.95L190.896 59H191.146L193.296 51.95L198.096 36.55H203.646L194.246 63H187.796ZM216.707 63.45C214.141 63.45 211.924 62.9 210.057 61.8C208.224 60.6667 206.824 59.0833 205.857 57.05C204.891 55.0167 204.407 52.6333 204.407 49.9C204.407 47.1 204.891 44.6667 205.857 42.6C206.824 40.5333 208.207 38.95 210.007 37.85C211.841 36.7167 214.024 36.15 216.557 36.15C219.324 36.15 221.607 36.7833 223.407 38.05C225.241 39.2833 226.557 41 227.357 43.2C228.157 45.4 228.457 47.9333 228.257 50.8H209.457C209.491 52.7333 209.807 54.35 210.407 55.65C211.007 56.9167 211.841 57.8833 212.907 58.55C214.007 59.1833 215.274 59.5 216.707 59.5C218.441 59.5 219.841 59.1167 220.907 58.35C222.007 57.5833 222.741 56.5667 223.107 55.3H228.007C227.741 57 227.091 58.4667 226.057 59.7C225.024 60.9 223.707 61.8333 222.107 62.5C220.507 63.1333 218.707 63.45 216.707 63.45ZM209.507 47.95L209.007 47.3H223.707L223.207 48C223.241 46.1667 222.974 44.6667 222.407 43.5C221.874 42.3333 221.091 41.4833 220.057 40.95C219.057 40.3833 217.891 40.1 216.557 40.1C215.157 40.1 213.941 40.4 212.907 41C211.874 41.6 211.057 42.4833 210.457 43.65C209.857 44.8167 209.541 46.25 209.507 47.95ZM242.229 63V26.55H247.679V63H242.229ZM263.009 63.5C261.343 63.5 259.826 63.3 258.459 62.9C257.126 62.5 255.976 61.9333 255.009 61.2C254.043 60.4667 253.293 59.5833 252.759 58.55C252.259 57.4833 251.993 56.3333 251.959 55.1H257.059C257.126 56.1333 257.409 57 257.909 57.7C258.443 58.4 259.159 58.9167 260.059 59.25C260.993 59.5833 262.026 59.75 263.159 59.75C264.959 59.75 266.326 59.4167 267.259 58.75C268.226 58.05 268.709 57.0833 268.709 55.85C268.709 54.9167 268.493 54.2 268.059 53.7C267.659 53.1667 267.009 52.75 266.109 52.45C265.209 52.15 264.026 51.9 262.559 51.7C260.359 51.3667 258.526 50.9333 257.059 50.4C255.593 49.8333 254.493 49.05 253.759 48.05C253.026 47.0167 252.659 45.6833 252.659 44.05C252.659 42.45 253.093 41.0667 253.959 39.9C254.826 38.7 256.043 37.7667 257.609 37.1C259.176 36.4 261.009 36.05 263.109 36.05C265.176 36.05 266.959 36.3833 268.459 37.05C269.993 37.7167 271.193 38.65 272.059 39.85C272.926 41.05 273.393 42.4833 273.459 44.15H268.409C268.343 43.1167 268.076 42.2833 267.609 41.65C267.176 41.0167 266.559 40.5667 265.759 40.3C264.993 40 264.076 39.85 263.009 39.85C261.376 39.85 260.093 40.1833 259.159 40.85C258.259 41.5167 257.809 42.4167 257.809 43.55C257.809 44.4167 258.043 45.1167 258.509 45.65C258.976 46.15 259.693 46.55 260.659 46.85C261.659 47.1167 262.926 47.3667 264.459 47.6C266.493 47.8667 268.226 48.2833 269.659 48.85C271.093 49.4167 272.159 50.2167 272.859 51.25C273.593 52.2833 273.959 53.6667 273.959 55.4C273.959 57.1333 273.509 58.6 272.609 59.8C271.709 61 270.426 61.9167 268.759 62.55C267.126 63.1833 265.209 63.5 263.009 63.5ZM278.039 63V26.55H283.189V63H278.039ZM298.294 63.45C296.694 63.45 295.211 63.1333 293.844 62.5C292.511 61.8667 291.361 60.9667 290.394 59.8C289.427 58.6333 288.677 57.2167 288.144 55.55C287.644 53.85 287.394 51.9167 287.394 49.75C287.394 46.8833 287.844 44.4333 288.744 42.4C289.677 40.3667 290.961 38.8167 292.594 37.75C294.227 36.65 296.127 36.1 298.294 36.1C299.761 36.1 301.094 36.3333 302.294 36.8C303.494 37.2667 304.511 37.9167 305.344 38.75C306.211 39.55 306.827 40.5167 307.194 41.65H307.494L307.694 36.55H312.594V63H307.694L307.494 57.85H307.194C306.594 59.5167 305.511 60.8667 303.944 61.9C302.377 62.9333 300.494 63.45 298.294 63.45ZM300.044 59.2C301.644 59.2 302.994 58.8333 304.094 58.1C305.194 57.3667 306.027 56.4 306.594 55.2C307.161 54 307.444 52.6833 307.444 51.25V48.25C307.444 46.7833 307.144 45.45 306.544 44.25C305.977 43.05 305.144 42.1 304.044 41.4C302.977 40.6667 301.677 40.3 300.144 40.3C298.577 40.3 297.227 40.6833 296.094 41.45C294.994 42.2167 294.144 43.3 293.544 44.7C292.977 46.1 292.694 47.7833 292.694 49.75C292.694 51.6833 292.977 53.3667 293.544 54.8C294.111 56.2333 294.944 57.3333 296.044 58.1C297.144 58.8333 298.477 59.2 300.044 59.2ZM318.301 63V36.55H323.201L323.401 41.8H323.701C324.468 39.9333 325.668 38.5333 327.301 37.6C328.935 36.6333 330.718 36.15 332.651 36.15C334.018 36.15 335.268 36.35 336.401 36.75C337.568 37.15 338.568 37.8 339.401 38.7C340.268 39.5667 340.935 40.7167 341.401 42.15C341.868 43.55 342.101 45.2667 342.101 47.3V63H336.951V48.35C336.951 46.55 336.735 45.0667 336.301 43.9C335.868 42.7 335.201 41.8167 334.301 41.25C333.401 40.6833 332.235 40.4 330.801 40.4C329.301 40.4 327.985 40.7667 326.851 41.5C325.751 42.2333 324.901 43.2167 324.301 44.45C323.701 45.65 323.401 47.0167 323.401 48.55V63H318.301ZM357.111 63.45C355.511 63.45 354.027 63.1333 352.661 62.5C351.327 61.8667 350.177 60.9667 349.211 59.8C348.244 58.6333 347.494 57.2167 346.961 55.55C346.461 53.85 346.211 51.9167 346.211 49.75C346.211 46.8833 346.661 44.4333 347.561 42.4C348.494 40.3667 349.777 38.8167 351.411 37.75C353.044 36.65 354.944 36.1 357.111 36.1C358.577 36.1 359.911 36.3333 361.111 36.8C362.311 37.2667 363.327 37.9167 364.161 38.75C365.027 39.55 365.644 40.5167 366.011 41.65H366.261V26.55H371.411V63H366.511L366.311 57.85H366.011C365.411 59.5167 364.327 60.8667 362.761 61.9C361.194 62.9333 359.311 63.45 357.111 63.45ZM358.861 59.2C360.461 59.2 361.811 58.8333 362.911 58.1C364.011 57.3667 364.844 56.4 365.411 55.2C365.977 54 366.261 52.6833 366.261 51.25V48.25C366.261 46.7833 365.961 45.45 365.361 44.25C364.794 43.05 363.961 42.1 362.861 41.4C361.794 40.6667 360.494 40.3 358.961 40.3C357.394 40.3 356.044 40.6833 354.911 41.45C353.811 42.2167 352.961 43.3 352.361 44.7C351.794 46.1 351.511 47.7833 351.511 49.75C351.511 51.6833 351.794 53.3667 352.361 54.8C352.927 56.2333 353.761 57.3333 354.861 58.1C355.961 58.8333 357.294 59.2 358.861 59.2Z" fill="white"/>
+<path d="M12.7949 42.136C11.8669 42.136 11.0589 41.936 10.3709 41.536C9.68294 41.12 9.13894 40.552 8.73894 39.832C8.35494 39.096 8.16294 38.248 8.16294 37.288C8.16294 36.312 8.35494 35.456 8.73894 34.72C9.13894 33.984 9.69094 33.416 10.3949 33.016C11.0989 32.6 11.9229 32.392 12.8669 32.392C13.6509 32.392 14.3389 32.536 14.9309 32.824C15.5389 33.096 16.0269 33.488 16.3949 34C16.7629 34.496 16.9709 35.072 17.0189 35.728H15.5069C15.3789 35.04 15.0589 34.536 14.5469 34.216C14.0349 33.88 13.4589 33.712 12.8189 33.712C12.1789 33.712 11.6269 33.864 11.1629 34.168C10.6989 34.472 10.3389 34.896 10.0829 35.44C9.84294 35.968 9.72294 36.584 9.72294 37.288C9.72294 38.024 9.85094 38.664 10.1069 39.208C10.3629 39.736 10.7229 40.144 11.1869 40.432C11.6509 40.704 12.1869 40.84 12.7949 40.84C13.5309 40.84 14.1469 40.648 14.6429 40.264C15.1549 39.88 15.4509 39.352 15.5309 38.68H17.0429C16.9949 39.352 16.7869 39.952 16.4189 40.48C16.0509 41.008 15.5549 41.416 14.9309 41.704C14.3069 41.992 13.5949 42.136 12.7949 42.136ZM12.6029 46.24C11.2589 46.24 10.0269 46.032 8.90694 45.616C7.80294 45.184 6.84294 44.568 6.02694 43.768C5.22694 42.968 4.60294 42.024 4.15494 40.936C3.72294 39.832 3.50694 38.608 3.50694 37.264C3.50694 35.92 3.72294 34.704 4.15494 33.616C4.60294 32.512 5.22694 31.568 6.02694 30.784C6.84294 29.984 7.80294 29.376 8.90694 28.96C10.0269 28.528 11.2589 28.312 12.6029 28.312C13.9469 28.312 15.1789 28.528 16.2989 28.96C17.4189 29.376 18.3789 29.984 19.1789 30.784C19.9789 31.568 20.5949 32.512 21.0269 33.616C21.4749 34.704 21.6989 35.92 21.6989 37.264C21.6989 38.608 21.4749 39.832 21.0269 40.936C20.5949 42.024 19.9789 42.968 19.1789 43.768C18.3789 44.568 17.4189 45.184 16.2989 45.616C15.1789 46.032 13.9469 46.24 12.6029 46.24ZM12.6029 45.184C14.1869 45.184 15.5709 44.856 16.7549 44.2C17.9549 43.528 18.8829 42.6 19.5389 41.416C20.2109 40.232 20.5469 38.848 20.5469 37.264C20.5469 35.696 20.2109 34.32 19.5389 33.136C18.8829 31.936 17.9549 31.008 16.7549 30.352C15.5709 29.68 14.1869 29.344 12.6029 29.344C11.0349 29.344 9.65094 29.68 8.45094 30.352C7.26694 31.008 6.33894 31.936 5.66694 33.136C5.01094 34.32 4.68294 35.696 4.68294 37.264C4.68294 38.848 5.01094 40.232 5.66694 41.416C6.33894 42.6 7.26694 43.528 8.45094 44.2C9.65094 44.856 11.0349 45.184 12.6029 45.184Z" fill="white"/>
+</svg>
+          </div>
+          <ul class="l-footer-sns">
+            <li><a href="https://www.facebook.com/nakanoshimalab/" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 9.5C19 4.2 14.7 0 9.5 0C4.3 0 0 4.3 0 9.5C0 14.7 3.1 17.6998 7.2 18.7998V12.5H5.2V9.59961H7.2V8.39941C7.2 5.19941 8.7 3.59961 11.8 3.59961C14.9 3.59961 13.4 3.6998 13.9 3.7998V6.39941C13.7 6.39941 13.3 6.39941 12.8 6.39941C11.2 6.39941 10.6 7 10.6 8.5V9.5H13.7L13.2 12.3994H10.6V18.8994C15.3 18.2994 18.9 14.2994 18.9 9.39941L19 9.5Z"/>
+</svg></a></li>
+            <li><a href="https://www.instagram.com/nakanoshimalab/" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.55056 0C4.48314 0 3.8427 0.21286 3.20225 0.426346C2.5618 0.639831 2.02809 0.960059 1.49438 1.49377C0.960676 2.02749 0.640451 2.56183 0.426968 3.20228C0.213485 3.84274 0 4.4834 0 5.55083C0 6.61826 0 6.93765 0 9.49948C0 12.0613 0 12.4885 0 13.4492C0 14.5166 0.213485 15.1573 0.426968 15.7977C0.640451 16.4382 0.960676 16.9715 1.49438 17.5052C2.02809 18.0389 2.5618 18.3591 3.20225 18.5726C3.8427 18.7861 4.48314 19 5.55056 19C6.61798 19 6.93821 19 9.5 19C12.0618 19 12.4888 19 13.4494 19C14.5169 19 15.1573 18.7861 15.7978 18.5726C16.4382 18.3591 16.9719 18.0389 17.5056 17.5052C18.0393 16.9715 18.3596 16.4382 18.573 15.7977C18.7865 15.1573 19 14.5166 19 13.4492C19 12.3817 19 12.0613 19 9.49948C19 6.93765 19 6.51152 19 5.55083C19 4.4834 18.7865 3.84274 18.573 3.20228C18.3596 2.56183 18.0393 2.02749 17.5056 1.49377C16.9719 0.960059 16.4382 0.639831 15.7978 0.426346C15.1573 0.21286 14.5169 0 13.4494 0C12.382 0 12.0618 0 9.5 0C6.93821 0 6.51123 0 5.55056 0ZM5.6573 17.3989C4.69663 17.3989 4.16292 17.1856 3.8427 17.0788C3.41573 16.8654 3.0955 16.6517 2.77528 16.3314C2.45505 16.0112 2.24158 15.691 2.02809 15.264C1.92135 14.9438 1.70786 14.4099 1.70786 13.4492C1.70786 12.4885 1.70786 12.1687 1.70786 9.60685C1.70786 7.04502 1.70786 6.72417 1.70786 5.76348C1.70786 4.8028 1.92135 4.26992 2.02809 3.94969C2.24158 3.52272 2.45505 3.20249 2.77528 2.88226C3.0955 2.56203 3.41573 2.34834 3.8427 2.13485C4.16292 2.02811 4.69663 1.81484 5.6573 1.81484C6.61797 1.81484 6.93821 1.81484 9.5 1.81484C12.0618 1.81484 12.382 1.81484 13.3427 1.81484C14.3034 1.81484 14.8371 2.02811 15.1573 2.13485C15.5843 2.34834 15.9045 2.56203 16.2247 2.88226C16.5449 3.20249 16.7584 3.52272 16.9719 3.94969C17.0787 4.26992 17.2921 4.8028 17.2921 5.76348C17.2921 6.72417 17.2921 7.04502 17.2921 9.60685C17.2921 12.1687 17.2921 12.4885 17.2921 13.4492C17.2921 14.4099 17.0787 14.9438 16.9719 15.264C16.7584 15.691 16.5449 16.0112 16.2247 16.3314C15.9045 16.6517 15.5843 16.8654 15.1573 17.0788C14.8371 17.1856 14.3034 17.3989 13.3427 17.3989C12.382 17.3989 12.0618 17.3989 9.5 17.3989C6.93821 17.3989 6.61797 17.3989 5.6573 17.3989ZM13.5562 4.4834C13.5562 4.69689 13.5562 4.90996 13.7697 5.12344C13.8764 5.33693 14.0899 5.44409 14.3034 5.55083C14.5169 5.55083 14.7303 5.65757 14.9438 5.55083C15.1573 5.55083 15.3708 5.44325 15.5843 5.22977C15.7978 5.01628 15.9045 4.90996 15.9045 4.58973C15.9045 4.37624 15.9045 4.16318 15.9045 3.94969C15.9045 3.7362 15.691 3.52272 15.4775 3.41598C15.264 3.30923 15.0506 3.20228 14.8371 3.20228C14.6236 3.20228 14.1966 3.30882 13.9831 3.5223C13.7697 3.73579 13.6629 4.05581 13.6629 4.37604L13.5562 4.4834ZM4.58988 9.60685C4.58988 12.3822 6.83146 14.5166 9.5 14.5166C12.2753 14.5166 14.4101 12.2754 14.4101 9.60685C14.4101 6.83154 12.1685 4.69605 9.5 4.69605C6.72472 4.69605 4.58988 6.93828 4.58988 9.60685ZM6.29776 9.60685C6.29776 8.96639 6.51124 8.32573 6.83146 7.79201C7.15169 7.2583 7.68539 6.83174 8.2191 6.61826C8.75281 6.40477 9.5 6.29782 10.0337 6.40456C10.6742 6.51131 11.2079 6.83133 11.6348 7.2583C12.0618 7.68527 12.382 8.32573 12.4888 8.85944C12.5955 9.4999 12.4888 10.1406 12.2753 10.6743C12.0618 11.208 11.6348 11.7411 11.1011 12.168C10.5674 12.4883 9.92696 12.7018 9.28652 12.7018C8.64607 12.7018 8.43258 12.7026 8.11236 12.4891C7.68539 12.3824 7.36517 12.0615 7.04494 11.848C6.72472 11.5278 6.51124 11.2076 6.29776 10.7806C6.08427 10.3536 6.08427 9.92707 6.08427 9.60685H6.29776Z"/>
+</svg></a></li>
+            <li><a href="https://x.com/nakanoshimalab" target="_blank" rel="noopener"><svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.7 6.80078L17.4 0H15.8L9.99999 5.90039L5.4 0H0L6.99999 8.90039L0 16H1.6L7.7 9.80078L12.6 16H18L10.7 6.80078ZM8.49999 9L7.8 8.10059L2.1 1.10059H4.49999L9.1 6.80078L9.8 7.7002L15.7 15.1006H13.3L8.49999 9.10059V9Z"/>
+</svg></a></li>
+            <li><a href="https://www.youtube.com/c/CreativeIslandNakanoshima" target="_blank" rel="noopener"><svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.5 2.5C21.2 1.5 20.5 0.7 19.6 0.5C17.9 0 11 0 11 0C11 0 4.10001 0 2.40001 0.5C1.50001 0.8 0.7 1.5 0.5 2.5C0 4.3 0 8 0 8C0 8 0 11.7 0.5 13.5C0.8 14.5 1.50001 15.3 2.40001 15.5C4.10001 16 11 16 11 16C11 16 17.9 16 19.6 15.5C20.5 15.2 21.3 14.5 21.5 13.5C22 11.7 22 8 22 8C22 8 22 4.3 21.5 2.5Z"/>
+<path d="M8.69531 11.3994V4.5L14.3953 7.89941L8.69531 11.2998V11.3994Z" fill="#007CBE"/>
+</svg></a></li>
+          </ul>
+          <div class="l-footer-info">
+            <dl>
+              <dt>【委託】</dt>
+              <dd>令和６年度日本博2.0事業（委託型）</dd>
+            </dl>
+            <dl>
+              <dt>【主催】</dt>
+              <dd>クリエイティブアイランド中之島実行委員会／独立行政法人日本芸術文化振興会／文化庁</dd>
+            </dl>
+          </div>
+          <div class="l-footer-expo"><a href="https://japanculturalexpo.bunka.go.jp/en/" target="_blank" rel="noopener"><img src="../assets/img/logo-japanculturalexpo.webp" alt="Japan Cultural Expo"/></a></div>
+        </div>
+        <div class="l-footer__pagetop"><a class="c-btn-pagetop" href="#top" data-scroll-anchor="data-scroll-anchor" aria-label="ページトップへ"><i class="c-btn-pagetop__arrow">
+              <svg class="js-clone" width="26" height="26">
+                <use href="#ico-arrow"></use>
+              </svg></i><span class="c-btn-pagetop__txt">TOP</span></a></div>
+      </div>
+    </footer>
+    <div class="cm-modal" id="modal-about" aria-hidden="true">
+      <div class="cm-modal__overlay" tabindex="-1" data-micromodal-close="">
+        <button class="c-btn-close cm-modal__close" aria-label="閉じる" data-micromodal-close=""><img src="../assets/img/btn-close.svg"/></button>
+        <div class="cm-modal-about is-section-dark" role="dialog" aria-modal="true">
+          <div class="cm-modal-about__wrap">
+            <div class="cm-modal-about__content">
+              <div class="cm-modal-about__head">
+                <h3 class="cm-modal-about__title1"><span>大阪の中の</span><span>島</span><span>へ。</span></h3>
+                <p class="cm-modal-about__title2">大阪にはキタとミナミだけでなく<br class="sp">「ナカ」がある。</p>
+              </div>
+              <div class="cm-modal-about__body">
+                <p>自然、文化、歴史、アート、科学、国際交流、<br/>ふたつの川に包まれた小さなエリアに、<br/>多彩な“学びの水源”が集まる中之島。<br/>私たちは、この地で湧き出る多様な知を交叉させ<br/>大阪の可能性と創造性を広げていきます。</p>
+              </div>
+              <div class="cm-modal-about__foot">
+                <p>クリエイティブアイランド中之島</p>
+              </div>
+            </div>
+            <div class="cm-modal-about__movie"><iframe width="560" height="315" src="https://www.youtube.com/embed/6Kwfe3BUSwI?si=uXhyjPOdB8tbqm1V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <div class="cm-modal-about__more"><a class="c-btn-youtube" href="#" target="_blank" rel="noopener"><i class="c-btn-youtube__arrow">
+                    <svg class="js-clone" width="26" height="26">
+                      <use href="#ico-arrow"></use>
+                    </svg></i><span class="c-btn-youtube__txt">Youtubeで見る</span></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../assets/js/app.js"></script>
+<svg display="none">
+<defs>
+<symbol id="ico-arrow" viewBox="0 0 26 26">
+<path d="M16.8293 13.0464L13.3661 9.09961L14.9573 9.09961L18.2333 13.062L14.9573 17.0088L13.3661 17.0088L16.8293 13.0464ZM7.79687 12.3912L17.0165 12.3912L17.0165 13.7016L7.79687 13.7016L7.79687 12.3912Z"/>
+</symbol>
+<symbol id="ico-heading-line" viewBox="0 0 17 24">
+<path d="M0.946606 0.109375C0.666606 1.35709 -0.723394 8.09875 3.44661 14.6995C7.76661 21.5318 14.7566 23.021 15.9466 23.2524" stroke="#1B1B1B" fill="none" stroke-miterlimit="10"/>
+</symbol>
+<symbol id="logo" viewBox="0 0 195 40">
+<path d="M47.0969 26.4799C46.8063 26.4799 46.5662 26.7172 46.5662 27.0045V28.2285C46.5409 28.8406 46.3008 32.1131 42.1307 33.6619C41.7895 33.7868 41.4104 33.5245 41.4104 33.1623V1.63626C41.4104 1.34897 41.1703 1.11165 40.8797 1.11165H36.0398C35.7492 1.11165 35.509 1.34897 35.509 1.63626V33.4621C35.509 33.7868 35.2184 34.0366 34.8899 33.9867C31.9581 33.4746 29.6583 32.3254 27.3584 30.9265C27.0804 30.7516 27.0173 30.3769 27.232 30.1396C28.7611 28.391 29.7594 26.1926 30.0247 23.782C30.0627 23.4697 29.8099 23.1824 29.494 23.1824H24.6036C24.3509 23.1824 24.1234 23.3572 24.0855 23.607C23.8075 25.081 22.9735 26.355 21.8109 27.2168C21.6466 27.3417 21.4191 27.3417 21.2422 27.2418C20.2692 26.7047 19.2962 26.2051 18.4369 25.8054C16.3392 24.8312 14.1657 24.4189 12.0933 24.4439C11.8406 24.4439 11.6258 24.2816 11.5626 24.0443C11.4362 23.5696 11.3604 23.0699 11.3604 22.5454V12.2157C11.3604 8.70588 14.2415 5.84556 17.7924 5.84556H18.2852C21.1664 5.84556 23.58 7.90649 24.0855 10.6169C24.1361 10.8667 24.3509 11.0416 24.6036 11.0416H29.494C29.8226 11.0416 30.0627 10.7668 30.0247 10.4421C29.3803 4.59651 24.3383 0 18.26 0H17.7672C10.9812 0 5.43377 5.49582 5.43377 12.2032V22.5329C5.43377 23.5571 5.57278 24.5439 5.82551 25.4806C5.88869 25.7179 5.77496 25.9678 5.56014 26.0927C4.46075 26.6922 3.51299 27.4166 2.7927 28.241C0.909841 30.3769 0 32.9875 0 36.235V37.1218C0 37.409 0.240097 37.6464 0.530741 37.6464L4.86512 36.5473C5.15576 36.5473 5.39586 36.3099 5.39586 36.0227V35.6479C5.39586 35.498 5.39586 35.3231 5.39586 35.1483C5.57278 32.4878 7.53146 31.0889 8.64349 30.5518C9.07313 30.3394 9.56598 30.1646 10.122 30.0397C14.2542 29.0654 18.121 31.5135 21.5961 33.7619C21.7857 33.8867 21.9879 34.0117 22.1774 34.1365C23.0493 34.6986 24.0097 35.3356 25.0711 35.9602C25.147 35.9977 25.2228 36.0476 25.286 36.085C25.3744 36.135 25.4629 36.185 25.5513 36.235C25.564 36.235 25.5766 36.2475 25.5893 36.26C28.9127 38.146 32.8427 39.7573 38.2891 39.7573C46.4019 39.7573 52.0631 34.5862 52.0631 27.1668V25.9428C52.0631 25.6555 51.8231 25.4182 51.5323 25.4182L47.0843 26.5174L47.0969 26.4799Z"/>
+<path d="M70.6583 14.655C68.7688 14.655 64.375 13.9898 64.375 7.81223C64.375 3.44876 66.8471 0.628906 70.6776 0.628906C73.6968 0.628906 75.7344 2.3953 75.7795 5.03056H72.9018C72.7023 3.42012 71.9136 2.60535 70.5617 2.60535C68.5016 2.60535 67.3235 4.51178 67.3235 7.83132C67.3235 10.944 68.3922 12.6563 70.33 12.6563C71.4726 12.6563 72.8278 11.9688 72.9276 10.0401H75.889C75.8278 10.8836 75.7087 12.0675 74.6658 13.1336C73.6775 14.1426 72.3288 14.6518 70.655 14.6518L70.6583 14.655Z"/>
+<path d="M77.891 14.4443V7.18413C77.891 6.7372 77.8203 5.45108 77.7656 4.84339H80.2562L80.3109 6.62467L80.4844 6.66003C80.7704 6.01698 81.3006 4.81445 83.4088 4.81445C83.4795 4.81445 83.5534 4.81445 83.6274 4.81766V7.19699C83.4313 7.18092 83.2449 7.17448 83.0713 7.17448C80.5615 7.17448 80.5615 8.8368 80.5615 9.72748V14.4411H77.891V14.4443Z"/>
+<path d="M89.1147 14.8634C88.2765 14.8634 86.7169 14.709 85.7098 13.6764C84.8846 12.824 84.4688 11.5663 84.4688 9.93869C84.4688 7.84464 85.1445 6.31673 86.4766 5.39998C87.2628 4.8821 88.2018 4.60547 89.1927 4.60547C90.1836 4.60547 92.0972 4.90462 93.0848 6.90859C93.7379 8.21777 93.6989 9.61703 93.6632 10.3471H87.0516V10.4373C87.0516 12.2257 87.7566 13.1328 89.1505 13.1328C90.0861 13.1328 90.6872 12.6793 90.9374 11.7818H93.3967C93.3578 12.2096 93.2408 12.9752 92.4936 13.7504C91.8178 14.4548 90.5832 14.8602 89.1115 14.8602L89.1147 14.8634ZM89.0952 6.37141C87.9516 6.37141 87.2238 7.21739 87.1524 8.63915L87.1458 8.73564H90.9016V8.64558C90.9016 7.18201 90.2583 6.37463 89.0952 6.37463V6.37141Z"/>
+<path d="M98.5066 14.654C97.1189 14.654 96.5235 14.2565 96.1637 13.9103C95.6478 13.3911 95.3516 12.6379 95.3516 11.8398C95.3516 11.0898 95.61 9.70829 97.3413 8.90375C98.5066 8.37488 100.21 8.37488 101.124 8.37488H101.213V8.28513C101.213 7.65049 101.194 7.32675 101.077 6.96776C100.787 6.1408 99.9047 6.09913 99.7296 6.09913C99.2582 6.09913 98.8313 6.31389 98.587 6.67608C98.3892 6.98379 98.3636 7.27547 98.3608 7.50305H95.7756C95.7974 6.9902 95.8864 6.05426 96.8226 5.37794C97.5325 4.8651 98.4971 4.60547 99.6917 4.60547C100.561 4.60547 102.152 4.76253 103.06 5.82348C103.489 6.34273 103.706 7.12803 103.706 8.1473L103.725 12.0513C103.725 12.9424 103.791 13.7213 103.935 14.4232H101.563C101.481 13.8719 101.481 13.4617 101.481 13.186V12.8944L101.315 13.1347C100.274 14.654 99.0319 14.654 98.5037 14.654H98.5066ZM100.564 9.82368C98.9335 9.82368 97.9216 10.4712 97.9216 11.516C97.9216 12.2501 98.4242 12.9904 99.386 12.9904C99.8697 12.9904 100.332 12.7758 100.656 12.4007C101.171 11.7597 101.213 10.9744 101.213 9.93585V9.85255L101.131 9.84611C100.937 9.83011 100.745 9.82046 100.564 9.82046V9.82368Z"/>
+<path d="M109.688 14.6545C106.875 14.6545 106.875 12.9476 106.875 12.1263V6.70414H104.984V5.00051H106.875V3.06587L109.555 2.09375V5.00051H111.893V6.70414H109.555V11.183C109.574 12.0845 109.587 12.7166 110.951 12.7166C111.338 12.7166 111.542 12.7006 111.835 12.6685V14.3657C110.834 14.6256 110.002 14.6545 109.684 14.6545H109.688Z"/>
+<path d="M113.838 14.4448V4.85036H116.44V14.4448H113.838ZM114.946 3.66192L113.359 2.02903L115.331 0L116.919 1.63289L114.946 3.66192Z"/>
+<path d="M121.622 14.4443L118.172 4.81445H120.982L123.213 11.6781L125.485 4.81445H128.011L124.617 14.4443H121.622Z"/>
+<path d="M133.068 14.8634C132.229 14.8634 130.67 14.709 129.663 13.6764C128.837 12.824 128.422 11.5663 128.422 9.93869C128.422 7.84464 129.098 6.31673 130.43 5.39998C131.216 4.8821 132.154 4.60547 133.145 4.60547C134.137 4.60547 136.051 4.90462 137.038 6.90859C137.691 8.21777 137.652 9.61703 137.616 10.3471H131.004V10.4373C131.004 12.2257 131.709 13.1328 133.104 13.1328C134.039 13.1328 134.64 12.6793 134.89 11.7818H137.35C137.31 12.2096 137.194 12.9752 136.446 13.7504C135.771 14.4548 134.536 14.8602 133.064 14.8602L133.068 14.8634ZM133.048 6.37141C131.904 6.37141 131.176 7.21739 131.105 8.63915L131.099 8.73564H134.855V8.64558C134.855 7.18201 134.211 6.37463 133.048 6.37463V6.37141Z"/>
+<path d="M146.228 0.628906H143.297V14.4456H146.228V0.628906Z"/>
+<path d="M151.862 14.654C150.409 14.654 149.334 14.2726 148.579 13.4905C147.984 12.8655 147.911 12.1443 147.891 11.7405H150.402C150.451 12.1411 150.712 13.0674 152.113 13.0674C153.214 13.0674 153.714 12.4231 153.714 11.8238C153.714 11.2244 153.314 10.9198 152.29 10.641L150.509 10.1602C149.721 9.92941 148.098 9.45826 148.098 7.55433C148.098 5.76258 149.74 4.60547 152.288 4.60547C153.96 4.60547 155.777 5.31384 155.909 7.28829H153.476C153.388 6.52222 152.892 6.13439 151.997 6.13439C151.102 6.13439 150.551 6.55748 150.551 7.18573C150.551 7.91332 151.109 8.06396 151.955 8.29154L153.718 8.77233C155.432 9.23389 156.264 10.0929 156.264 11.3975C156.264 12.9649 154.886 14.654 151.862 14.654Z"/>
+<path d="M161.089 0.628906H158.367V14.4456H161.089V0.628906Z"/>
+<path d="M166.327 14.654C164.938 14.654 164.343 14.2565 163.983 13.9103C163.468 13.3911 163.172 12.6379 163.172 11.8398C163.172 11.0898 163.429 9.70829 165.162 8.90375C166.327 8.37488 168.03 8.37488 168.943 8.37488H169.033V8.28513C169.033 7.65049 169.013 7.32675 168.896 6.96776C168.606 6.1408 167.724 6.09913 167.549 6.09913C167.079 6.09913 166.652 6.31389 166.406 6.67608C166.209 6.98379 166.183 7.27547 166.18 7.50305H163.595C163.618 6.9902 163.707 6.05426 164.643 5.37794C165.353 4.8651 166.317 4.60547 167.511 4.60547C168.38 4.60547 169.972 4.76253 170.879 5.82348C171.309 6.34273 171.526 7.12803 171.526 8.1473L171.545 12.0513C171.545 12.9424 171.612 13.7213 171.755 14.4232H169.383C169.3 13.8719 169.3 13.4617 169.3 13.186V12.8944L169.135 13.1347C168.093 14.654 166.852 14.654 166.323 14.654H166.327ZM168.383 9.82368C166.753 9.82368 165.741 10.4712 165.741 11.516C165.741 12.2501 166.244 12.9904 167.205 12.9904C167.689 12.9904 168.151 12.7758 168.476 12.4007C168.992 11.7597 169.033 10.9744 169.033 9.93585V9.85255L168.95 9.84611C168.756 9.83011 168.565 9.82046 168.383 9.82046V9.82368Z"/>
+<path d="M180.353 14.4415V8.46972C180.353 8.05466 180.353 7.6943 180.19 7.36611C180.059 7.10227 179.651 6.48451 178.725 6.48451C178.08 6.48451 177.497 6.78052 177.167 7.27924C177.032 7.47551 176.805 7.93561 176.805 8.81721V14.4415H174.121V6.5199C174.121 6.41372 174.121 5.49351 174.07 4.83392H176.616L176.702 6.51025L176.856 6.25929C177.102 5.85066 177.86 4.60547 179.934 4.60547C182.008 4.60547 182.655 5.96326 182.809 6.38155C183.011 6.95105 183.072 7.4208 183.072 9.26445V14.4447H180.35L180.353 14.4415Z"/>
+<path d="M189.362 14.6518C186.866 14.6518 185.375 12.8661 185.375 9.8707C185.375 6.72974 186.999 4.70152 189.514 4.70152C191.216 4.70152 191.906 5.68166 192.133 6.00191L192.295 6.23158V0.628906H194.939V12.9599C194.939 13.5034 194.97 14.0824 195.005 14.4609H192.345L192.256 12.8144L192.104 13.0926C191.908 13.4549 191.722 13.801 191.166 14.1666C190.506 14.6065 189.817 14.655 189.356 14.655L189.362 14.6518ZM190.215 6.40302C188.254 6.40302 188.042 8.77413 188.042 9.79308C188.042 11.7825 188.797 12.9697 190.064 12.9697C190.841 12.9697 191.571 12.5168 191.925 11.8148C192.234 11.2132 192.389 10.4207 192.389 9.46314C192.389 7.54491 191.577 6.40302 190.215 6.40302Z"/>
+<path d="M73.1846 37.4726L67.8064 26.0839L67.6328 26.122V37.4726H65V23.8652H69.1726L74.3741 34.666L74.5477 34.6278V23.8652H77.142V37.4726H73.1846Z"/>
+<path d="M83.5132 37.6814C82.0912 37.6814 81.4814 37.2839 81.1128 36.9377C80.5845 36.4184 80.2812 35.6652 80.2812 34.8671C80.2812 34.117 80.5454 32.7356 82.3196 31.931C83.5132 31.4022 85.258 31.4022 86.194 31.4022H86.2853V31.3124C86.2853 30.6778 86.2658 30.3541 86.1451 29.9951C85.8483 29.1681 84.9449 29.1265 84.7655 29.1265C84.2828 29.1265 83.8459 29.3412 83.5947 29.7034C83.3925 30.0112 83.3664 30.3028 83.3632 30.5304H80.715C80.7378 30.0175 80.8291 29.0816 81.788 28.4052C82.5152 27.8925 83.5034 27.6328 84.7264 27.6328C85.6168 27.6328 87.2474 27.7899 88.1769 28.8508C88.6171 29.37 88.8389 30.1553 88.8389 31.1746L88.8585 35.0787C88.8585 35.9697 88.9269 36.7486 89.0738 37.4506H86.644C86.5592 36.8993 86.5592 36.4889 86.5592 36.2133V35.9216L86.3897 36.1621C85.3232 37.6814 84.0513 37.6814 83.5099 37.6814H83.5132ZM85.62 32.851C83.9502 32.851 82.9131 33.4984 82.9131 34.5434C82.9131 35.2774 83.4284 36.0178 84.4134 36.0178C84.909 36.0178 85.3819 35.803 85.7146 35.428C86.2429 34.7869 86.2853 34.0016 86.2853 32.9631V32.8798L86.2005 32.8734C86.0016 32.8574 85.8059 32.8477 85.62 32.8477V32.851Z"/>
+<path d="M97.8316 37.4726L94.7287 32.0882L97.7663 27.9656H100.766L97.4918 32.0659L101.002 37.4726H97.8316ZM92 37.4726V23.8652H94.6634V37.4726H92Z"/>
+<path d="M106.046 37.6814C104.658 37.6814 104.063 37.2839 103.703 36.9377C103.187 36.4184 102.891 35.6652 102.891 34.8671C102.891 34.117 103.149 32.7356 104.88 31.931C106.046 31.4022 107.75 31.4022 108.663 31.4022H108.752V31.3124C108.752 30.6778 108.733 30.3541 108.616 29.9951C108.325 29.1681 107.444 29.1265 107.269 29.1265C106.797 29.1265 106.37 29.3412 106.125 29.7034C105.928 30.0112 105.903 30.3028 105.9 30.5304H103.315C103.336 30.0175 103.425 29.0816 104.362 28.4052C105.072 27.8925 106.036 27.6328 107.231 27.6328C108.1 27.6328 109.691 27.7899 110.599 28.8508C111.029 29.37 111.245 30.1553 111.245 31.1746L111.264 35.0787C111.264 35.9697 111.331 36.7486 111.474 37.4506H109.102C109.02 36.8993 109.02 36.4889 109.02 36.2133V35.9216L108.854 36.1621C107.813 37.6814 106.571 37.6814 106.043 37.6814H106.046ZM108.103 32.851C106.473 32.851 105.461 33.4984 105.461 34.5434C105.461 35.2774 105.963 36.0178 106.925 36.0178C107.409 36.0178 107.871 35.803 108.195 35.428C108.71 34.7869 108.752 34.0016 108.752 32.9631V32.8798L108.67 32.8734C108.476 32.8574 108.284 32.8477 108.103 32.8477V32.851Z"/>
+<path d="M120.893 37.4688V31.497C120.893 31.0819 120.893 30.7217 120.729 30.3935C120.598 30.1296 120.191 29.5118 119.264 29.5118C118.62 29.5118 118.036 29.8078 117.707 30.3066C117.571 30.5028 117.344 30.963 117.344 31.8445V37.4688H114.66V29.5472C114.66 29.441 114.66 28.5208 114.609 27.8612H117.155L117.242 29.5376L117.395 29.2866C117.642 28.878 118.399 27.6328 120.473 27.6328C122.547 27.6328 123.194 28.9906 123.348 29.4088C123.55 29.9784 123.612 30.4481 123.612 32.2918V37.472H120.89L120.893 37.4688Z"/>
+<path d="M131.18 37.8923C128.189 37.8923 126.328 35.9775 126.328 32.8967C126.328 30.4531 127.617 27.8438 131.238 27.8438C134.858 27.8438 136.167 30.4148 136.167 32.8202C136.167 35.2256 134.862 37.8923 131.18 37.8923ZM131.238 29.5578C129.061 29.5578 129.061 32.0875 129.061 32.9158C129.061 35.06 129.785 36.1017 131.276 36.1017C132.767 36.1017 133.453 35.0217 133.453 32.7055C133.453 30.6155 132.706 29.5578 131.238 29.5578Z"/>
+<path d="M142.237 37.8923C140.784 37.8923 139.709 37.5108 138.954 36.7287C138.359 36.1037 138.286 35.3826 138.266 34.9787H140.778C140.826 35.3794 141.087 36.3056 142.488 36.3056C143.589 36.3056 144.089 35.6614 144.089 35.062C144.089 34.4626 143.69 34.1582 142.666 33.8793L140.884 33.3985C140.096 33.1677 138.473 32.6965 138.473 30.7926C138.473 29.0009 140.115 27.8438 142.663 27.8438C144.335 27.8438 146.153 28.5521 146.284 30.5265H143.851C143.763 29.7605 143.267 29.3726 142.372 29.3726C141.478 29.3726 140.926 29.7957 140.926 30.424C140.926 31.1516 141.484 31.3023 142.33 31.5298L144.093 32.0106C145.807 32.4722 146.64 33.3312 146.64 34.6357C146.64 36.2031 145.261 37.8923 142.237 37.8923Z"/>
+<path d="M155.482 37.4695V31.7923C155.482 31.2513 155.482 29.6029 153.78 29.6029C152.845 29.6029 151.846 30.1439 151.846 31.6586L151.864 37.4695H149.156V23.8652H151.826V29.5201L151.994 29.2878C152.325 28.8296 153.011 27.8749 154.754 27.8749C156.366 27.8749 157.236 28.7596 157.537 29.1383C157.932 29.676 158.158 30.6117 158.158 31.7V37.4726H155.489L155.482 37.4695Z"/>
+<path d="M161.582 37.4738V28.0183H164.335V37.4738H161.582ZM162.758 26.8472L161.078 25.238L163.166 23.2383L164.847 24.8475L162.758 26.8472Z"/>
+<path d="M180.58 37.4736V31.9156C180.58 30.8002 180.375 29.6594 178.854 29.6594C177.013 29.6594 177.013 31.4466 177.013 32.7522V37.4736H174.33V31.8586C174.33 31.1456 174.33 29.6594 172.642 29.6594C170.763 29.6594 170.763 31.2977 170.763 31.9156V37.4736H168.078V29.7671C168.078 29.2475 168.05 28.6993 167.992 28.0497H170.561L170.67 29.4471L170.814 29.2507C171.125 28.826 171.851 27.8438 173.743 27.8438C175.227 27.8438 176.228 28.4331 176.719 29.596L176.793 29.7735L176.883 29.6023C177.495 28.4331 178.489 27.8628 179.919 27.8628C181.77 27.8628 182.553 28.9084 182.803 29.3552C183.277 30.122 183.274 31.1519 183.274 31.9821V37.4736H180.59H180.58Z"/>
+<path d="M189.232 37.6814C187.81 37.6814 187.2 37.2839 186.832 36.9377C186.304 36.4184 186 35.6652 186 34.8671C186 34.117 186.264 32.7356 188.038 31.931C189.232 31.4022 190.977 31.4022 191.912 31.4022H192.004V31.3124C192.004 30.6778 191.984 30.3541 191.864 29.9951C191.567 29.1681 190.664 29.1265 190.484 29.1265C190.002 29.1265 189.565 29.3412 189.314 29.7034C189.111 30.0112 189.085 30.3028 189.082 30.5304H186.434C186.457 30.0175 186.548 29.0816 187.507 28.4052C188.234 27.8925 189.222 27.6328 190.445 27.6328C191.336 27.6328 192.966 27.7899 193.896 28.8508C194.336 29.37 194.558 30.1553 194.558 31.1746L194.577 35.0787C194.577 35.9697 194.646 36.7486 194.793 37.4506H192.363C192.278 36.8993 192.278 36.4889 192.278 36.2133V35.9216L192.108 36.1621C191.043 37.6814 189.77 37.6814 189.229 37.6814H189.232ZM191.339 32.851C189.669 32.851 188.632 33.4984 188.632 34.5434C188.632 35.2774 189.147 36.0178 190.132 36.0178C190.628 36.0178 191.101 35.803 191.433 35.428C191.962 34.7869 192.004 34.0016 192.004 32.9631V32.8798L191.919 32.8734C191.72 32.8574 191.524 32.8477 191.339 32.8477V32.851Z"/>
+</symbol>
+</defs>
+</svg>
+</body>
+</html>

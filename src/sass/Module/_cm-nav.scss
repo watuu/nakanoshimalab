@@ -1,0 +1,334 @@
+@use '../Base/config' as config;
+@use '../Component/c-btn' as btn;
+@use '../Component/c-link' as link;
+/*----------------------------------------------------
+	...
+----------------------------------------------------*/
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+.cm-nav-main {
+	display: grid;
+	gap: 20/16+rem;
+	@include config.pc {
+		grid-template-columns: auto auto;
+		gap: 56/16+rem 72/16+rem;
+	}
+}
+.cm-nav-main-block {
+	display: flex;
+	flex-direction: row;
+	@include config.sp-tab {
+		padding-bottom: 20/16+rem;
+		border-bottom: var(--border-gray);
+	}
+	@include config.pc {
+		flex-direction: column;
+		&:nth-child(2) {
+			order: 3;
+		}
+		&:nth-child(3) {
+			order: 2;
+		}
+		&:nth-child(4) {
+			order: 4;
+		}
+	}
+}
+.cm-nav-main-block__head {
+	font-size: 20/16+rem;
+	line-height: 1.1;
+	span {
+		opacity: 0.4;
+	}
+	a {
+		@extend .c-link-gradient;
+	}
+	@include config.sp-tab {
+		width: 168/16+rem;
+	}
+	@include config.pc {
+		font-size: 22/16+rem;
+	}
+}
+.cm-nav-main-block__list {
+	flex: 1;
+	font-size: 14/16+rem;
+	letter-spacing: 0.02em;
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 3/16+rem;
+	}
+	button,
+	a {
+		@extend .c-link-gradient;
+		//background-image: linear-gradient(90deg, var(--color-accent) 50%,  #fff 50%,  #fff 100%);
+		//background-size: 200%;
+		//background-position: 100% 0;
+		//-webkit-background-clip: text;
+		//-webkit-text-fill-color: transparent;
+		//&:hover {
+		//	background-position: 0 0;
+		//}
+	}
+	@include config.pc {
+		margin-top: 15/16+rem;
+		font-size: 16/16+rem;
+		letter-spacing: 0;
+		ul {
+			padding-left: 15/16+rem;
+			gap: 8/16+rem;
+			border-left: var(--border-gray);
+		}
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.cm-nav-category {
+	border-bottom: var(--border-gray);
+	@include config.pc {}
+}
+.cm-nav-category__title {
+	display: flex;
+	align-items: flex-end;
+	&:after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 0;
+		position: relative;
+		bottom: 12/16+rem;
+		pointer-events: none;
+		border-bottom: var(--border-gray);
+	}
+	@include config.pc {
+		&:after {
+			bottom: 12/16+rem;
+		}
+	}
+}
+.cm-nav-category__list {
+	display: flex;
+	flex-direction: column;
+	gap: 6/16+rem;
+	padding: 18/16+rem 0 30/16+rem;
+	@include config.pc {
+		gap: 15/16+rem;
+		padding: 30/16+rem 0 40/16+rem;
+		margin-inline: auto;
+		width: 846/16+rem;
+	}
+}
+.cm-nav-category__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5/16+rem 10/16+rem;
+	a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		font-size: 14/16+rem;
+		&:hover {
+			color: var(--color-accent);
+		}
+	}
+	@include config.pc {
+		gap: 5/16+rem 24/16+rem;
+		a {
+			font-size: 16/16+rem;
+		}
+	}
+}
+.cm-nav-category__category {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5/16+rem 0;
+	padding-left: 6/16+rem;
+	li {
+		margin-left: -6/16+rem;
+	}
+	a {
+		display: inline-flex;
+		padding: 0 12/16+rem;
+		justify-content: center;
+		align-items: center;
+		gap: 10/16+rem;
+
+		border-radius: 100/16+rem;
+		border: var(--border-gray);
+		background: #FFF;
+
+		font-size: 13/16+rem;
+		letter-spacing: 0.02em;
+		&:hover {
+			background: var(--color-accent);
+			color: #fff;
+		}
+	}
+	@include config.pc {
+		a {
+			padding: 1/16+rem 16/16+rem;
+			font-size: 16/16+rem;
+		}
+	}
+}
+.cm-nav-category__place {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5/16+rem 23/16+rem;
+	overflow: hidden;
+	li {
+		position: relative;
+		font-size: 13/16+rem;
+		&:before {
+			content: '／';
+			display: block;
+			position: absolute;
+			left: -18/16+rem;
+			pointer-events: none;
+		}
+		&:last-child:after {
+			content: '／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／';
+			display: block;
+			white-space: nowrap;
+			position: absolute;
+			left: calc(100% + #{5/16+rem});
+			letter-spacing: -0.5em;
+			top: 0;
+			pointer-events: none;
+		}
+	}
+	a {
+		font-size: 13/16+rem;
+		letter-spacing: 0.02em;
+		&:hover {
+			color: var(--color-accent);
+		}
+	}
+	@include config.pc {
+		li {
+			font-size: 16/16+rem;
+		}
+		a {
+			font-size: 16/16+rem;
+		}
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.cm-nav-paginate {
+	display: flex;
+	justify-content: center;
+	color: var(--color-accent);
+}
+.cm-nav-paginate__ctrl {
+	&:first-child {
+		margin-right: 6/16+rem;
+		a {
+			transform: rotate(-180deg);
+		}
+	}
+	&:last-child {
+		margin-left: 6/16+rem;
+	}
+	a {
+		@extend .c-btn-arrow;
+		@extend .c-btn-arrow--accent;
+	}
+	@include config.pc {
+		&:first-child {
+			margin-right: 6/16+rem;
+		}
+		&:last-child {
+			margin-left: 6/16+rem;
+		}
+		a {
+			width: 35/16+rem;
+			height: 35/16+rem;
+		}
+	}
+}
+.cm-nav-paginate__page {
+	a, span {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 28/16+rem;
+		height: 28/16+rem;
+		border-radius: 100/16+rem;
+		font-size: 15/16+rem;
+		color: var(--color-accent);
+		border: var(--border-accent);
+		border-color: transparent;
+	}
+	a:hover {
+		background: var(--blue, #084CC2);
+		color: #FFF;
+	}
+	&.is-current {
+		a, span {
+			border: var(--border-accent);
+			background: var(--blue, #084CC2);
+			color: #FFF;
+		}
+	}
+	@include config.pc {
+		a, span {
+			width: 35/16+rem;
+			height: 35/16+rem;
+			font-size: 20/16+rem;
+		}
+	}
+}
+.cm-nav-paginate__dotted {
+	font-size: 15/16+rem;
+	span {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 28/16+rem;
+		height: 28/16+rem;
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.cm-nav-page {
+	display: flex;
+	width: 100%;
+	border-top: var(--border-gray);
+	border-bottom: var(--border-gray);
+	padding: 14/16+rem 0;
+	@include config.pc {
+		padding: 50/16+rem 0;
+	}
+}
+.cm-nav-page__ctrl {
+	@include config.pc {}
+}
+.cm-nav-page__index {
+	flex: 1;
+	text-align: center;
+}
+.cm-nav-page-link {
+	display: inline-flex;
+	align-items: center;
+	font-size: 13/16+rem;
+	letter-spacing: 0.02em;
+	color: var(--color-accent);
+	@include config.pc {
+		font-size: 16/16+rem;
+	}
+}
+.cm-nav-page-link__arrow {
+	@extend .c-btn-arrow;
+	@extend .c-btn-arrow--accent;
+	&:first-child {
+		transform: rotate(-225deg);
+	}
+	&:last-child {
+		transform: rotate(45deg);
+	}
+	@include config.pc {}
+}
+.cm-nav-page-link__txt {
+	@include config.pc {}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/

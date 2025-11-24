@@ -1,0 +1,64 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	ヘッダー
+----------------------------------------------------*/
+.l-header {
+}
+.l-header__wrap {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 15/16+rem;
+	height: var(--header-height);
+	position: fixed;
+	width: 100%;
+	z-index: 500;
+	padding: 0 19/16+rem;
+	@include config.pc {
+		padding: 0 39/16+rem 0 44/16+rem ;
+		gap: 20/16+rem;
+	}
+}
+.l-header-logo {
+	position: absolute;
+	width: 134/16+rem;
+	left: 19/16+rem;
+	top: 18/16+rem;
+	svg {
+	    width: 100%;
+	    height: auto;
+		fill: var(--color-assort);
+		.is-nav-open & {
+			fill: #fff;
+		}
+	}
+	@include config.pc {
+		width: 195/16+rem;
+		left: 44/16+rem;
+		top: 27/16+rem;
+	}
+}
+.l-header-nav {
+	display: flex;
+	align-items: center;
+	@include config.pc {
+		gap: 130/16+rem;
+	}
+}
+.l-header-nav__nav {
+	display: none;
+	@include config.pc {
+		display: flex;
+		gap: 32/16+rem;
+		.is-nav-open & {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+}
+.l-header-nav__locale {
+	@include config.pc {}
+}
+.l-header-menu {
+	@include config.pc {}
+}

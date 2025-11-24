@@ -1,0 +1,20 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	コンテナ
+----------------------------------------------------*/
+.l-container {
+	@include config.container;
+}
+.l-container--md {
+	@include config.pc {
+		padding-left: 104/16+rem;
+		padding-right: 104/16+rem;
+	}
+}
+.l-container--md,
+.l-container--creative {
+	@include config.pc {
+		padding-left: 130/16+rem;
+		padding-right: 130/16+rem;
+	}
+}

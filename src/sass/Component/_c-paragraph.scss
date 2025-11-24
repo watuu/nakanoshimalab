@@ -1,0 +1,23 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	c-paragraph
+----------------------------------------------------*/
+.c-paragraph {
+	font-size: 13/16+rem;
+	line-height: 1.75;
+	letter-spacing: 0.02em;
+	font-feature-settings: 'palt' on;
+	@include config.pc {
+		font-size: 16/16+rem;
+	}
+}
+.c-paragraph-lg {
+	font-size: 15/16+rem;
+	line-height: 2;
+	letter-spacing: 0.02em;
+	font-feature-settings: 'palt' on;
+	@include config.pc {
+		font-size: 20/16+rem;
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/

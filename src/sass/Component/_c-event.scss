@@ -1,0 +1,29 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	...
+----------------------------------------------------*/
+.c-event-ex {
+	display: flex;
+	gap: 10/16+rem;
+	font-size: 13/16+rem;
+	li {
+		display: flex;
+		align-items: center;
+		gap: 5/16+rem;
+		svg {
+			width: 20/16+rem;
+			height: auto;
+		}
+	}
+	@include config.pc {
+		gap: 30/16+rem;
+		font-size: 16/16+rem;
+		font-weight: 600;
+		li {
+			svg {
+				width: 27/16+rem;
+			}
+		}
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/

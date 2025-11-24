@@ -1,0 +1,27 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	body
+----------------------------------------------------*/
+html {
+	height: 100%;
+	//overscroll-behavior: none;
+}
+body {
+	position: relative;
+	height: 100%;
+	background: var(--bg, #F1F2F4);
+	&.is-leaving {
+		// animation: bodyLeaving .8s forwards;
+	}
+	@include config.pc {
+	}
+	@include config.sp-tab {
+	}
+}
+.l-body-wrap {
+	width: 100%;
+	min-height: 100%;
+	@include config.sp-tab {
+		overflow: hidden;
+	}
+}

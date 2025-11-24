@@ -1,0 +1,63 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	p-creative
+----------------------------------------------------*/
+.p-creative {
+	padding-bottom: var(--padding-page);
+}
+.p-creative__head {
+	padding-top: var(--padding-page);
+}
+.p-creative__list {
+	padding-top: 40/16+rem;
+	.cm-section-masonry {
+		margin-top: 15/16+rem;
+		@include config.pc {
+			margin-top: 20/16+rem;
+		}
+	}
+}
+.p-creative__pagination {
+	padding-top: var(--padding-section);
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.p-creative-single {
+	padding-bottom: var(--padding-page);
+}
+.p-creative-single__wrap {
+	margin-top: var(--padding-section);
+	display: flex;
+	flex-direction: column;
+	@include config.pc {
+		flex-direction: row;
+		max-width: 1182/16+rem;
+		margin-inline: auto;
+	}
+}
+.p-creative-single__pic {
+	padding: 0 38/16+rem;
+	@include config.pc {
+		padding: 0 125/16+rem;
+		width: 670/16+rem;
+		img {
+			position: sticky;
+			top: var(--header-height);
+		}
+	}
+}
+.p-creative-single__main {
+	padding-top: 40/16+rem;
+	@include config.pc {
+		padding-top: 71/16+rem;
+		flex: 1;
+	}
+}
+.p-creative-single__pager {
+	margin-top: var(--padding-section);
+	@include config.pc {}
+}
+.p-creative-single__more {
+	margin-top: var(--padding-section);
+	@include config.pc {}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/

@@ -1,0 +1,158 @@
+extends ../_default
+block vars
+    - var path = "../"
+    - var title = "News"
+    - var pageClass = ""
+
+block content
+
+    .p-news-single
+        .l-container
+            .cm-section-header
+                .cm-section-header__bc
+                    ul.c-link-bc
+                        li
+                            a(href= path + "") Top
+                        li
+                            a(href= path + "news/") News
+                        li
+                            span 回遊型プロジェクト「ARでめぐる『中之島15の場所での物語』」
+            .p-news-single__wrap
+                figure.p-news-single__pic
+                    img(src=img + "500x620_2.webp" alt="")
+                .p-news-single__main
+                    .cm-post
+                        h1.c-heading-post 回遊型プロジェクト「ARでめぐる『中之島15の場所での物語』」
+                        .cm-post-meta
+                            p.cm-post-meta__date
+                                span 2025.06.21
+                                span -
+                                span 2025.08.30
+                            ul.cm-post-meta__category
+                                li
+                                    a(href="#") アート
+                            ul.cm-post-meta__place
+                                li
+                                    a(href="#") graf studio
+                                li
+                                    a(href="#") こども本の森 中之島
+                                li
+                                    a(href="#") 大阪中之島美術館
+                            ul.cm-post-meta__logo
+                                li
+                                    img(src=img+"dummy-post-logo1.webp")
+                                li
+                                    img(src=img+"dummy-post-logo2.webp")
+                                li
+                                    img(src=img+"dummy-post-logo3.webp")
+
+                        .cm-post-editor
+                            p
+                                | 「クリエイティブアイランド中之島」は2025年9月27日（土）〜11月30日（日）に、回遊型プロジェクト「ARでめぐる『中之島15の場所での物語』」を開催します。
+                                br
+                                | 『中之島15の場所での物語』は、演劇作家・チェルフィッチュ主宰の岡田利規が、大阪・中之島を舞台に創作した物語です。本プロジェクトでは、アーティストやクリエイター、さらに公募参加者が制作した本物語のAR挿絵作品を、鑑賞者は中之島をめぐりながら体験することができます。
+                                br
+                                | 過去から現在にいたる歴史文化や、未来的なSF感覚が交錯する15のオリジナルストーリーをスマートフォンを通じて現実の風景に重ね合わせながら鑑賞していただけます。リアルとバーチャルが交差する、新たな物語体験をお楽しみください。
+                                br
+                                | ※本プロジェクトは日本語・英語の両言語に対応しています。
+                        .cm-post-outline
+                            h3.c-heading-txt 開催概要
+                            .cm-post-outline__list
+                                dl
+                                    dt 名称
+                                    dd 回遊型プロジェクト「ARでめぐる『中之島15の場所での物語』」
+                                dl
+                                    dt 会期
+                                    dd ミーティングポイント設置の15か所
+                                dl
+                                    dt 場所
+                                    dd (中之島センタービル／グランキューブ大阪／リーガロイヤルホテル大阪／大阪大学中之島センター／大阪中之島美術館／国立国際美術館／大阪市立科学館／graf studio／中之島フェスティバルタワー／中之島フェスティバルタワー・ウエスト／大阪府立中之島図書館／大阪市中央公会堂／大阪市立東洋陶磁美術館／こども本の森 中之島／アートエリアB1)
+                                dl
+                                    dt 場所
+                                    dd 各施設の開館時間に準ずる
+                                dl
+                                    dt 作品制作
+                                    dd 金氏徹平、菅野歩美、小林健太、contact Gonzo、MANTLE（伊阪柊＋中村壮志）、STYLYクリエイター、公募参加のみなさま
+                                dl
+                                    dt 共催
+                                    dd 金氏徹平、菅野歩美、小林健太、contact Gonzo、MANTLE（伊阪柊＋中村壮志）、STYLYクリエイター、公募参加のみなさま
+                                dl
+                                    dt 特別協力
+                                    dd 株式会社STYLY ／ 吉田山（floating alps）
+                                dl
+                                    dt 委託
+                                    dd 令和7年度日本博2.0 事業（委託型）
+
+                        .cm-post-list
+
+                            h3.c-heading-txt-sm 出店者一覧
+                            .cm-post-editor
+                                p 中之島に点在する15施設に設置のミーティングポイントで、各作品をご覧いただけます。
+                                ul
+                                    li 箇条書き
+                                    li 箇条書き
+                                    li 箇条書き
+                                    li 箇条書き
+                                p 中之島に点在する15施設に設置のミーティングポイントで、各作品をご覧いただけます。
+                                ol
+                                    li 「三十一階」
+                                        a(href="#") 中之島センタービル
+                                    li 「プラザ。」
+                                        a(href="#") 大阪府立国際会議場（グランキューブ大阪）
+                                    li 「リーチバー」
+                                        a(href="#") リーガロイヤルホテル
+                                    li 「旧緒方洪庵住宅（適塾）より」
+                                        a(href="#") 大阪大学中之島センター
+                                    li 「空き地」
+                                        a(href="#") 大阪中之島美術館
+                                    li 「B4F」
+                                        a(href="#") 国立国際美術館
+
+
+            .p-news-single__pager
+                .cm-nav-page
+                    .cm-nav-page__ctrl
+                        a(href= path + "single-news/").cm-nav-page-link
+                            i.cm-nav-page-link__arrow
+                                svg(width=26 height=26).js-clone
+                                    use(href="#ico-arrow")
+                            span.cm-nav-page-link__txt 前の記事
+                    .cm-nav-page__index
+                        a(href= path + "single-news/").cm-nav-page-link
+                            span.cm-nav-page-link__txt News一覧に戻る
+                    .cm-nav-page__ctrl
+                        a(href= path + "single-news/").cm-nav-page-link
+                            span.cm-nav-page-link__txt 前の記事
+                            i.cm-nav-page-link__arrow
+                                svg(width=26 height=26).js-clone
+                                    use(href="#ico-arrow")
+            .p-news-single__more
+                .cm-section-relative
+                    h3.c-heading-txt 同じカテゴリーのNEWS
+                    .cm-section-relative__list
+                        - for (var x = 1; x <= 4; x++)
+                            .c-card-event.c-card-event--teaser
+                                a(href= path + "single-news/").c-card-event__link
+                                    .c-card-event__meta
+                                        p.c-card-event__type Events
+                                        ul.c-card-event__category
+                                            li 現代アート
+                                    p.c-card-event__status
+                                        | 予
+                                    figure.c-card-event__pic
+                                        img(src=img + "500x620_2.webp" alt="")
+                                    h3.c-card-event__title
+                                        | 映像展示「ビルダーズ：工事記録にみる都市再考」
+                                    ul.c-card-event__place
+                                        li graf studio
+                                        li アートエリアB1
+
+
+
+
+
+
+
+
+
+

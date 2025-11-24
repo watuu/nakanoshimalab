@@ -1,0 +1,66 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	...
+----------------------------------------------------*/
+.cm-form {
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		width: 100%;
+		height: 56/16+rem;
+		padding: 10/16+rem 15/16+rem;
+		background: var(--white, #FFF);
+		border: var(--border);
+		border-color: transparent;
+		&::placeholder {
+			opacity: 0.5;
+		}
+		&:focus {
+			border-color: var(--color-accent);
+		}
+	}
+	textarea {
+		height: 230/16+rem;
+	}
+	@include config.pc {}
+}
+.cm-form__inputs {
+	display: flex;
+	flex-direction: column;
+	gap: 20/16+rem;
+	@include config.pc {
+		gap: 38/16+rem;
+	}
+}
+.cm-form-input {
+	display: flex;
+	flex-direction: column;
+	gap: 5/16+rem;
+	letter-spacing: 0.02em;
+	dt {
+		display: flex;
+		gap: 5/16+rem;
+		font-size: 15/16+rem;
+		._required {
+			color: var(--blue, #008CD6);
+		}
+	}
+	@include config.pc {
+		dt {
+			font-size: 18/16+rem;
+		}
+	}
+}
+.cm-form__privacy {
+	padding-top: var(--padding-section);
+
+	color: var(--gray, #444648);
+	font-size: 14/16+rem;
+	letter-spacing: 0.02em;
+	@include config.pc {}
+}
+.cm-form__action {
+	padding-top: var(--gap);
+	@include config.pc {}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/

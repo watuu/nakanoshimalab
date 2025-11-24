@@ -1,0 +1,325 @@
+extends ./_default
+block vars
+    - var path = "./"
+    - var title = ""
+    - var pageClass = ""
+
+block content
+
+
+    .p-top
+        section.p-top-mv
+            picture
+                source(srcset=img + "p-top-mv-sp.webp" media="(max-width: 1023px)")
+                img(src=img+"p-top-mv.webp" alt="")
+        section.p-top-news
+            picture.p-top-news__bg
+                source(srcset=img + "p-top-news-bg-sp.webp" media="(max-width: 1023px)")
+                img(src=img + "p-top-news-bg.webp" alt="")
+            .l-container.l-container--md
+                .p-top-creative__wrap
+                    .p-top-creative__head
+                        .c-heading-section
+                            h2.c-heading-section__ja ニュース
+                            .c-heading-section__en
+                                p
+                                    span._o
+                                    span News
+                            p.c-heading-section__desc
+                                svg(width=17 height=24)
+                                    use(href="#ico-heading-line")
+                                span
+                                    | 中之島で行われている
+                                    br
+                                    | 展示会やイベント
+                    .p-top-creative__list
+                        .cm-section-masonry
+                            - for (var x = 1; x <= 3; x++)
+                                .c-card-event.c-card-event--teaser
+                                    a(href= path + "single-news/").c-card-event__link
+                                        .c-card-event__meta
+                                            p.c-card-event__type Events
+                                            ul.c-card-event__category
+                                                li 現代アート
+                                        p.c-card-event__status
+                                            | 予
+                                        figure.c-card-event__pic
+                                            img(src=img + "500x620_2.webp" alt="")
+                                        h3.c-card-event__title
+                                            | 映像展示「ビルダーズ：工事記録にみる都市再考」
+                                        ul.c-card-event__place
+                                            li graf studio
+                                            li アートエリアB1
+                                .c-card-event.c-card-event--teaser
+                                    a(href= path + "single-news/").c-card-event__link
+                                        .c-card-event__meta
+                                            p.c-card-event__type Events
+                                            ul.c-card-event__category
+                                                li 現代アート
+                                        p.c-card-event__status
+                                            | 予
+                                        figure.c-card-event__pic
+                                            img(src=img + "500x260.webp" alt="")
+                                        h3.c-card-event__title
+                                            | 映像展示「ビルダーズ：工事記録にみる都市再考」
+                                        ul.c-card-event__place
+                                            li graf studio
+                                            li アートエリアB1
+                                .c-card-event.c-card-event--teaser
+                                    a(href= path + "single-news/").c-card-event__link
+                                        .c-card-event__meta
+                                            p.c-card-event__type Events
+                                            ul.c-card-event__category
+                                                li 現代アート
+                                        p.c-card-event__status
+                                            | 予
+                                        figure.c-card-event__pic
+                                            img(src=img + "500x620_2.webp" alt="")
+                                        h3.c-card-event__title
+                                            | 映像展示「ビルダーズ：工事記録にみる都市再考」
+                                        ul.c-card-event__place
+                                            li graf studio
+                                            li アートエリアB1
+                                .c-card-event
+                                    a(href= path + "single-news/").c-card-event__link
+                                        .c-card-event__meta
+                                            p.c-card-event__type Events
+                                            ul.c-card-event__category
+                                                li 現代アート
+                                        p.c-card-event__status
+                                            | 開
+                                        figure.c-card-event__pic
+                                            img(src=img + "500x700.webp" alt="")
+                                        h3.c-card-event__title
+                                            | 映像展示「ビルダーズ：工事記録にみる都市再考」
+                                        ul.c-card-event__place
+                                            li graf studio
+                                            li アートエリアB1
+                                .c-card-event.c-card-event--teaser
+                                    a(href= path + "single-news/").c-card-event__link
+                                        .c-card-event__meta
+                                            p.c-card-event__type Events
+                                            ul.c-card-event__category
+                                                li 現代アート
+                                        p.c-card-event__status
+                                            | 予
+                                        figure.c-card-event__pic
+                                            img(src=img + "500x700_2.webp" alt="")
+                                        h3.c-card-event__title
+                                            | 映像展示「ビルダーズ：工事記録にみる都市再考」
+                                        ul.c-card-event__place
+                                            li graf studio
+                                            li アートエリアB1
+                    .p-top-creative__more1
+                        a(href= path + "posts/").c-btn-more
+                            .c-btn-more__ico
+                                i.c-btn-more__circle
+                                i.c-btn-more__arrow
+                                    svg(width=26 height=26).js-clone
+                                        use(href="#ico-arrow")
+                            span.c-btn-more__txt NEWS一覧へ
+                    .p-top-creative__more2
+                        a(href= path + "posts/").c-btn-square
+                            span.c-btn-square__bg
+                            span.c-btn-square__txt もっと見る
+            .p-top-creative__category
+                ul
+                    li
+                        a(href="#") アート
+                    li
+                        a(href="#") 写真
+                    li
+                        a(href="#") 建築
+                    li
+                        a(href="#") パフォーマンス
+                    li
+                        a(href="#") 陶芸
+                    li
+                        a(href="#") 音楽
+                    li
+                        a(href="#") デザイン
+                    li
+                        a(href="#") 都市デザイン
+                    li
+                        a(href="#") グラフィック
+        section.p-top-about
+            //-picture.p-top-about__bg
+                //- source(srcset=img + "p-top-about-bg-sp.webp" media="(max-width: 1023px)")
+                img(src=img + "p-top-about-bg.webp" alt="")
+            .l-container
+                .p-top-about__wrap
+                    .c-heading-about.c-heading-about--top
+                        h2.c-heading-about__title
+                            | 創造的
+                            span.u-char-circle な
+                            | 実験島
+                        p.c-heading-about__en About Creative Island
+                    .p-top-about__body
+                        p
+                            span 大阪市北区に位置する中之島は、
+                            | 堂島川と土佐堀川に挟まれた東西約3kmの中州です。重層的な歴史文化を有し大阪市北区に位置する中之島は、堂島川と土佐堀川に挟まれた東西約3kmの中州です。重層的な歴史文化を有しながら都市の機能が集積する中之島は、パリのシテ島、 ルリンのムゼウムス・インゼルなど、世界に類する都心の中州（島）の可能性に満ちています。 このプロジェクトでは、“中之島” エリアを、持続可能な芸術文化環境をそなえた「創造的な研究所（クリエイティブ・ラボ）」として見立て、様々な思考実験を繰り広げます。
+                    .p-top-about__more
+                        a(href= path + "aboutus/").c-btn-more
+                            .c-btn-more__ico
+                                i.c-btn-more__circle
+                                i.c-btn-more__arrow
+                                    svg(width=26 height=26).js-clone
+                                        use(href="#ico-arrow")
+                            span.c-btn-more__txt 私たちについて
+
+
+        section.p-top-creative
+            .l-container
+                .p-top-creative__head
+                    .c-heading-section
+                        h2.c-heading-section__ja クリエイティブコンテンツ
+                        .c-heading-section__en
+                            p
+                                span._o
+                                span Creative
+                            p
+                                span C
+                                span._o o
+                                span ntents
+                        p.c-heading-section__desc
+                            svg(width=17 height=24)
+                                use(href="#ico-heading-line")
+                            span
+                                | 中之島で生まれたモノやコト
+                .p-top-creative__items
+                    .p-top-creative-item
+                        a(href= path + "creative/").p-top-creative-item__link
+                            figure.p-top-creative-item__pic
+                                img(src=img+"p-top-creative-exchange.webp" alt="エクスチェンジプログラム")
+                            .p-top-creative-item__btn.c-btn-more
+                                .c-btn-more__ico
+                                    i.c-btn-more__circle
+                                    i.c-btn-more__arrow
+                                        svg(width=26 height=26).js-clone
+                                            use(href="#ico-arrow")
+                            p.p-top-creative-item__desc.c-paragraph
+                                | エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味
+                    .p-top-creative-item
+                        a(href= path + "creative/").p-top-creative-item__link
+                            figure.p-top-creative-item__pic
+                                img(src=img+"p-top-creative-meeting.webp" alt="ミーティングポイント")
+                            .p-top-creative-item__btn.c-btn-more
+                                .c-btn-more__ico
+                                    i.c-btn-more__circle
+                                    i.c-btn-more__arrow
+                                        svg(width=26 height=26).js-clone
+                                            use(href="#ico-arrow")
+                            p.p-top-creative-item__desc.c-paragraph
+                                | エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味
+                    .p-top-creative-item
+                        a(href= path + "creative/").p-top-creative-item__link
+                            figure.p-top-creative-item__pic
+                                img(src=img+"p-top-creative-promotion.webp" alt="中之島プロモーション")
+                            .p-top-creative-item__btn.c-btn-more
+                                .c-btn-more__ico
+                                    i.c-btn-more__circle
+                                    i.c-btn-more__arrow
+                                        svg(width=26 height=26).js-clone
+                                            use(href="#ico-arrow")
+                            p.p-top-creative-item__desc.c-paragraph
+                                | エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味
+                    .p-top-creative-item
+                        a(href= path + "creative/").p-top-creative-item__link
+                            figure.p-top-creative-item__pic
+                                img(src=img+"p-top-creative-artist.webp" alt="アーティストリサーチ")
+                            .p-top-creative-item__btn.c-btn-more
+                                .c-btn-more__ico
+                                    i.c-btn-more__circle
+                                    i.c-btn-more__arrow
+                                        svg(width=26 height=26).js-clone
+                                            use(href="#ico-arrow")
+                            p.p-top-creative-item__desc.c-paragraph
+                                | エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味
+
+
+                .p-top-creative__more
+                    a(href= path + "creative/").c-btn-square
+                        span.c-btn-square__bg
+                        span.c-btn-square__txt 全てを見る
+        section.p-top-map
+            .p-top-map__wrap
+                .p-top-map__head
+                    h2.p-top-map__title Map
+                    p.p-top-map__desc Creative Island Nakanoshima
+                .p-top-map__map
+                    img(src=img+"p-top-map.webp" alt="")
+                .p-top-map__cards
+                    button.p-top-map__cardsClose.c-btn-close(aria-label="閉じる")
+                        img(src=img + "btn-close.svg")
+                    .p-top-map__cardsCtrl
+                        button.c-btn-arrow.c-btn-arrow--outline#btnMapPrev
+                            svg(width=26 height=26).js-clone
+                                use(href="#ico-arrow")
+                        button.c-btn-arrow.c-btn-arrow--outline#btnMapNext
+                            svg(width=26 height=26).js-clone
+                                use(href="#ico-arrow")
+                    .p-top-map-card
+                        .p-top-map-card__head
+                            .p-top-map-card__no
+                                p Spot
+                                p._no 1
+                            p.p-top-map-card__name
+                                span グランキューブ大阪
+                                small (大阪府立国際会議場)
+                        figure.p-top-map-card__pic
+                            img(src=img + "600x300.webp")
+                        p.p-top-map-card__desc
+                            | 国際会議をはじめ、セミナー・シンポジウム、展示会、コンサートなど幅広く対応できる複合型MICE施設として2000年に開館。「グランキューブ大阪」の愛称は、その大きなキューブ型の外観にちなんだもので、黒川紀章による設計。
+                        .p-top-map-card__info
+                            dl
+                                dt Address
+                                dd 大阪市北区中之島5-3-51
+                            dl
+                                dt Te
+                                    span._c4
+                                    | l
+                                dd 06-4803-5555
+                            dl
+                                dt Ope
+                                    span._c3
+                                    | n
+                                dd 8:00-22:00(年末年始休)
+                            dl
+                                dt We
+                                    span._c3
+                                    |b
+                                dd https://www.gco.co.jp/
+                            dl
+                                dt SN
+                                    span._c3
+                                    | S
+                                dd
+                                    ul
+                                        li
+                                            a(href="#")
+                                                img(src=img + "ico-x.svg" alt="")
+                                        li
+                                            a(href="#")
+                                                img(src=img + "ico-instagram.svg" alt="")
+                        .p-top-map-card__more
+                            a(href="#").c-btn-top-creative
+                                span.c-btn-top-creative__txt 関連イベントを見る
+                                i.c-btn-top-creative__arrow
+                                    svg(width=26 height=26).js-clone
+                                        use(href="#ico-arrow")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

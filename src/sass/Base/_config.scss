@@ -1,0 +1,108 @@
+@charset "utf-8";
+@use "sass:math";
+@use "sass:map";
+// ===================================================================
+// 変数
+// ===================================================================
+
+// モバイルファースト
+$breakpoints: (
+	sm: 640px,
+	md: 1023px,
+	lg: 1680px,
+);
+$container-padding: (
+	sm: (math.div(20, 375) * 100vw),
+	md: (math.div(40, 375) * 100vw),
+	lg: (math.div(40, 1440) * 100vw),
+	wide: (math.div(40 * 1680, 1440)),
+);
+
+// コンテンツの最大幅
+$container-width : 1680px;
+
+// ===================================================================
+// container
+// ===================================================================
+@mixin container{
+	margin-left: auto; margin-right: auto;
+	width: 100%;
+	max-width: $container-width;
+	@include sp{
+		padding-left: map.get($container-padding, 'sm');
+		padding-right: map.get($container-padding, 'sm');
+	}
+	@include tab{
+		padding-left: map.get($container-padding, 'md');
+		padding-right: map.get($container-padding, 'md');
+	}
+	@include pc{
+		padding-left: map.get($container-padding, 'lg');
+		padding-right: map.get($container-padding, 'lg');
+	}
+	@include wide{
+		padding-left: map.get($container-padding, 'wide')+px;
+		padding-right: map.get($container-padding, 'wide')+px;
+	}
+}
+
+// ===================================================================
+// mixin responsive
+// sp--[1]--tab--[2]--lap--[3]--wide
+//                      pc        pc
+// ===================================================================
+
+@mixin sp {
+	@media screen and (max-width: (map.get($breakpoints, 'sm')) ){@content;}
+}
+@mixin sp-tab {
+	@media screen and (max-width: (map.get($breakpoints, 'md')) ){@content;}
+}
+@mixin sp-lap {
+	@media screen and (max-width: (map.get($breakpoints, 'lg')) ){@content;}
+}
+
+@mixin tab {
+	@media screen and (min-width: (map.get($breakpoints, 'sm') + 1) ) and (max-width: (map.get($breakpoints, 'md') ) ){@content;}
+}
+@mixin tab-lap {
+	@media screen and (min-width: (map.get($breakpoints, 'sm') + 1) ) and (max-width: (map.get($breakpoints, 'lg') ) ){@content;}
+}
+@mixin tab-pc {
+	@media screen and (min-width: (map.get($breakpoints, 'sm') + 1) ){@content;}
+}
+
+@mixin lap {
+	@media screen and (min-width: (map.get($breakpoints, 'md') + 1) ) and (max-width: (map.get($breakpoints, 'lg') ) ){@content;}
+}
+
+@mixin pc {
+	@media screen and (min-width: (map.get($breakpoints, 'md') + 1) ){@content;}
+}
+@mixin pc-tab {
+	@media screen and (min-width: (map.get($breakpoints, 'sm') + 1) ){@content;}
+}
+
+@mixin wide {
+	@media screen and (min-width: (map.get($breakpoints, 'lg') + 1) ){@content;}
+}
+
+// ===================================================================
+// mixin utility
+// ===================================================================
+
+@mixin hover {
+	@media (hover: none) {
+		&:active {
+			transform: scale(0.965);
+		}
+	}
+	@media (hover: hover) {
+		&:hover,
+		a:hover & {
+			@content;
+		}
+	}
+}
+
+

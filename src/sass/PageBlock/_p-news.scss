@@ -1,0 +1,64 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	p-news
+----------------------------------------------------*/
+.p-news {
+	background: var(--bg, #D8EBF9);
+	padding-bottom: var(--padding-page);
+}
+.p-news__head {
+	padding-top: var(--padding-page);
+}
+.p-news__list {
+	padding-top: 40/16+rem;
+	.cm-section-masonry {
+		margin-top: 15/16+rem;
+		@include config.pc {
+			margin-top: 20/16+rem;
+		}
+	}
+}
+.p-news__pagination {
+	padding-top: var(--padding-section);
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.p-news-single {
+	background: var(--bg, #D8EBF9);
+	padding-bottom: var(--padding-page);
+}
+.p-news-single__wrap {
+	margin-top: var(--padding-section);
+	display: flex;
+	flex-direction: column;
+	@include config.pc {
+		flex-direction: row;
+		padding-right: 66/16+rem;
+	}
+}
+.p-news-single__pic {
+	padding: 0 38/16+rem;
+	@include config.pc {
+		padding: 0 125/16+rem;
+		width: 670/16+rem;
+		img {
+			position: sticky;
+			top: var(--header-height);
+		}
+	}
+}
+.p-news-single__main {
+	padding-top: 40/16+rem;
+	@include config.pc {
+		padding-top: 71/16+rem;
+		flex: 1;
+	}
+}
+.p-news-single__pager {
+	margin-top: var(--padding-section);
+	@include config.pc {}
+}
+.p-news-single__more {
+	margin-top: var(--padding-section);
+	@include config.pc {}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/

@@ -1,0 +1,89 @@
+extends ../_default
+block vars
+    - var path = "../"
+    - var title = "お問い合わせ"
+    - var pageClass = ""
+
+block content
+
+    .p-contact
+        .l-container
+            .cm-section-header
+                .cm-section-header__bc
+                    ul.c-link-bc
+                        li
+                            a(href= path + "") Top
+                        li
+                            span お問い合わせ
+                .cm-section-header__title
+                    .c-heading-page.c-heading-page--sm
+                        h1.c-heading-page__title お問い合わせ
+
+        .l-container.l-container--md
+            section.p-contact-form
+                .p-contact-form__head
+                    h2.c-heading-txt-sm お問い合わせフォーム
+                    p.p-contact-form__headEx
+                        span._required *
+                        span は必須項目です。
+                .p-contact-form__body
+                    .cm-form
+                        .cm-form__inputs
+                            dl.cm-form-input
+                                dt
+                                    span お名前
+                                    span._required *
+                                dd
+                                    input(type="text" name="xxx" placeholder="山田太郎")
+                            dl.cm-form-input
+                                dt
+                                    span 電話番号
+                                    span._required *
+                                dd
+                                    input(type="text" name="xxx" placeholder="012-345-6789")
+                            dl.cm-form-input
+                                dt
+                                    span メールアドレス
+                                    span._required *
+                                dd
+                                    input(type="text" name="xxx" placeholder="example@example.com")
+                            dl.cm-form-input
+                                dt
+                                    span お問い合わせ内容
+                                    span._required *
+                                dd
+                                    textarea(name="xxx" placeholder="内容をご入力ください。")
+                        .cm-form__privacy
+                            p
+                                | このサイトはreCAPTCHA によって保護されています。
+                                br
+                                | Googleの
+                                a(href="#" target="_blank").c-link-underline プライバシーポリシー
+                                | および
+                                a(href="#" target="_blank").c-link-underline 利用規約
+                                | が適用されます。
+                        .cm-form__action
+                            button.c-btn-square.c-btn-square--contact
+                                span.c-btn-square__bg
+                                span.c-btn-square__txt 送信する
+
+
+            section.p-contact-tel
+                .p-contact-tel__head
+                    h2.c-heading-txt-sm 電話・FAXでのお問い合わせ
+                .p-contact-tel__body
+                    p.c-paragraph クリエイティブアイランド中之島実行委員会 事務局
+                    p.c-paragraph アートエリアB1（受付時間12:00-19:00／月曜休館、祝日の場合は翌日休）
+                    p.c-paragraph
+                        | 〒530-0005
+                        br
+                        | 大阪市北区中之島1-1-1 京阪電車なにわ橋駅地下1F
+                        br
+                        | TEL 06-6226-4006／FAX 06-6226-7299
+
+
+
+
+
+
+

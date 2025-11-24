@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>PixiJS ノードリンクアニメーション（直線版）</title>
+<style>
+  body { margin: 0; background: #000; overflow: hidden; }
+</style>
+
+<!-- PixiJS & GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+<script>
+const app = new PIXI.Application({
+  width: window.innerWidth,
+  height: window.innerHeight,
+  backgroundColor: 0x000000,
+  antialias: true,
+});
+document.body.appendChild(app.view);
+
+// 支点データ
+const nodes = [];
+const numNodes = 8;
+for (let i = 0; i < numNodes; i++) {
+  nodes.push({
+    x: Math.random() * app.screen.width,
+    y: Math.random() * app.screen.height * 0.8,
+  });
+}
+
+// 線描画
+const graphics = new PIXI.Graphics();
+app.stage.addChild(graphics);
+
+// ノード描画
+const nodeSprites = nodes.map(node => {
+  const g = new PIXI.Graphics();
+  g.beginFill(0xffffff);
+  g.drawCircle(0, 0, 20);
+  g.endFill();
+  g.x = node.x;
+  g.y = node.y;
+  app.stage.addChild(g);
+  return g;
+});
+
+// アニメーション
+app.ticker.add(() => {
+  graphics.clear();
+  graphics.lineStyle(20, 0x00aaff, 0.7);
+
+  // ノードをゆらゆら動かす
+  nodes.forEach((n, i) => {
+    n.x += Math.sin(performance.now() / 700 + i) * 0.3;
+    n.y += Math.cos(performance.now() / 1000 + i) * 0.3;
+    nodeSprites[i].x = n.x;
+    nodeSprites[i].y = n.y;
+  });
+
+  // 直線でつなぐ
+  graphics.moveTo(nodes[0].x, nodes[0].y);
+  for (let i = 1; i < nodes.length; i++) {
+    graphics.lineTo(nodes[i].x, nodes[i].y);
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	p-aboutus
+----------------------------------------------------*/
+.p-aboutus {
+	padding-bottom: var(--padding-page);
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+.p-aboutus-about {
+	margin: var(--padding-section) 0 var(--padding-section-lg);
+	@include config.pc {
+		padding: 0 65/16+rem;
+	}
+}
+.p-aboutus-about__wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 30/16+rem;
+	@include config.pc {
+		gap: 0;
+		flex-direction: row;
+	}
+}
+.p-aboutus-about__head {
+	@include config.pc {
+		width: 434/16+rem;
+	}
+}
+.p-aboutus-about__body {
+	@include config.pc {
+		flex: 1;
+		margin-top: 100/16+rem;
+	}
+}
+.p-aboutus-about-group {
+	margin-top: 40/16+rem;
+	display: flex;
+	flex-direction: column;
+	gap: 30/16+rem;
+	@include config.pc {
+		margin-top: 100/16+rem;
+		gap: 0;
+		flex-direction: row;
+	}
+}
+.p-aboutus-about-group__title {
+	font-size: 13/16+rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	@include config.pc {
+		width: 434/16+rem;
+		font-size: 16/16+rem;
+	}
+}
+.p-aboutus-about-group__list {
+	flex: 1;
+	@include config.pc {}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+.p-aboutus-purpose {
+	padding: 25/16+rem 20/16+rem 87/16+rem;
+	background: #fff;
+
+	display: flex;
+	flex-direction: column;
+	gap: 30/16+rem;
+	position: relative;
+	@include config.sp-tab {
+		margin-bottom: 216/16+rem;
+	}
+	@include config.pc {
+		padding: 100/16+rem 65/16+rem;
+		gap: 0;
+		flex-direction: row;
+	}
+}
+.p-aboutus-purpose__head {
+	@include config.pc {
+		width: 434/16+rem;
+	}
+}
+.p-aboutus-purpose__items {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 60/16+rem;
+	@include config.sp-tab {
+		padding-left: 50/16+rem;
+	}
+	@include config.pc {
+		padding-top: 74/16+rem;
+	}
+}
+.p-aboutus-purpose-item {
+	display: flex;
+	flex-direction: column;
+	gap: 15/16+rem;
+	@include config.pc {}
+}
+.p-aboutus-purpose-item__title {
+	display: flex;
+	align-items: flex-start;
+	font-size: 16/16+rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	.u-char-circle {
+		margin-right: 5/16+rem;
+	}
+	@include config.pc {
+		font-size: 22/16+rem;
+		.u-char-circle {
+			margin-right: 16/16+rem;
+		}
+	}
+}
+.p-aboutus-purpose__gallery {
+	position: absolute;
+	bottom: -216/16+rem;
+	figure {
+		width: 178/16+rem;
+	}
+	figcaption {
+		margin-top: 6/16+rem;
+		color: var(--gray, #444648);
+		font-size: 9/16+rem;
+		letter-spacing: 0.02em;
+	}
+	@include config.pc {
+		bottom: 105/16+rem;
+		figure {
+			width: 278/16+rem;
+		}
+		figcaption {
+			margin-top: 10/16+rem;
+			font-size: 14/16+rem;
+		}
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+.p-aboutus-concept {
+	padding: var(--padding-section-lg) 0;
+
+	display: flex;
+	flex-direction: column;
+	gap: 30/16+rem;
+	@include config.pc {
+		gap: 0;
+		flex-direction: row;
+		padding: var(--padding-section-lg) 0 var(--padding-section-lg) 65/16+rem;
+	}
+}
+.p-aboutus-concept__head {
+	@include config.pc {
+		width: 390/16+rem;
+	}
+}
+.p-aboutus-concept__items {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 40/16+rem;
+	@include config.pc {
+		margin-top: 16/16+rem;
+		gap: 100/16+rem;
+		align-items: flex-end;
+	}
+}
+.p-aboutus-concept-item {
+	position: relative;
+	width: 246/16+rem;
+	@include config.pc {
+		width: 432/16+rem;
+	}
+}
+@include config.sp-tab {
+	.p-aboutus-concept-item__head {
+		position: relative;
+		margin: 0 20/16+rem -16/16+rem auto;
+	}
+	.p-aboutus-concept-item:nth-child(1) {
+		margin-left: auto;
+	}
+	.p-aboutus-concept-item:nth-child(2) {
+		margin-right: auto;
+	}
+	.p-aboutus-concept-item:nth-child(3) {
+		margin-left: auto;
+	}
+}
+@include config.pc {
+	.p-aboutus-concept-item__head {
+		position: absolute;
+		right: calc(100% + #{25/16+rem});
+	}
+	.p-aboutus-concept-item:nth-child(1) {
+		margin-right: 114/16+rem;
+		.p-aboutus-concept-item__head {
+			top: -53/16+rem;
+		}
+	}
+	.p-aboutus-concept-item:nth-child(2) {
+		width: 358/16+rem;
+		margin-right: 20/16+rem;
+		.p-aboutus-concept-item__head {
+			top: -60/16+rem;
+		}
+	}
+	.p-aboutus-concept-item:nth-child(3) {
+		margin-right: 250/16+rem;
+		.p-aboutus-concept-item__head {
+			top: -188/16+rem;
+		}
+	}
+}
+
+.p-aboutus-concept-item__head {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 180/16+rem;
+	height: 180/16+rem;
+	background: url(../img/p-aboutus-concept-bg.webp) center center /contain no-repeat;
+	color: var(--white, #FFF);
+	letter-spacing: 0.02em;
+	@include config.pc {
+		width: 290/16+rem;
+		height: 290/16+rem;
+	}
+}
+.p-aboutus-concept-item__en {
+	font-size: 11/16+rem;
+	font-weight: 500;
+	@include config.pc {
+		font-size: 14/16+rem;
+	}
+}
+.p-aboutus-concept-item__ja {
+	font-size: 18/16+rem;
+	font-weight: 600;
+	font-feature-settings: 'palt' on;
+	@include config.pc {
+		font-size: 26/16+rem;
+	}
+}
+.p-aboutus-concept-item__headTxt {
+	position: absolute;
+	width: 25/16+rem;
+	right: 97%;
+	top: 62/16+rem;
+	svg {
+	    width: 100%;
+	    height: auto;
+	}
+	@include config.pc {
+		width: 90/16+rem;
+		right: 75%;
+		top: 200/16+rem;
+	}
+}
+.p-aboutus-concept-item__lead {
+	position: relative;
+	font-size: 16/16+rem;
+	font-weight: 600;
+	line-height: 1.35;
+	letter-spacing: 0.02em;
+	@include config.pc {
+		font-size: 22/16+rem;
+	}
+}
+.p-aboutus-concept-item__desc.p-aboutus-concept-item__desc {
+	margin-top: 15/16+rem;
+	line-height: 1.5;
+	@include config.pc {}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+.p-aboutus-history {
+	padding: 25/16+rem 20/16+rem;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	gap: 30/16+rem;
+	@include config.pc {
+		gap: 0;
+		flex-direction: row;
+		padding: 100/16+rem 65/16+rem;
+	}
+}
+.p-aboutus-history__head {
+	@include config.pc {
+		width: 390/16+rem;
+	}
+}
+.p-aboutus-history__list {
+	flex: 1;
+	li {
+		display: flex;
+		gap: 10/16+rem;
+		padding: 15/16+rem 0;
+		font-size: 11/16+rem;
+		font-weight: 500;
+		letter-spacing: 0.02em;
+		._date {
+			width: 62/16+rem;
+			font-size: 16/16+rem;
+			font-weight: 440;
+			line-height: 1.35;
+			letter-spacing: -0.01em;
+
+		}
+		._subject {
+			flex: 1;
+			font-feature-settings: 'palt' on;
+		}
+	}
+	li:not(:last-child) {
+		border-bottom: var(--border-gray-light);
+	}
+	@include config.pc {
+		padding-top: 48/16+rem;
+		li {
+			gap: 15/16+rem;
+			padding: 19/16+rem 0;
+			font-size: 14/16+rem;
+			._date {
+				width: 152/16+rem;
+				font-size: 24/16+rem;
+
+			}
+			._subject {
+				padding-top: 4/16+rem;
+			}
+		}
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+.p-aboutus__pager {
+	margin-top: var(--padding-section);
+	@include config.pc {}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/

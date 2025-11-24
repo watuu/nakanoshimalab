@@ -1,0 +1,58 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	...
+----------------------------------------------------*/
+.cm-section-header {
+	padding-top: var(--header-height);
+	display: flex;
+	flex-direction: column;
+}
+.cm-section-header__bc {
+	align-self: flex-end;
+}
+.cm-section-header__title {
+	padding: 70/16+rem 0 25/16+rem;
+	border-bottom: var(--border-gray);
+	@include config.pc {
+		padding: 176/16+rem 0 53/16+rem;
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.cm-section-masonry {
+	display: grid;
+	//grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(auto-fill, minmax(#{160/16+rem}, 1fr));
+	grid-auto-rows: 15/16+rem;
+	grid-gap: 15/16+rem;
+	.c-card-event:nth-child(7) {
+		transform: rotate(8deg);
+	}
+	.c-card-event:nth-child(14) {
+		transform: rotate(-8deg);
+	}
+	@include config.pc {
+		grid-template-columns: repeat(auto-fill, minmax(#{322/16+rem}, 1fr));
+		grid-gap: 24/16+rem;
+		//grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.cm-section-relative {
+	display: flex;
+	flex-direction: column;
+	gap: 20/16+rem;
+	@include config.pc {
+		gap: 40/16+rem;
+	}
+}
+.cm-section-relative__list {
+	display: grid;
+	//grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(auto-fill, minmax(#{160/16+rem}, 1fr));
+	grid-gap: 15/16+rem;
+	@include config.pc {
+		grid-template-columns: repeat(auto-fill, minmax(#{322/16+rem}, 1fr));
+		grid-gap: 24/16+rem;
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/

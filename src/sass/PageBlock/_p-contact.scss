@@ -1,0 +1,67 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	...
+----------------------------------------------------*/
+.p-contact {
+	padding-bottom: var(--padding-page);
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+.p-contact-form {
+	padding: var(--padding-section-lg) 0;
+	display: flex;
+	flex-direction: column;
+	gap: 30/16+rem;
+	@include config.pc {
+		gap: 0;
+		flex-direction: row;
+	}
+}
+.p-contact-form__head {
+	@include config.pc {
+		width: 434/16+rem;
+	}
+}
+.p-contact-form__headEx {
+	margin-top: 6/16+rem;
+	display: flex;
+	gap: 5/16+rem;
+	font-size: 13/16+rem;
+	._required {
+		color: var(--blue, #008CD6);
+	}
+	@include config.pc {
+		margin-top: 14/16+rem;
+		font-size: 16/16+rem;
+	}
+}
+.p-contact-form__body {
+	flex: 1;
+	@include config.pc {}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+.p-contact-tel {
+	padding: var(--padding-section-lg) 0 0;
+	display: flex;
+	flex-direction: column;
+	gap: 30/16+rem;
+	border-top: var(--border-gray-light);
+	@include config.pc {
+		gap: 0;
+		flex-direction: row;
+	}
+}
+.p-contact-tel__head {
+	@include config.pc {
+		width: 434/16+rem;
+	}
+}
+.p-contact-tel__body {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 4/16+rem;
+	@include config.pc {}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/

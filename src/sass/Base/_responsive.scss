@@ -1,0 +1,21 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	レスポンシブ
+----------------------------------------------------*/
+.sp{
+	@include config.pc-tab{display: none;}
+}
+.sp-tab{
+	@include config.pc{display: none;}
+}
+.pc{
+	@include config.sp-tab{display: none;}
+}
+.pc-tab{
+	@include config.sp{display: none;}
+}
+.tab{
+	@include config.sp{display: none;}
+	@include config.pc{display: none;}
+}
+

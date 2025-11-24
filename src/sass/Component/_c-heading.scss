@@ -1,0 +1,176 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	c-heading
+----------------------------------------------------*/
+.c-heading-page {
+	display: flex;
+	gap: 4/16+rem;
+	line-height: 1;
+	@include config.pc {
+		gap: 8/16+rem;
+	}
+}
+.c-heading-page__title {
+	font-size: 48/16+rem;
+	letter-spacing: -0.03em;
+	font-feature-settings: 'palt' on;
+	@include config.pc {
+		font-size: 74/16+rem;
+		white-space: nowrap;
+	}
+}
+.c-heading-page__count {
+	position: relative;
+	top: 0.4em;
+	font-size: 11/16+rem;
+	@include config.pc {
+		font-size: 15/16+rem;
+	}
+}
+.c-heading-page--sm {
+	.c-heading-page__title {
+		line-height: 1.35;
+		font-size: 28/16+rem;
+		@include config.pc {
+			font-size: 55/16+rem;
+		}
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.c-heading-section {
+	display: flex;
+	flex-direction: column;
+	@include config.pc {}
+}
+.c-heading-section__ja {
+	color: #008CD6;
+	font-feature-settings: 'palt' on;
+	font-size: 14/16+rem;
+	font-weight: 600;
+	line-height: 1.5;
+	@include config.pc {}
+}
+.c-heading-section__en {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	font-size: 35/16+rem;
+	font-weight: 500;
+	line-height: 0.9;
+	letter-spacing: -0.02em;
+	p {
+		position: relative;
+		display: flex;
+		align-items: baseline;
+		&:first-child:before {
+			content: '';
+			display: block;
+			width: calc(100% - 0.25em);
+			height: 0.7em;
+			position: absolute;
+			left: 0.25em;
+			top: 0.1em;
+			pointer-events: none;
+			background: url(../img/c-heading-section-bg.webp) center center /cover;
+		}
+	}
+	._o {
+		overflow: hidden;
+		width: 0.68em;
+		height: 0.68em;
+		background: var(--color);
+		border-radius: 100%;
+		text-indent: -1em;
+	}
+	@include config.pc {
+		font-size: 69/16+rem;
+		._o {
+			width: 0.55em;
+			height: 0.55em;
+		}
+	}
+}
+.c-heading-section__desc {
+	position: relative;
+	margin: 21/16+rem 0 0 53/16+rem;
+	display: flex;
+	align-items: center;
+	padding-left: 25/16+rem;
+	font-feature-settings: 'palt' on;
+	font-size: 14/16+rem;
+	font-weight: 600;
+	line-height: 1.35;
+	svg {
+		position: absolute;
+		left: 0;
+		top: calc(50% - #{24/16+rem});
+	    width: 15/16+rem;
+	    height: auto;
+	}
+	@include config.pc {
+		margin: 21/16+rem 0 0 155/16+rem;
+		font-size: 16/16+rem;
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.c-heading-about {
+
+}
+.c-heading-about__title {
+	color: var(--black, #1B1B1B);
+	font-size: 22/16+rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	line-height: 1.35;
+	@include config.pc {
+		font-size: 45/16+rem;
+		letter-spacing: 0.1em;
+	}
+}
+.c-heading-about__en {
+	margin-top: 4/16+rem;
+	color: var(--blue, #008CD6);
+	font-size: 11/16+rem;
+	font-weight: 600;
+	line-height: 1.35;
+	@include config.pc {
+		font-size: 15/16+rem;
+	}
+}
+.c-heading-about--top {
+	.c-heading-about__title {
+		font-size: 28/16+rem;
+		@include config.pc {
+			font-size: 52/16+rem;
+		}
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.c-heading-post {
+	color: #0086CE;
+	font-size: 24/16+rem;
+	font-weight: 600;
+	line-height: 1.35;
+	@include config.pc {
+		font-size: 38/16+rem;
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.c-heading-txt {
+	font-size: 22/16+rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	@include config.pc {
+		font-size: 32/16+rem;
+	}
+}
+.c-heading-txt-sm {
+	font-size: 16/16+rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	@include config.pc {
+		font-size: 22/16+rem;
+	}
+}
+
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/

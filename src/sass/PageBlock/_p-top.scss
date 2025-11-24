@@ -1,0 +1,500 @@
+@use '../Base/config' as config;
+/*----------------------------------------------------
+	...
+----------------------------------------------------*/
+.p-top {
+	@include config.pc {}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.p-top-mv {
+	position: relative;
+	padding-top: var(--header-height);
+	@include config.pc {}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.p-top-news {
+	position: relative;
+	padding: var(--padding-section-lg) 0 0;
+	@include config.pc {}
+}
+.p-top-news__bg {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 200%;
+	position: absolute;
+	left: 0;
+	top: -200/16+rem;
+	pointer-events: none;
+	z-index: -1;
+	@include config.pc {
+		top: -400/16+rem;
+	}
+}
+.p-top-creative__wrap {
+	position: relative;
+}
+.p-top-creative__head {
+	@include config.pc {}
+}
+.p-top-creative__list {
+	padding-top: var(--padding-section-md);
+	@include config.pc {}
+}
+.p-top-creative__more1 {
+	margin-top: 20/16+rem;
+	text-align: right;
+	@include config.pc {}
+}
+.p-top-creative__more2 {
+	margin-top: 20/16+rem;
+	@include config.pc {}
+}
+.p-top-creative__category {
+	margin-top: var(--padding-section-md);
+	padding: 40/16+rem 0;
+	border-top: var(--border-gray);
+	border-bottom: var(--border-gray);
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 5/16+rem 0;
+		padding-left: 6/16+rem;
+		li {
+			margin-left: -6/16+rem;
+		}
+		a {
+			display: inline-flex;
+			padding: 0 12/16+rem;
+			justify-content: center;
+			align-items: center;
+			gap: 10/16+rem;
+
+			border-radius: 100/16+rem;
+			border: var(--border-gray);
+			background: #FFF;
+
+			font-size: 13/16+rem;
+			letter-spacing: 0.02em;
+			&:hover {
+				background: var(--color-accent);
+				color: #fff;
+			}
+		}
+	}
+	@include config.sp-tab {
+		ul {
+			flex-wrap: nowrap;
+			white-space: nowrap;
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			-ms-overflow-style: -ms-autohiding-scrollbar;
+			&::-webkit-scrollbar {
+				display: none;
+				-webkit-appearance: none;
+			}
+		}
+	}
+	@include config.pc {
+		a {
+			padding: 1/16+rem 16/16+rem;
+			font-size: 16/16+rem;
+		}
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.p-top-about {
+	position: relative;
+	z-index: 10;
+	padding: var(--padding-page) 0 var(--padding-section-md);
+	@include config.pc {}
+}
+.p-top-about__bg {
+
+}
+.p-top-about__wrap {
+	@include config.pc {
+		width: 842/16+rem;
+		margin-inline: auto;
+	}
+}
+.p-top-about__body {
+	margin-top: 15/16+rem;
+
+	color: var(--black, #1B1B1B);
+	font-feature-settings: 'palt' on;
+	font-size: 15/16+rem;
+	font-weight: 500;
+	line-height: 2;
+	letter-spacing: 0.02em;
+	span:first-child {
+		display: block;
+		text-align: right;
+	}
+	@include config.pc {
+		font-size: 22/16+rem;
+	}
+}
+.p-top-about__more {
+	margin-top: var(--padding-section);
+	text-align: right;
+	@include config.pc {}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.p-top-creative {
+	position: relative;
+	padding: var(--padding-section-md) 0 var(--padding-page);
+	overflow: hidden;
+	@include config.pc {}
+}
+.p-top-creative__head {
+	@include config.pc {
+		padding-left: 90/16+rem;
+	}
+}
+.p-top-creative__items {
+	margin-top: 50/16+rem;
+	display: flex;
+	flex-direction: column;
+	gap: 50/16+rem;
+	position: relative;
+	@include config.pc {
+		gap: 0;
+	}
+}
+.p-top-creative-item {
+	@include config.pc {}
+}
+.p-top-creative-item__link {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	@include config.pc {}
+}
+.p-top-creative-item__pic {
+	position: relative;
+	width: 300/16+rem;
+	@include config.pc {
+		width: 650/16+rem;
+	}
+}
+.p-top-creative-item__btn {
+	position: absolute;
+	left: calc(50% + #{100/16+rem});
+	top: 185/16+rem;
+	@include config.pc {
+		left: 530/16+rem;
+		top: 410/16+rem;
+	}
+}
+.p-top-creative-item__desc {
+	margin-top: 16/16+rem;
+	width: 285/16+rem;
+	@include config.pc {
+		margin-top: 12/16+rem;
+		width: 486/16+rem;
+		margin-inline: auto;
+	}
+}
+@include config.sp-tab {
+	.p-top-creative-item:nth-child(1) {
+		margin-left: auto;
+		.p-top-creative-item__pic {
+			width: 310/16+rem;
+			left: 26/16+rem;
+		}
+		.p-top-creative-item__btn {}
+		.p-top-creative-item__desc {
+			margin-inline: auto;
+		}
+	}
+	.p-top-creative-item:nth-child(2) {
+		.p-top-creative-item__pic {
+			width: 280/16+rem;
+		}
+		.p-top-creative-item__btn {
+			top: 136/16+rem;
+			left: calc(50% + #{70/16+rem});
+		}
+		.p-top-creative-item__desc {}
+	}
+	.p-top-creative-item:nth-child(3) {
+		margin-top: -20/16+rem;
+		margin-left: auto;
+		.p-top-creative-item__pic {
+			width: 270/16+rem;
+			left: 20/16+rem;
+		}
+		.p-top-creative-item__btn {
+			top: 190/16+rem;
+			left: calc(50% + #{80/16+rem});
+		}
+		.p-top-creative-item__desc {}
+	}
+	.p-top-creative-item:nth-child(4) {
+		margin-top: -20/16+rem;
+		.p-top-creative-item__pic {
+			width: 270/16+rem;
+			left: -40/16+rem;
+		}
+		.p-top-creative-item__btn {
+			top: 180/16+rem;
+			left: calc(50% + #{70/16+rem});
+		}
+		.p-top-creative-item__desc {}
+	}
+}
+@include config.pc {
+	.p-top-creative__items {
+		height: 1360/16+rem;
+	}
+	.p-top-creative-item {
+		position: absolute;
+		margin-top: -200/16+rem;
+	}
+	.p-top-creative-item:nth-child(1) {
+		right: 100/16+rem;
+		.p-top-creative-item__pic {}
+		.p-top-creative-item__btn {}
+		.p-top-creative-item__desc {}
+	}
+	.p-top-creative-item:nth-child(2) {
+		top: 430/16+rem;
+		left: -20/16+rem;
+		.p-top-creative-item__pic {}
+		.p-top-creative-item__btn {}
+		.p-top-creative-item__desc {
+			margin: 60/16+rem 0 0 130/16+rem;
+		}
+	}
+	.p-top-creative-item:nth-child(3) {
+		right: 90/16+rem;
+		top: 620/16+rem;
+		.p-top-creative-item__pic {
+			width: 540/16+rem;
+		}
+		.p-top-creative-item__btn {
+			left: 430/16+rem;
+		}
+		.p-top-creative-item__desc {
+			margin: 20/16+rem 0 0 28/16+rem;
+		}
+	}
+	.p-top-creative-item:nth-child(4) {
+		left: 60/16+rem;
+		top: 1030/16+rem;
+		.p-top-creative-item__link {
+			flex-direction: row;
+			align-items: flex-end;
+		}
+		.p-top-creative-item__pic {
+			width: 580/16+rem;
+		}
+		.p-top-creative-item__btn {
+			top: 364/16+rem;
+			left: 480/16+rem;
+		}
+		.p-top-creative-item__desc {
+			margin-inline: auto;
+			padding-bottom: 100/16+rem;
+		}
+	}
+}
+
+.p-top-creative__more {
+	margin-top: var(--padding-section);
+	@include config.pc {
+		max-width: 1182/16+rem;
+		margin-inline: auto;
+	}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.p-top-map {
+	position: relative;
+	overflow: hidden;
+	@include config.pc {}
+}
+.p-top-map__wrap {
+	margin-inline: auto;
+	padding: var(--padding-section-md) 20/16+rem var(--padding-section-lg);
+	@include config.pc {
+		max-width: 1360/16+rem;
+		padding: var(--padding-section-md) 64/16+rem var(--padding-section-lg);
+		background: #fff;
+	}
+}
+.p-top-map__head {
+	@include config.pc {}
+}
+.p-top-map__title {
+	font-size: 32/16+rem;
+	line-height: 175%; /* 56/16+rem */
+	letter-spacing: -0.02em;
+	@include config.pc {
+		font-size: 58/16+rem;
+		line-height: 1.35;
+	}
+}
+.p-top-map__desc {
+	font-size: 10/16+rem;
+	font-weight: 500;
+	line-height: 1.1;
+	@include config.pc {
+		font-size: 14/16+rem;
+	}
+}
+.p-top-map__map {
+	white-space: nowrap;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	&::-webkit-scrollbar {
+	  display: none;
+	  -webkit-appearance: none;
+	}
+	margin-inline: calc(50% - 50vw);
+	img {
+		width: 766/16+rem;
+		max-width: none;
+	}
+	@include config.pc {
+		margin-top: -20/16+rem;
+		img {
+			width: 1596/16+rem;
+		}
+	}
+}
+/* map card */
+.p-top-map__cards {
+	position: absolute;
+	right: 0;
+	top: -20/16+rem;
+	width: 577/16+rem;
+	height: 800/16+rem;
+	background: var(--bg, #D8EBF9);
+	padding: 30/16+rem 40/16+rem;
+	@include config.sp-tab {
+		display: none;
+	}
+	@include config.pc {}
+}
+.p-top-map__cardsClose {
+	width: 60/16+rem;
+	position: absolute;
+	left: -42/16+rem;
+	top: 35/16+rem;
+	@include config.pc {}
+}
+.p-top-map__cardsCtrl {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10/16+rem;
+	padding-bottom: 10/16+rem;
+	button {
+		width: 40/16+rem;
+		height: 40/16+rem;
+	}
+	button:nth-child(1) {
+		transform: rotate(-180deg);
+	}
+	@include config.pc {}
+}
+.p-top-map-card {
+	display: flex;
+	flex-direction: column;
+	gap: 20/16+rem;
+	@include config.pc {}
+}
+.p-top-map-card__head {
+	display: flex;
+	gap: 15/16+rem;
+	@include config.pc {}
+}
+.p-top-map-card__no {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 48/16+rem;
+	height: 48/16+rem;
+	aspect-ratio: 1/1;
+	border-radius: 100%;
+	background: var(--color);
+
+	color: #FFF;
+	text-align: center;
+	//font-family: "Roc Grotesk";
+	font-size: 10/16+rem;
+	font-weight: 500;
+	line-height: 1;
+	._no {
+		font-size: 13/16+rem;
+	}
+	@include config.pc {}
+}
+.p-top-map-card__name {
+	display: flex;
+	flex-direction: column;
+	font-size: 25/16+rem;
+	font-weight: 600;
+	line-height: 1.5;
+	letter-spacing: -0.02em;
+	small {
+		font-size: 20/16+rem;
+	}
+	@include config.pc {}
+}
+.p-top-map-card__pic {}
+.p-top-map-card__desc {
+	color: var(--black, #1B1B1B);
+	text-align: justify;
+	font-feature-settings: 'palt' on;
+	font-size: 16/16+rem;
+	font-weight: 600;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+	@include config.pc {}
+}
+.p-top-map-card__info {
+	padding-top: 20/16+rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2/16+rem;
+	border-top: var(--border-gray-light);
+	dl {
+		display: flex;
+		gap: 30/16+rem;
+		//font-family: "Roc Grotesk";
+		font-size: 14/16+rem;
+		line-height: 1.75;
+		letter-spacing: 0.02em;
+	}
+	dt {
+		width: 62/16+rem;
+		display: flex;
+		align-items: baseline;
+		span._c3 {
+			width: 3em;
+			border-bottom: var(--border);
+		}
+		span._c4 {
+			width: 3.5em;
+			border-bottom: var(--border);
+		}
+
+	}
+	dd {
+		flex: 1;
+	}
+	ul {
+		display: flex;
+		gap: 20/16+rem;
+	}
+	@include config.pc {}
+}
+.p-top-map-card__more {
+	margin-top: 15/16+rem;
+	text-align: right;
+	@include config.pc {}
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/

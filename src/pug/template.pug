@@ -1,0 +1,382 @@
+extends ./_default
+block vars
+    - var path = "./"
+    - var title = "テンプレート"
+    - var pageClass = ""
+
+block content
+    picture
+        source(srcset=img + "" media="(max-width: 1023px)")
+        img(src=img + "")
+    div(style="background: var(--bg, #D8EBF9);")
+        - for (var x = 1; x <= 8; x++)
+        .l-container(style="padding-top: var(--padding-section);")
+            .u-template
+                .u-gap
+                    p .c-heading-page fz74 48
+                    .c-heading-page
+                        h1.c-heading-page__title News
+                        span.c-heading-page__count 25
+
+                    p .c-heading-page .c-heading-page--sm fz55 28
+                    .c-heading-page.c-heading-page--sm
+                        h1.c-heading-page__title News
+                        span.c-heading-page__count 25
+
+                    p .c-heading-section
+                    div
+                        .c-heading-section
+                            h2.c-heading-section__ja ニュース
+                            .c-heading-section__en
+                                p
+                                    span._o
+                                    span News
+                            p.c-heading-section__desc
+                                svg(width=17 height=24)
+                                    use(href="#ico-heading-line")
+                                span
+                                    | 中之島で行われている
+                                    br
+                                    | 展示会やイベント
+                        .c-heading-section
+                            h2.c-heading-section__ja クリエイティブコンテンツ
+                            .c-heading-section__en
+                                p
+                                    span._o
+                                    span Creative
+                                p
+                                    span C
+                                    span._o o
+                                    span ntents
+                            p.c-heading-section__desc
+                                svg(width=17 height=24)
+                                    use(href="#ico-heading-line")
+                                span
+                                    | 中之島で生まれたモノやコト
+                    p .c-heading-about
+                    .c-heading-about
+                        h2.c-heading-about__title
+                            | 創造的
+                            span.u-char-circle な
+                            | 実験島
+                        p.c-heading-about__en About Creative Island
+
+
+                    p .c-heading-post fz38 fz24
+                    h1.c-heading-post 回遊型プロジェクト「ARでめぐる『中之島15の場所での物語』」
+
+                    p .c-heading-txt fz32 fz22
+                    p.c-heading-txt 開催概要
+
+                    p c-heading-txt-sm fz22 fz16
+                    ph3.c-heading-txt-sm 出店者一覧
+
+
+                    p .c-paragraph fz16 fz13
+                    p.c-paragraph
+                        | 14の文化施設や機関と連携して各機関が有する固有の資源（人・コレクション・歴史・取組み）を活かし、その資源を施設間で交換することで、新たな価値を掘り起こします。
+
+                    p .c-paragraph-lg fz20 fz15
+                    p.c-paragraph-lg
+                        | 大阪市北区に位置する中之島は、堂島川と土佐堀川に挟まれた東西約3kmの中州です。重層的な歴史文化を有しながら都市の機能が集積する中之島は、パリのシテ島、ベルリンのムゼウムス・インゼルなど、世界に類する都心の中州（島）の可能性に満ちています。
+
+
+                hr
+                .u-gap
+                    p .c-btn-arrow
+                    div(style="display: flex;")
+                        button.c-btn-arrow
+                            svg(width=26 height=26).js-clone
+                                use(href="#ico-arrow")
+                        button.c-btn-arrow.c-btn-arrow--accent
+                            svg(width=26 height=26).js-clone
+                                use(href="#ico-arrow")
+                        button.c-btn-arrow.c-btn-arrow--outline
+                            svg(width=26 height=26).js-clone
+                                use(href="#ico-arrow")
+
+
+                    p .c-btn-header-nav .c-btn-top-creative
+                    a(href="#").c-btn-header-nav
+                        span.c-btn-header-nav__txt 展覧会・文化イベント
+                        i.c-btn-header-nav__arrow
+                            svg(width=26 height=26).js-clone
+                                use(href="#ico-arrow")
+                    p .c-btn-header-about
+                    button.c-btn-header-about
+                        span.c-btn-header-about__txt 中之島について
+                        i.c-btn-header-about__plus
+
+                    p .c-btn-more
+                    a(href="#").c-btn-more
+                        .c-btn-more__ico
+                            i.c-btn-more__circle
+                            i.c-btn-more__arrow
+                                svg(width=26 height=26).js-clone
+                                    use(href="#ico-arrow")
+                        span.c-btn-more__txt NEWS一覧へ
+
+                    p .c-btn-square
+                    a(href="#").c-btn-square
+                        span.c-btn-square__bg
+                        span.c-btn-square__txt もっと見る
+
+                    p .c-btn-about
+                    a(href="#").c-btn-about
+                        i.c-btn-about__arrow
+                            svg(width=26 height=26).js-clone
+                                use(href="#ico-arrow")
+                        span.c-btn-about__txt.js-split-text
+                            | 私たちについて
+                    p .c-btn-youtube
+                    a(href="#").c-btn-youtube
+                        i.c-btn-youtube__arrow
+                            svg(width=26 height=26).js-clone
+                                use(href="#ico-arrow")
+                        span.c-btn-youtube__txt
+                            | Youtubeで見る
+
+                    p .c-btn-ticket
+                    a(href="#").c-btn-ticket
+                        span.c-btn-ticket__txt Ticket購入
+                        i.c-btn-ticket__arrow
+                            svg(width=26 height=26).js-clone
+                                use(href="#ico-arrow")
+
+                    p .c-btn-menu
+                    button.c-btn-menu(aria-label="メニューを開く")
+                        span Menu
+                        span Close
+                    p .c-btn-close
+                    button.c-btn-close(aria-label="閉じる")
+                        img(src=img+"btn-close.svg")
+
+                    p .c-btn-pagetop
+                    a(href="#top" data-scroll-anchor).c-btn-pagetop(aria-label="ページトップへ")
+                        i.c-btn-pagetop__arrow
+                            svg(width=26 height=26).js-clone
+                                use(href="#ico-arrow")
+                        span.c-btn-pagetop__txt TOP
+
+                hr
+                .u-gap
+                    p .c-link-gradient
+                    a(href="#").c-link-gradient 中之島について
+                    p .c-link-local
+                    ul.c-link-local
+                        li
+                            p.js-split-text JP
+                        li
+                            a(href="#").js-split-text EN
+
+                    p .c-link-bc
+                    ul.c-link-bc
+                        li
+                            a(href= path + "") Top
+                        li
+                            a(href= path + "creative/") Creative Contents
+                        li
+                            span 中之島プロモーション
+                hr
+                .u-gap
+                    p .c-card-event
+                    div(style="width: 320px;")
+                        - for (var x = 1; x <= 8; x++)
+                        .c-card-event.c-card-event--square
+                            a(href= path + "single-news/").c-card-event__link
+                                figure.c-card-event__pic
+                                    img(src=img + "500x620_2.webp" alt="")
+                                ul.c-card-event__category
+                                    li エクスチェンジプログラム
+                                h3.c-card-event__title
+                                    | 「中之島15の場所での物語」AR挿絵公募
+                                ul.c-card-event__place
+                                    li graf studio
+                                    li アートエリアB1
+                                    li こども本の森 中之島
+                                    li フェスティバルホール
+                                    li 国立国際美術館
+                                    li 大阪市中央公会堂
+                                    li 中之島まちみらい協議会
+                        .c-card-event.c-card-event--teaser
+                            a(href= path + "single-news/").c-card-event__link
+                                .c-card-event__meta
+                                    p.c-card-event__type Events
+                                    ul.c-card-event__category
+                                        li 現代アート
+                                p.c-card-event__status
+                                    | 予
+                                figure.c-card-event__pic
+                                    img(src=img + "500x620_2.webp" alt="")
+                                h3.c-card-event__title
+                                    | 映像展示「ビルダーズ：工事記録にみる都市再考」
+                                ul.c-card-event__place
+                                    li graf studio
+                                    li アートエリアB1
+
+                    p .c-card-recommend
+                    .c-card-recommend
+                        a(href="#").c-card-recommend__link
+                            figure.c-card-recommend__pic
+                                img(src=img+"500x500.webp" alt="")
+                            .c-card-recommend__body
+                                h3.c-card-recommend__title
+                                    | 「中之島15の場所での物語」AR挿絵公募
+                                ul.c-card-recommend__tag
+                                    li #Events
+                hr
+                .u-gap
+                    p .cm-nav-category
+                    .cm-nav-category
+                        ul.cm-nav-category__tags
+                            li
+                                a(href="#") #All
+                            li
+                                a(href="#") #News
+                            li
+                                a(href="#") #Events
+                            li
+                                a(href="#") #Exhibitions
+                        ul.cm-nav-category__category
+                            li
+                                a(href="#") アート
+                            li
+                                a(href="#") 写真
+                            li
+                                a(href="#") 建築
+                            li
+                                a(href="#") パフォーマンス
+                            li
+                                a(href="#") 陶芸
+                            li
+                                a(href="#") 音楽
+                            li
+                                a(href="#") デザイン
+                            li
+                                a(href="#") 都市デザイン
+                            li
+                                a(href="#") グラフィック
+
+                        ul.cm-nav-category__place
+                            li
+                                a(href="#") graf studio
+                            li
+                                a(href="#") アートエリアB1
+                            li
+                                a(href="#") グランキューブ大阪
+                            li
+                                a(href="#") こども本の森 中之島
+                            li
+                                a(href="#") 国立国際美術館
+                            li
+                                a(href="#") フェスティバルホール
+                            li
+                                a(href="#") 中之島まちみらい協議会
+                            li
+                                a(href="#") 大阪市立東洋陶磁美術館
+                            li
+                                a(href="#") 中之島香雪美術館
+                            li
+                                a(href="#") 大阪中之島美術館
+                            li
+                                a(href="#") 大阪大学中之島センター
+                            li
+                                a(href="#") 大阪市立科学館
+
+                    p .cm-nav-paginate
+                    ul.cm-nav-paginate
+                        li.cm-nav-paginate__ctrl
+                            a(href="#")
+                                svg(width=26 height=26).js-clone
+                                    use(href="#ico-arrow")
+                        li.cm-nav-paginate__page.is-current
+                            span 1
+                        li.cm-nav-paginate__page
+                            a(href="#") 2
+                        li.cm-nav-paginate__page
+                            a(href="#") 3
+                        li.cm-nav-paginate__dotted
+                            span …
+                        li.cm-nav-paginate__page
+                            a(href="#") 17
+
+                        li.cm-nav-paginate__ctrl
+                            a(href="#")
+                                svg(width=26 height=26).js-clone
+                                    use(href="#ico-arrow")
+
+                    p .cm-nav-page
+                    .cm-nav-page
+                        .cm-nav-page__ctrl
+                            a(href= path + "single-news/").cm-nav-page-link
+                                i.cm-nav-page-link__arrow
+                                    svg(width=26 height=26).js-clone
+                                        use(href="#ico-arrow")
+                                span.cm-nav-page-link__txt 前の記事
+                        .cm-nav-page__index
+                            a(href= path + "single-news/").cm-nav-page-link
+                                span.cm-nav-page-link__txt News一覧に戻る
+                        .cm-nav-page__ctrl
+                            a(href= path + "single-news/").cm-nav-page-link
+                                span.cm-nav-page-link__txt 前の記事
+                                i.cm-nav-page-link__arrow
+                                    svg(width=26 height=26).js-clone
+                                        use(href="#ico-arrow")
+
+        p .cm-modal-about
+
+        //#modal-about.cm-modal(aria-hidden='true')
+        //-#modal-about.cm-modal(aria-hidden='false')
+            .cm-modal__overlay(tabindex='-1' data-micromodal-close='')
+                button.cm-modal__close(aria-label='Close modal' data-micromodal-close='')
+                    span
+                    span
+                    span
+                button.c-btn-close.cm-modal__close(aria-label='閉じる' data-micromodal-close='')
+                    img(src=img + "btn-close.svg")
+                .cm-modal-about(role='dialog' aria-modal='true').is-section-dark
+                    .cm-modal-about__wrap
+                        .cm-modal-about__content
+                            .cm-modal-about__head
+                                h3.cm-modal-about__title1
+                                    span 大阪の中の
+                                    span 島
+                                    span へ。
+                                p.cm-modal-about__title2 大阪にはキタとミナミだけでなく<br class="sp">「ナカ」がある。
+                            .cm-modal-about__body
+                                p
+                                    | 自然、文化、歴史、アート、科学、国際交流、
+                                    br
+                                    | ふたつの川に包まれた小さなエリアに、
+                                    br
+                                    | 多彩な“学びの水源”が集まる中之島。
+                                    br
+                                    | 私たちは、この地で湧き出る多様な知を交叉させ
+                                    br
+                                    | 大阪の可能性と創造性を広げていきます。
+                            .cm-modal-about__foot
+                                p クリエイティブアイランド中之島
+                        .cm-modal-about__movie
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/6Kwfe3BUSwI?si=uXhyjPOdB8tbqm1V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            .cm-modal-about__more
+                                a(href="#" target="_blank" rel="noopener").c-btn-youtube
+                                    i.c-btn-youtube__arrow
+                                        svg(width=26 height=26).js-clone
+                                            use(href="#ico-arrow")
+                                    span.c-btn-youtube__txt
+                                        | Youtubeで見る
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
