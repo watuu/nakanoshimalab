@@ -55,6 +55,22 @@
 		top: calc(var(--header-height) + #{80/16+rem});
 	}
 }
+#modal-spot.cm-modal[aria-hidden="true"] {
+	display: none;
+	pointer-events: none;
+}
+#modal-spot.cm-modal {
+	position: relative;
+	@include config.pc {
+		position: absolute;
+		right: 0;
+		top: 0;
+		left: auto;
+		bottom: auto;
+		width: 577/16+rem;
+		height: 800/16+rem;
+	}
+}
 /**************************\
   Demo Animation Style
 \**************************/
@@ -263,5 +279,170 @@
 }
 .cm-modal-about__more {
 
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+.cm-modal-spot {
+	position: relative;
+	background: var(--bg, #D8EBF9);
+	padding: 20/16+rem 20/16+rem;
+	@include config.pc {
+		padding: 30/16+rem 40/16+rem;
+	}
+}
+.cm-modal-spot__close {
+	width: 40/16+rem;
+	position: absolute;
+	left: -22/16+rem;
+	top: 15/16+rem;
+	@include config.sp-tab {
+		display: none;
+	}
+	@include config.pc {
+		width: 60/16+rem;
+		left: -42/16+rem;
+		top: 35/16+rem;
+	}
+}
+.cm-modal-spot__ctrl {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10/16+rem;
+	padding-bottom: 10/16+rem;
+	button {
+		width: 28/16+rem;
+		height: 28/16+rem;
+	}
+	button:nth-child(1) {
+		transform: rotate(-180deg);
+	}
+	@include config.pc {
+		button {
+			width: 40/16+rem;
+			height: 40/16+rem;
+		}
+	}
+}
+.cm-modal-spot-card {
+	display: flex;
+	flex-direction: column;
+	gap: 20/16+rem;
+	@include config.pc {}
+}
+.cm-modal-spot-card__head {
+	display: flex;
+	gap: 15/16+rem;
+	@include config.pc {}
+}
+.cm-modal-spot-card__no {
+	display: inline-flex;
+	padding-top: 4/16+rem;
+	gap: 2/16+rem;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 40/16+rem;
+	height: 40/16+rem;
+	aspect-ratio: 1/1;
+	border-radius: 100%;
+	background: var(--color);
+
+	color: #FFF;
+	text-align: center;
+	//font-family: "Roc Grotesk";
+	font-size: 10/16+rem;
+	font-weight: 500;
+	line-height: 1;
+	._no {
+		font-size: 13/16+rem;
+	}
+	@include config.pc {
+		width: 48/16+rem;
+		height: 48/16+rem;
+		font-size: 10/16+rem;
+		._no {
+			font-size: 13/16+rem;
+		}
+	}
+}
+.cm-modal-spot-card__name {
+	display: flex;
+	flex-direction: column;
+	font-size: 20/16+rem;
+	font-weight: 600;
+	line-height: 1.5;
+	letter-spacing: -0.02em;
+	small {
+		font-size: 16/16+rem;
+	}
+	@include config.pc {
+		font-size: 25/16+rem;
+		small {
+			font-size: 20/16+rem;
+		}
+	}
+}
+.cm-modal-spot-card__pic {
+	img {
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 500 / 240;
+		object-fit: cover;
+	}
+}
+.cm-modal-spot-card__desc {
+	color: var(--black, #1B1B1B);
+	text-align: justify;
+	font-feature-settings: 'palt' on;
+	font-size: 16/16+rem;
+	font-weight: 600;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+	@include config.pc {}
+}
+.cm-modal-spot-card__info {
+	padding-top: 20/16+rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2/16+rem;
+	border-top: var(--border-gray-light);
+	dl {
+		display: flex;
+		gap: 30/16+rem;
+		//font-family: "Roc Grotesk";
+		font-size: 14/16+rem;
+		line-height: 1.75;
+		letter-spacing: 0.02em;
+	}
+	dt {
+		width: 62/16+rem;
+		display: flex;
+		align-items: baseline;
+		span._c3 {
+			width: 3em;
+			border-bottom: var(--border);
+		}
+		span._c4 {
+			width: 3.5em;
+			border-bottom: var(--border);
+		}
+
+	}
+	dd {
+		flex: 1;
+	}
+	.cm-modal-spot-card__sns {
+		display: flex;
+		gap: 20/16+rem;
+		li:has(a[href=""]) {
+			display: none;
+		}
+	}
+	@include config.pc {}
+}
+.cm-modal-spot-card__more {
+	margin-top: 15/16+rem;
+	text-align: right;
+	@include config.pc {}
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/

@@ -246,68 +246,98 @@ block content
                 .p-top-map__head
                     h2.p-top-map__title Map
                     p.p-top-map__desc Creative Island Nakanoshima
-                .p-top-map__map
-                    img(src=img+"p-top-map.webp" alt="")
-                .p-top-map__cards
-                    button.p-top-map__cardsClose.c-btn-close(aria-label="閉じる")
-                        img(src=img + "btn-close.svg")
-                    .p-top-map__cardsCtrl
-                        button.c-btn-arrow.c-btn-arrow--outline#btnMapPrev
-                            svg(width=26 height=26).js-clone
-                                use(href="#ico-arrow")
-                        button.c-btn-arrow.c-btn-arrow--outline#btnMapNext
-                            svg(width=26 height=26).js-clone
-                                use(href="#ico-arrow")
-                    .p-top-map-card
-                        .p-top-map-card__head
-                            .p-top-map-card__no
-                                p Spot
-                                p._no 1
-                            p.p-top-map-card__name
-                                span グランキューブ大阪
-                                small (大阪府立国際会議場)
-                        figure.p-top-map-card__pic
-                            img(src=img + "600x300.webp")
-                        p.p-top-map-card__desc
-                            | 国際会議をはじめ、セミナー・シンポジウム、展示会、コンサートなど幅広く対応できる複合型MICE施設として2000年に開館。「グランキューブ大阪」の愛称は、その大きなキューブ型の外観にちなんだもので、黒川紀章による設計。
-                        .p-top-map-card__info
-                            dl
-                                dt Address
-                                dd 大阪市北区中之島5-3-51
-                            dl
-                                dt Te
-                                    span._c4
-                                    | l
-                                dd 06-4803-5555
-                            dl
-                                dt Ope
-                                    span._c3
-                                    | n
-                                dd 8:00-22:00(年末年始休)
-                            dl
-                                dt We
-                                    span._c3
-                                    |b
-                                dd https://www.gco.co.jp/
-                            dl
-                                dt SN
-                                    span._c3
-                                    | S
-                                dd
-                                    ul
-                                        li
-                                            a(href="#")
-                                                img(src=img + "ico-x.svg" alt="")
-                                        li
-                                            a(href="#")
-                                                img(src=img + "ico-instagram.svg" alt="")
-                        .p-top-map-card__more
-                            a(href="#").c-btn-top-creative
-                                span.c-btn-top-creative__txt 関連イベントを見る
-                                i.c-btn-top-creative__arrow
+                .p-top-map-area
+                    .p-top-map-area__wrap
+                        ul.p-top-map-area__list
+                            li
+                                button(aria-label="詳細を見る" data-micromodal-trigger="modal-spot" data-spot-id=1).p-top-map-area__btn 1
+                            li
+                                button(aria-label="詳細を見る" data-micromodal-trigger="modal-spot" data-spot-id=2).p-top-map-area__btn 2
+                            li
+                                button(aria-label="詳細を見る" data-micromodal-trigger="modal-spot" data-spot-id=3).p-top-map-area__btn 3
+                            li
+                                button(aria-label="詳細を見る" data-micromodal-trigger="modal-spot" data-spot-id=4).p-top-map-area__btn 4
+                            li
+                                button(aria-label="詳細を見る" data-micromodal-trigger="modal-spot" data-spot-id=5).p-top-map-area__btn 5
+                            li
+                                button(aria-label="詳細を見る" data-micromodal-trigger="modal-spot" data-spot-id=6).p-top-map-area__btn 6
+                            li
+                                button(aria-label="詳細を見る" data-micromodal-trigger="modal-spot" data-spot-id=7).p-top-map-area__btn 7
+                            li
+                                button(aria-label="詳細を見る" data-micromodal-trigger="modal-spot" data-spot-id=8).p-top-map-area__btn 8
+                            li
+                                button(aria-label="詳細を見る" data-micromodal-trigger="modal-spot" data-spot-id=9).p-top-map-area__btn 9
+                            li
+                                button(aria-label="詳細を見る" data-micromodal-trigger="modal-spot" data-spot-id=10).p-top-map-area__btn 10
+                            li
+                                button(aria-label="詳細を見る" data-micromodal-trigger="modal-spot" data-spot-id=11).p-top-map-area__btn 11
+                            li
+                                button(aria-label="詳細を見る" data-micromodal-trigger="modal-spot" data-spot-id=12).p-top-map-area__btn 12
+
+                        .p-top-map-area__map
+                            img(src=img+"p-top-map.svg" alt="")
+                .p-top-map__spots
+                    #modal-spot.cm-modal(aria-hidden='true')
+                        .cm-modal-spot
+                            button.cm-modal-spot__close.c-btn-close(aria-label="閉じる" data-micromodal-close='')
+                                img(src=img + "btn-close.svg")
+                            .cm-modal-spot__ctrl
+                                button.c-btn-arrow.c-btn-arrow--outline#btnSpotPrev
                                     svg(width=26 height=26).js-clone
                                         use(href="#ico-arrow")
-
+                                button.c-btn-arrow.c-btn-arrow--outline#btnSpotNext
+                                    svg(width=26 height=26).js-clone
+                                        use(href="#ico-arrow")
+                            .cm-modal-spot-card
+                                .cm-modal-spot-card__head
+                                    .cm-modal-spot-card__no
+                                        p Spot
+                                        p._no#spot_no 1
+                                    p.cm-modal-spot-card__name
+                                        span#spot_name グランキューブ大阪
+                                        small#spot_name2 (大阪府立国際会議場)
+                                figure.cm-modal-spot-card__pic
+                                    img(src=img + "600x300.webp")#spot_pic
+                                p.cm-modal-spot-card__desc#spot_desc
+                                    | 国際会議をはじめ、セミナー・シンポジウム、展示会、コンサートなど幅広く対応できる複合型MICE施設として2000年に開館。「グランキューブ大阪」の愛称は、その大きなキューブ型の外観にちなんだもので、黒川紀章による設計。
+                                .cm-modal-spot-card__info
+                                    dl
+                                        dt Address
+                                        dd#spot_address 大阪市北区中之島5-3-51
+                                    dl
+                                        dt Te
+                                            span._c4
+                                            | l
+                                        dd#spot_tel 06-4803-5555
+                                    dl
+                                        dt Ope
+                                            span._c3
+                                            | n
+                                        dd#spot_open 8:00-22:00(年末年始休)
+                                    dl
+                                        dt We
+                                            span._c3
+                                            |b
+                                        dd#spot_web https://www.gco.co.jp/
+                                    dl
+                                        dt SN
+                                            span._c3
+                                            | S
+                                        dd
+                                            ul#spot_sns
+                                                li
+                                                    a(href="#")
+                                                        img(src=img + "ico-x.svg" alt="")
+                                                li
+                                                    a(href="#")
+                                                        img(src=img + "ico-instagram.svg" alt="")
+                                .cm-modal-spot-card__more
+                                    a(href="#").c-btn-top-creative#spot_event
+                                        span.c-btn-top-creative__txt 関連イベントを見る
+                                        i.c-btn-top-creative__arrow
+                                            svg(width=26 height=26).js-clone
+                                                use(href="#ico-arrow")
+    include ./spot
 
 
 

@@ -44,7 +44,7 @@
 		@extend .c-link-gradient;
 	}
 	@include config.sp-tab {
-		width: 168/16+rem;
+		width: 162/16+rem;
 	}
 	@include config.pc {
 		font-size: 22/16+rem;
@@ -128,6 +128,7 @@
 		justify-content: center;
 
 		font-size: 14/16+rem;
+		&.is-current,
 		&:hover {
 			color: var(--color-accent);
 		}
@@ -160,6 +161,7 @@
 
 		font-size: 13/16+rem;
 		letter-spacing: 0.02em;
+		&.is-current,
 		&:hover {
 			background: var(--color-accent);
 			color: #fff;
@@ -201,6 +203,7 @@
 	a {
 		font-size: 13/16+rem;
 		letter-spacing: 0.02em;
+		&.is-current,
 		&:hover {
 			color: var(--color-accent);
 		}
@@ -223,14 +226,16 @@
 .cm-nav-paginate__ctrl {
 	&:first-child {
 		margin-right: 6/16+rem;
-		a {
+		a,
+		span {
 			transform: rotate(-180deg);
 		}
 	}
 	&:last-child {
 		margin-left: 6/16+rem;
 	}
-	a {
+	a,
+	span {
 		@extend .c-btn-arrow;
 		@extend .c-btn-arrow--accent;
 	}
@@ -241,7 +246,8 @@
 		&:last-child {
 			margin-left: 6/16+rem;
 		}
-		a {
+		a,
+		span {
 			width: 35/16+rem;
 			height: 35/16+rem;
 		}

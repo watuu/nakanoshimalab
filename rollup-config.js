@@ -18,7 +18,8 @@ export default {
     {
       format: 'iife',
       sourcemap: false,
-      file: 'dest/assets/js/app.js',
+      // file: 'dest/assets/js/app.js',
+      file: 'public/wp-content/themes/nakanoshimalab2025/assets/js/app.js',
       plugins: outputPlugin
     },
   ],

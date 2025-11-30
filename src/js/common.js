@@ -56,7 +56,13 @@ export default class common {
         this.isVisibleType();
 
         MicroModal.init({
-            disableScroll: true,
+            // disableScroll: true,
+            onClose: () => {
+                // モーダルclose時に is-current 解除
+                document.querySelectorAll('.p-top-map-area__btn').forEach(btn => {
+                    btn.classList.remove('is-current');
+                });
+            }
         });
     }
 

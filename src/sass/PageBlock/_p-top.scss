@@ -312,7 +312,9 @@
 .p-top-map {
 	position: relative;
 	overflow: hidden;
-	@include config.pc {}
+	@include config.pc {
+		padding-top: 15/16+rem;
+	}
 }
 .p-top-map__wrap {
 	margin-inline: auto;
@@ -343,7 +345,9 @@
 		font-size: 14/16+rem;
 	}
 }
-.p-top-map__map {
+.p-top-map-area {
+	position: relative;
+	margin-inline: calc(50% - 50vw);
 	white-space: nowrap;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
@@ -352,149 +356,115 @@
 	  display: none;
 	  -webkit-appearance: none;
 	}
-	margin-inline: calc(50% - 50vw);
-	img {
-		width: 766/16+rem;
-		max-width: none;
+
+	cursor: grab;
+	user-select: none;
+	&.active {
+		cursor: grabbing;
 	}
 	@include config.pc {
 		margin-top: -20/16+rem;
+
+	}
+}
+.p-top-map-area__wrap {
+	width: 766/16+rem;
+	position: relative;
+	@include config.pc {
+		width: 1596/16+rem;
+	}
+}
+.p-top-map-area__list {
+	button {
+		position: absolute;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 22/16+rem;
+		height: 22/16+rem;
+		border-radius: 100%;
+		background: rgba(#000, 1);
+		color: #fff;
+		&.is-current,
+		&:hover {
+			background: var(--color-assort);
+			transition-duration: .1s;
+		}
+	}
+	button[data-spot-id="1"] {
+		left: 16.5%;
+		top: 46.5%;
+	}
+	button[data-spot-id="2"] {
+		left: 31.5%;
+		top: 45%;
+	}
+	button[data-spot-id="3"] {
+		left: 32%;
+		top: 36%;
+	}
+	button[data-spot-id="4"] {
+		left: 35%;
+		top: 32%;
+	}
+	button[data-spot-id="5"] {
+		left: 30.5%;
+		top: 23%;
+	}
+	button[data-spot-id="6"] {
+		left: 33.2%;
+		top: 20%;
+	}
+	button[data-spot-id="7"] {
+		left: 44.5%;
+		top: 21%;
+	}
+	button[data-spot-id="8"] {
+		left: 48%;
+		top: 21%;
+	}
+	button[data-spot-id="9"] {
+		left: 68%;
+		top: 32%;
+	}
+	button[data-spot-id="10"] {
+		left: 69.8%;
+		top: 40%;
+	}
+	button[data-spot-id="11"] {
+		left: 72.5%;
+		top: 32%;
+	}
+	button[data-spot-id="12"] {
+		left: 74.8%;
+		top: 38%;
+	}
+	@include config.pc {
+		button {
+			width: 44/16+rem;
+			height: 44/16+rem;
+			font-size: 28/16+rem;
+		}
+	}
+}
+.p-top-map-area__map {
+	img {
+		width: 766/16+rem;
+		max-width: none;
+		pointer-events: none;
+	}
+	@include config.pc {
 		img {
 			width: 1596/16+rem;
 		}
 	}
 }
 /* map card */
-.p-top-map__cards {
-	position: absolute;
-	right: 0;
-	top: -20/16+rem;
-	width: 577/16+rem;
-	height: 800/16+rem;
-	background: var(--bg, #D8EBF9);
-	padding: 30/16+rem 40/16+rem;
-	@include config.sp-tab {
-		display: none;
+.p-top-map__spots {
+	margin-top: 20/16+rem;
+	@include config.pc {
+		margin-top: 0;
 	}
-	@include config.pc {}
 }
-.p-top-map__cardsClose {
-	width: 60/16+rem;
-	position: absolute;
-	left: -42/16+rem;
-	top: 35/16+rem;
-	@include config.pc {}
-}
-.p-top-map__cardsCtrl {
-	display: flex;
-	justify-content: flex-end;
-	gap: 10/16+rem;
-	padding-bottom: 10/16+rem;
-	button {
-		width: 40/16+rem;
-		height: 40/16+rem;
-	}
-	button:nth-child(1) {
-		transform: rotate(-180deg);
-	}
-	@include config.pc {}
-}
-.p-top-map-card {
-	display: flex;
-	flex-direction: column;
-	gap: 20/16+rem;
-	@include config.pc {}
-}
-.p-top-map-card__head {
-	display: flex;
-	gap: 15/16+rem;
-	@include config.pc {}
-}
-.p-top-map-card__no {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	width: 48/16+rem;
-	height: 48/16+rem;
-	aspect-ratio: 1/1;
-	border-radius: 100%;
-	background: var(--color);
 
-	color: #FFF;
-	text-align: center;
-	//font-family: "Roc Grotesk";
-	font-size: 10/16+rem;
-	font-weight: 500;
-	line-height: 1;
-	._no {
-		font-size: 13/16+rem;
-	}
-	@include config.pc {}
-}
-.p-top-map-card__name {
-	display: flex;
-	flex-direction: column;
-	font-size: 25/16+rem;
-	font-weight: 600;
-	line-height: 1.5;
-	letter-spacing: -0.02em;
-	small {
-		font-size: 20/16+rem;
-	}
-	@include config.pc {}
-}
-.p-top-map-card__pic {}
-.p-top-map-card__desc {
-	color: var(--black, #1B1B1B);
-	text-align: justify;
-	font-feature-settings: 'palt' on;
-	font-size: 16/16+rem;
-	font-weight: 600;
-	line-height: 1.5;
-	letter-spacing: 0.02em;
-	@include config.pc {}
-}
-.p-top-map-card__info {
-	padding-top: 20/16+rem;
-	display: flex;
-	flex-direction: column;
-	gap: 2/16+rem;
-	border-top: var(--border-gray-light);
-	dl {
-		display: flex;
-		gap: 30/16+rem;
-		//font-family: "Roc Grotesk";
-		font-size: 14/16+rem;
-		line-height: 1.75;
-		letter-spacing: 0.02em;
-	}
-	dt {
-		width: 62/16+rem;
-		display: flex;
-		align-items: baseline;
-		span._c3 {
-			width: 3em;
-			border-bottom: var(--border);
-		}
-		span._c4 {
-			width: 3.5em;
-			border-bottom: var(--border);
-		}
-
-	}
-	dd {
-		flex: 1;
-	}
-	ul {
-		display: flex;
-		gap: 20/16+rem;
-	}
-	@include config.pc {}
-}
-.p-top-map-card__more {
-	margin-top: 15/16+rem;
-	text-align: right;
-	@include config.pc {}
-}
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
