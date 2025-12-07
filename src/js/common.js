@@ -166,8 +166,8 @@ export default class common {
         const headerLinks = header.querySelectorAll('a');
         headerLinks.forEach(link => {
             link.addEventListener('click', () => {
-                headerMenu.classList.remove(classNameNavOpen);
-                navClose();
+                // headerMenu.classList.remove(classNameNavOpen);
+                // navClose();
             });
         });
 

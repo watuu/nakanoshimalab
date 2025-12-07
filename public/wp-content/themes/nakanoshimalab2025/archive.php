@@ -1,4 +1,15 @@
 <?php get_header(); ?>
+    <?php
+        if (is_page('posts')) {
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $args = [
+                'post_type' => 'post',
+                'paged' => $paged,
+                // 'posts_per_page' => 20,
+            ];
+            $wp_query = new WP_Query($args);
+        }
+    ?>
     <div class="p-news">
         <div class="l-container">
             <div class="cm-section-header">
@@ -14,7 +25,8 @@
             $current_term = $query_object->slug?? '';
             $settings = [
                 'categories' => get_terms(['taxonomy' => 'category', 'parent' => 0]),
-                'tags' => get_terms(['taxonomy' => 'post_tag', 'hide_empty' => false]),
+                'cultures'   => get_terms(['taxonomy' => 'culture_cat', 'parent' => 0, 'hide_empty' => false]),
+                'tags'       => get_terms(['taxonomy' => 'post_tag', 'hide_empty' => false]),
             ];
 
             ?>
@@ -39,17 +51,17 @@
                             }
                             ?>
                         </ul>
-                        <p class="todo">TODO: 文化カテゴリーの作成</p>
                         <ul class="cm-nav-category__category">
-                            <li><a href="#">アート</a></li>
-                            <li><a href="#">写真</a></li>
-                            <li><a href="#">建築</a></li>
-                            <li><a href="#">パフォーマンス</a></li>
-                            <li><a href="#">陶芸</a></li>
-                            <li><a href="#">音楽</a></li>
-                            <li><a href="#">デザイン</a></li>
-                            <li><a href="#">都市デザイン</a></li>
-                            <li><a href="#">グラフィック</a></li>
+                            <?php
+                            foreach ($settings['cultures'] as $term) {
+                                $class = $term->slug == $current_term? ' is-current': '';
+                                echo sprintf('<li><a class="%s" href="%s">#%s</a></li>',
+                                    $class,
+                                    get_term_link($term),
+                                    $term->name
+                                );
+                            }
+                            ?>
                         </ul>
                         <ul class="cm-nav-category__place">
                             <?php

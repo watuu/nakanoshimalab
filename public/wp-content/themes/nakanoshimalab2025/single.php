@@ -5,15 +5,18 @@
     $eyeCatch = $eyeCatch? $eyeCatch:
         sprintf('%s/assets/img/500x500.webp', get_stylesheet_directory_uri());
     $settings = [
-        'categories'   => get_the_terms(null, 'category'),
-        'tags'         => get_the_terms(null, 'post_tag'),
-        'category'     => [],
-        'date_open'    => get_field('date_open'),
-        'date_end'     => get_field('date_end'),
-        'today'        => date('Ymd'),
-        'status'       => "",
-        'status_class' => "",
-        'status_char'  => "",
+        'categories'    => get_the_terms(null, 'category'),
+        'cultures'      => get_the_terms(null, 'culture_cat'),
+        'tags'          => get_the_terms(null, 'post_tag'),
+        'tags_has_logo' => [],
+        'category'      => [],
+        'date_open'     => get_field('date_open'),
+        'date_end'      => get_field('date_end'),
+        'today'         => date('Ymd'),
+        'status'        => "",
+        'status_class'  => "",
+        'status_char'   => "",
+        'outline'       => get_field('開催概要'),
     ];
     $settings['category'] = $settings['categories']? $settings['categories'][0]: [];
     $settings['date_end'] = $settings['date_end']?: $settings['date_open'];
@@ -27,6 +30,16 @@
         $settings['status_char'] = "開";
     } else {
         $settings['status'] = "終了";
+    }
+    foreach ($settings['tags'] as $term) {
+        $logo = get_field('スポットロゴ', 'category_' . $term->term_id);
+        if ($logo) {
+            $settings['tags_has_logo'][] = [
+                'term' => $term,
+                'pic' => $logo,
+                'src' => $logo['sizes']['resize'],
+            ];
+        }
     }
     ?>
     <div class="p-news-single">
@@ -49,84 +62,42 @@
                             <p class="cm-post-meta__date">
                                 <span><?= date('Y.m.d', strtotime($settings['date_open'])) ?></span><?php if (get_field('date_end')): ?><span>-</span><span><?= date('Y.m.d', strtotime($settings['date_end'])) ?></span><?php endif; ?>
                             </p>
-                            <p class="todo">TODO: 文化カテゴリーの作成</p>
+                            <?php if ($settings['cultures']): ?>
                             <ul class="cm-post-meta__category">
-                                <li><a href="#">アート</a></li>
+                                <?php if($settings['cultures']): foreach($settings['cultures'] as $term): ?>
+                                    <li><a href="<?= get_term_link($term) ?>"><?= $term->name ?></a></li>
+                                <?php endforeach; endif; ?>
                             </ul>
+                            <?php endif; ?>
                             <ul class="cm-post-meta__place">
-                                <?php foreach($settings['tags'] as $term): ?>
+                                <?php if($settings['tags']): foreach($settings['tags'] as $term): ?>
                                     <li><?= $term->name ?></li>
-                                <?php endforeach; ?>
+                                <?php endforeach; endif; ?>
                             </ul>
-                            <p class="todo">TODO: ロゴの登録</p>
-                            <ul class="cm-post-meta__logo">
-                                <li><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/dummy-post-logo1.webp"/></li>
-                                <li><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/dummy-post-logo2.webp"/></li>
-                                <li><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/dummy-post-logo3.webp"/></li>
-                            </ul>
+                            <?php if ($settings['tags_has_logo']): ?>
+                                <ul class="cm-post-meta__logo">
+                                    <?php foreach ($settings['tags_has_logo'] as $logo): ?>
+                                        <li><img src="<?= $logo['src'] ?>"/></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
                         </div>
                         <div class="cm-post-editor">
                             <?php the_content(); ?>
                         </div>
-                        <p class="todo">TODO: カスタムフィールドの作成</p>
-                        <div class="cm-post-outline">
-                            <h3 class="c-heading-txt">開催概要</h3>
-                            <div class="cm-post-outline__list">
-                                <dl>
-                                    <dt>名称</dt>
-                                    <dd><?= get_the_title() ?></dd>
-                                </dl>
-                                <dl>
-                                    <dt>会期</dt>
-                                    <dd>ミーティングポイント設置の15か所</dd>
-                                </dl>
-                                <dl>
-                                    <dt>場所</dt>
-                                    <dd>(中之島センタービル／グランキューブ大阪／リーガロイヤルホテル大阪／大阪大学中之島センター／大阪中之島美術館／国立国際美術館／大阪市立科学館／graf studio／中之島フェスティバルタワー／中之島フェスティバルタワー・ウエスト／大阪府立中之島図書館／大阪市中央公会堂／大阪市立東洋陶磁美術館／こども本の森 中之島／アートエリアB1)</dd>
-                                </dl>
-                                <dl>
-                                    <dt>場所</dt>
-                                    <dd>各施設の開館時間に準ずる</dd>
-                                </dl>
-                                <dl>
-                                    <dt>作品制作</dt>
-                                    <dd>金氏徹平、菅野歩美、小林健太、contact Gonzo、MANTLE（伊阪柊＋中村壮志）、STYLYクリエイター、公募参加のみなさま</dd>
-                                </dl>
-                                <dl>
-                                    <dt>共催</dt>
-                                    <dd>金氏徹平、菅野歩美、小林健太、contact Gonzo、MANTLE（伊阪柊＋中村壮志）、STYLYクリエイター、公募参加のみなさま</dd>
-                                </dl>
-                                <dl>
-                                    <dt>特別協力</dt>
-                                    <dd>株式会社STYLY ／ 吉田山（floating alps）</dd>
-                                </dl>
-                                <dl>
-                                    <dt>委託</dt>
-                                    <dd>令和7年度日本博2.0 事業（委託型）</dd>
-                                </dl>
+                        <?php if ($settings['outline']): ?>
+                            <div class="cm-post-outline">
+                                <h3 class="c-heading-txt">開催概要</h3>
+                                <div class="cm-post-outline__list">
+                                    <?php foreach ($settings['outline'] as $item): ?>
+                                        <dl>
+                                            <dt><?= $item['項目'] ?></dt>
+                                            <dd><?= nl2br($item['内容']) ?></dd>
+                                        </dl>
+                                    <?php endforeach; ?>
+                                </div>
                             </div>
-                        </div>
-                        <div class="cm-post-list">
-                            <h3 class="c-heading-txt-sm">出店者一覧</h3>
-                            <div class="cm-post-editor">
-                                <p>中之島に点在する15施設に設置のミーティングポイントで、各作品をご覧いただけます。</p>
-                                <ul>
-                                    <li>箇条書き</li>
-                                    <li>箇条書き</li>
-                                    <li>箇条書き</li>
-                                    <li>箇条書き</li>
-                                </ul>
-                                <p>中之島に点在する15施設に設置のミーティングポイントで、各作品をご覧いただけます。</p>
-                                <ol>
-                                    <li>「三十一階」<a href="#">中之島センタービル</a></li>
-                                    <li>「プラザ。」<a href="#">大阪府立国際会議場（グランキューブ大阪）</a></li>
-                                    <li>「リーチバー」<a href="#">リーガロイヤルホテル</a></li>
-                                    <li>「旧緒方洪庵住宅（適塾）より」<a href="#">大阪大学中之島センター</a></li>
-                                    <li>「空き地」<a href="#">大阪中之島美術館</a></li>
-                                    <li>「B4F」<a href="#">国立国際美術館</a></li>
-                                </ol>
-                            </div>
-                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

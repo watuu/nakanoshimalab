@@ -236,6 +236,9 @@ body figure {
 			line-height: 1;
 		}
 	}
+	iframe {
+		max-width: 100%;
+	}
 	a {
 		text-decoration: underline;
 		&:hover {
@@ -293,7 +296,10 @@ body figure {
 	// btn
 	.wp-block-buttons {}
 	.wp-block-button {
-		.wp-block-button__link {}
+		.wp-block-button__link {
+			background: var(--color-accent);
+			text-decoration: none;
+		}
 	}
 	//blockquote
 	blockquote.wp-block-quote {
@@ -363,96 +369,100 @@ body figure {
 	}
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
-.cm-post-report {
-	margin-top: var(--padding-section-md);
-	position: relative;
-	padding: 25/16+rem 22/16+rem 26/16+rem;
-	background: #A6DCF3;
-	@include config.pc {
-		padding: 60/16+rem 67/16+rem;
-		max-width: 1015/16+rem;
-		margin-inline: auto;
+.editor-styles-wrapper.editor-styles-wrapper.editor-styles-wrapper,
+.cm-post-editor {
+	.cm-post-report {
+		margin-top: var(--padding-section-md);
+		position: relative;
+		padding: 25/16+rem 22/16+rem 26/16+rem;
+		background: #A6DCF3;
+		@include config.pc {
+			padding: 60/16+rem 67/16+rem;
+			max-width: 1015/16+rem;
+			margin-inline: auto;
+		}
 	}
-}
-.cm-post-report__head {
-	position: absolute;
-	left: 16/16+rem;
-	top: -13/16+rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	@include config.pc {
-		left: -19/16+rem;
-		top: 80/16+rem;
+	.cm-post-report__head {
+		position: absolute;
+		left: 16/16+rem;
+		top: -13/16+rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		@include config.pc {
+			left: -19/16+rem;
+			top: 80/16+rem;
+		}
 	}
-}
-.cm-post-report__label {
-	display: flex;
-	padding: 2/16+rem 10/16+rem;
-	justify-content: center;
-	align-items: center;
-	border-radius: 32.955/16+rem;
-	background: var(--black, #1B1B1B);
-	color: var(--white, #FFF);
-	font-feature-settings: 'palt' on;
-	font-size: 13/16+rem;
-	font-weight: 600;
-	line-height: 150%;
-	@include config.pc {
-		padding: 4/16+rem 12/16+rem;
-		font-size: 16/16+rem;
-	}
-}
-
-.cm-post-report__no {
-	margin-top: 6/16+rem;
-	width: 100/16+rem;
-	font-feature-settings: 'palt' on;
-	font-size: 11/16+rem;
-	font-weight: 600;
-	line-height: 1.5;
-	background: #A6DCF3;
-	@include config.pc {
+	.cm-post-report__label {
+		display: flex;
+		padding: 2/16+rem 10/16+rem;
+		justify-content: center;
+		align-items: center;
+		border-radius: 32.955/16+rem;
+		background: var(--black, #1B1B1B);
+		color: var(--white, #FFF);
+		font-feature-settings: 'palt' on;
 		font-size: 13/16+rem;
-		background: transparent;
+		font-weight: 600;
+		line-height: 150%;
+		@include config.pc {
+			padding: 4/16+rem 12/16+rem;
+			font-size: 16/16+rem;
+		}
 	}
-}
-.cm-post-report__title {
-	padding: 10/16+rem 0;
-	border-top: var(--border-gray);
-	border-bottom: var(--border-gray);
 
-	font-feature-settings: 'palt' on;
-	font-size: 22/16+rem;
-	font-weight: 600;
-	line-height: 1.35;
-	letter-spacing: 0.02em;
-	@include config.pc {
-		padding: 26/16+rem 60/16+rem;
-		font-size: 32/16+rem;
+	.cm-post-report__no {
+		margin-top: 6/16+rem;
+		width: 100/16+rem;
+		font-feature-settings: 'palt' on;
+		font-size: 11/16+rem;
+		font-weight: 600;
+		line-height: 1.5;
+		background: #A6DCF3;
+		@include config.pc {
+			font-size: 13/16+rem;
+			background: transparent;
+		}
 	}
-}
-.cm-post-report__author {
-	margin-top: 10/16+rem;
-	font-feature-settings: 'palt' on;
-	font-size: 9/16+rem;
-	font-weight: 600;
-	line-height: 200%; /* 18/16+rem */
-	letter-spacing: 0.02em;
-	text-align: right;
-	@include config.pc {
-		font-size: 13/16+rem;
+	.cm-post-report__title {
+		margin-top: 0 !important;
+		padding: 10/16+rem 0;
+		border-top: var(--border-gray);
+		border-bottom: var(--border-gray);
+
+		font-feature-settings: 'palt' on;
+		font-size: 22/16+rem;
+		font-weight: 600;
+		line-height: 1.35;
+		letter-spacing: 0.02em;
+		@include config.pc {
+			padding: 26/16+rem 60/16+rem;
+			font-size: 32/16+rem;
+		}
 	}
-}
-.cm-post-report__body {
-	margin-top: 20/16+rem;
-	padding-bottom: 30/16+rem;
-	border-bottom: var(--border-gray);
-	@extend .cm-post-editor;
-	@include config.pc {
-		margin-top: 45/16+rem;
-		padding-bottom: 50/16+rem;
+	.cm-post-report__author {
+		margin-top: 10/16+rem;
+		font-feature-settings: 'palt' on;
+		font-size: 9/16+rem;
+		font-weight: 600;
+		line-height: 200%; /* 18/16+rem */
+		letter-spacing: 0.02em;
+		text-align: right;
+		@include config.pc {
+			font-size: 13/16+rem;
+		}
+	}
+	.cm-post-report__body {
+		margin-top: 20/16+rem;
+		padding-bottom: 30/16+rem;
+		border-bottom: var(--border-gray);
+		@extend .cm-post-editor;
+		@include config.pc {
+			margin-top: 45/16+rem;
+			padding-bottom: 50/16+rem;
+		}
 	}
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/

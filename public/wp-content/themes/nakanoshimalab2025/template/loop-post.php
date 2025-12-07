@@ -5,6 +5,7 @@
         sprintf('%s/assets/img/500x500.webp', get_stylesheet_directory_uri());
     $settings = [
         'categories'   => get_the_terms(null, 'category'),
+        'cultures'     => get_the_terms(null, 'culture_cat'),
         'tags'         => get_the_terms(null, 'post_tag'),
         'category'     => [],
         'date_open'    => get_field('date_open'),
@@ -33,7 +34,9 @@
             <div class="c-card-event__meta">
                 <p class="c-card-event__type"><?= $settings['category']->name ?></p>
                 <ul class="c-card-event__category">
-                    <li>現代アート</li>
+                    <?php if ($settings['cultures']): foreach ($settings['cultures'] as $term): ?>
+                        <li><?= $term->name ?></li>
+                    <?php break; endforeach; endif; ?>
                 </ul>
             </div>
             <?php if ($settings['status_char']): ?>
@@ -42,9 +45,9 @@
             <figure class="c-card-event__pic"><img src="<?= $eyeCatch ?>" alt=""/></figure>
             <h3 class="c-card-event__title"><?= get_the_title() ?></h3>
             <ul class="c-card-event__place">
-                <?php foreach($settings['tags'] as $term): ?>
+                <?php if ($settings['tags']): foreach($settings['tags'] as $term): ?>
                     <li><?= $term->name ?></li>
-                <?php endforeach; ?>
+                <?php endforeach; endif; ?>
             </ul>
         </a>
     </div>

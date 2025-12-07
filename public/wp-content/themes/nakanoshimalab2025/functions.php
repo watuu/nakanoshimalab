@@ -5,8 +5,9 @@ const THEME_DISABLED_EDITOR = [];
 const THEME_DISABLED_BLOCK_EDITOR = ['mw-wp-form'];
 const THEME_ENABLED_CLASSIC_EDITOR = [];
 const THEME_MEDIA_SIZES = [
-    ['thumbnail', 720, 480, true ],
-    ['medium', 720, 480, true ],
+//    ['thumbnail', 720, 480, true ],
+//    ['medium', 720, 480, true ],
+    ['resize', 640, 640, false ],
 ];
 const THEME_COMMON_ARCHIVE_NUM = null;
 const GOOGLE_MAP_KEY = "xxx";
@@ -25,6 +26,7 @@ require_once('functions/admin.php');
 //    エディター設定 Gutenberg
 // -------------------------------------------------------
 require_once('functions/editor.php');
+require_once('functions/editor-pattern.php');
 
 // -------------------------------------------------------
 //    プラグインの設定

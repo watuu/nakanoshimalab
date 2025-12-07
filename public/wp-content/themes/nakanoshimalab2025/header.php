@@ -58,34 +58,54 @@
                     <div class="l-header-drawer-recommend">
                         <div class="l-header-drawer-recommend__head"><span>Recommend</span><span>おすすめコンテンツ</span></div>
                         <div class="l-header-drawer-recommend__list">
-                            <div class="c-card-recommend"><a class="c-card-recommend__link" href="<?= home_url() ?>/single-news/">
-                                    <figure class="c-card-recommend__pic"><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/500x500.webp" alt=""/></figure>
-                                    <div class="c-card-recommend__body">
-                                        <h3 class="c-card-recommend__title">「中之島15の場所での物語」AR挿絵公募</h3>
-                                        <ul class="c-card-recommend__tag">
-                                            <li>#Events</li>
-                                        </ul>
-                                    </div></a></div>
-                            <div class="c-card-recommend"><a class="c-card-recommend__link" href="<?= home_url() ?>/single-news/">
-                                    <figure class="c-card-recommend__pic"><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/500x500.webp" alt=""/></figure>
-                                    <div class="c-card-recommend__body">
-                                        <h3 class="c-card-recommend__title">「中之島15の場所での物語」AR挿絵公募</h3>
-                                        <ul class="c-card-recommend__tag">
-                                            <li>#Events</li>
-                                        </ul>
-                                    </div></a></div>
-                            <div class="c-card-recommend"><a class="c-card-recommend__link" href="<?= home_url() ?>/single-news/">
-                                    <figure class="c-card-recommend__pic"><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/500x500.webp" alt=""/></figure>
-                                    <div class="c-card-recommend__body">
-                                        <h3 class="c-card-recommend__title">「中之島15の場所での物語」AR挿絵公募</h3>
-                                        <ul class="c-card-recommend__tag">
-                                            <li>#Events</li>
-                                        </ul>
-                                    </div></a></div>
+                            <?php
+                            $recommends = get_field('おすすめコンテンツ', 'option');
+                            if ($recommends):
+                            $args = [
+                                'post_type' => 'post',
+                                'paged' => 1,
+                                'posts_per_page' => 4,
+                                'post__in' => $recommends,
+                            ];
+                            $wp_query = new WP_Query($args);
+                            if (have_posts()) : while (have_posts()) : the_post();
+                                $eyeCatch = esc_url(get_the_post_thumbnail_url(null, 'thumbnail'));
+                                $eyeCatch = $eyeCatch? $eyeCatch:
+                                    sprintf('%s/assets/img/500x500.webp', get_stylesheet_directory_uri());
+                                $settings = [
+                                    'categories'   => get_the_terms(null, 'category'),
+                                    'tags'         => get_the_terms(null, 'post_tag'),
+                                    'category'     => [],
+                                    'date_open'    => get_field('date_open'),
+                                    'date_end'     => get_field('date_end'),
+                                    'today'        => date('Ymd'),
+                                    'status'       => "",
+                                    'status_class' => "",
+                                    'status_char'  => "",
+                                ];
+                            ?>
+                                <div class="c-card-recommend">
+                                    <a class="c-card-recommend__link" href="<?= get_the_permalink() ?>">
+                                        <figure class="c-card-recommend__pic"><img src="<?= $eyeCatch ?>" alt=""/></figure>
+                                        <div class="c-card-recommend__body">
+                                            <h3 class="c-card-recommend__title"><?= get_the_title() ?></h3>
+                                            <ul class="c-card-recommend__tag">
+                                                <?php if($settings['tags']): foreach($settings['tags'] as $term): ?>
+                                                    <li>#<?= $term->name ?></li>
+                                                <?php endforeach; endif; ?>
+                                            </ul>
+                                        </div>
+                                    </a>
+                                </div>
+                            <?php endwhile; endif;  endif; wp_reset_query(); ?>
                         </div>
                     </div>
-                    <div class="l-header-drawer__cta"><a class="c-btn-ticket" href="#"><span class="c-btn-ticket__txt">Ticket購入</span><i class="c-btn-ticket__arrow">
-                                <svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i></a></div>
+                    <div class="l-header-drawer__cta">
+                        <a class="c-btn-ticket" href="https://www.tabione.com/nakanoshimapavilion/" target="_blank">
+                            <span class="c-btn-ticket__txt">Ticket購入</span><i class="c-btn-ticket__arrow">
+                                <svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

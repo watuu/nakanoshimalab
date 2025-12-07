@@ -134,8 +134,22 @@ export default class Page {
                         document.querySelector(".cm-modal-spot #spot_instagram a").href = spot.instagram;
                         document.querySelector(".cm-modal-spot #spot_facebook a").href = spot.facebook;
                         document.querySelector(".cm-modal-spot #spot_youtube a").href = spot.youtube;
-                        document.querySelector(".cm-modal-spot #spot_event").href = spot.event;
+                        // event URLの調整
+                        const eventBtn = document.querySelector(".cm-modal-spot #spot_event");
+                        const eventTitle = document.querySelector(".cm-modal-spot #spot_event_title");
 
+                        if (!spot.event_url) {
+                            eventBtn.style.display = 'none';
+                        } else {
+                            eventBtn.style.display = '';
+                            eventBtn.href = spot.event_url.url || '#';
+
+                            if (spot.event_url.title && spot.event_url.title.trim() !== '') {
+                                eventTitle.textContent = spot.event_url.title;
+                            } else {
+                                eventTitle.textContent = '関連イベントを見る';
+                            }
+                        }
                         currentOrder = order;
                     })
                     .to('.cm-modal-spot-card', {
@@ -144,7 +158,6 @@ export default class Page {
                         duration: 0.3,
                         ease: 'power3.out',
                     })
-
             }
 
             document.querySelectorAll(".p-top-map-area__btn").forEach(button => {

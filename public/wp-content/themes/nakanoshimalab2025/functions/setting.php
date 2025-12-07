@@ -24,7 +24,7 @@ function setting__login_logo() {
 <style type="text/css"> 
 	body.login div#login h1 a {
 	width: auto;
-	background: url('{$path}/images/logo.svg') center center/90% auto no-repeat;
+	background: url('{$path}/assets/img/logo.svg') center center/90% auto no-repeat;
 	padding-bottom: 30px; 
 } 
 </style>

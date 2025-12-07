@@ -1,4 +1,10 @@
 <?php get_header(); ?>
+    <?php
+        $settings = [
+            'categories' => get_terms(['taxonomy' => 'category', 'parent' => 0]),
+            'cultures'   => get_terms(['taxonomy' => 'culture_cat', 'parent' => 0, 'hide_empty' => false]),
+        ];
+    ?>
     <div class="p-top">
         <section class="p-top-mv">
             <picture>
@@ -22,7 +28,7 @@
                             </p>
                         </div>
                     </div>
-                    <p class="todo">TODO: 日付でのクエリーに時間がかかってそう</p>
+                    <p class="todo">TODO: 終了のものも表示されている</p>
                     <div class="p-top-creative__list">
                         <div class="cm-section-masonry">
                             <?php
@@ -30,40 +36,40 @@
                             $args = [
                                 'post_type'      => 'post',
                                 // 'posts_per_page' => 20,
-                                'meta_query'     => [
-                                    'relation' => 'OR',
-                                    // ① date_end が設定されている投稿：date_end >= today
-                                    [
-                                        'relation' => 'AND',
-                                        [
-                                            'key'     => 'date_end',
-                                            'compare' => 'EXISTS',
-                                        ],
-                                        [
-                                            'key'     => 'date_end',
-                                            'value'   => $today,
-                                            'compare' => '>=',
-                                            'type'    => 'NUMERIC',
-                                        ]
-                                    ],
-                                    // ② date_end が空の場合：date_open >= today を満たす投稿
-                                    [
-                                        'relation' => 'AND',
-                                        [
-                                            'key'     => 'date_end',
-                                            'compare' => 'NOT EXISTS',
-                                        ],
-                                        [
-                                            'key'     => 'date_open',
-                                            'value'   => $today,
-                                            'compare' => '>=',
-                                            'type'    => 'NUMERIC',
-                                        ]
-                                    ],
-                                ],
-                                'orderby' => 'meta_value_num',
-                                'meta_key' => 'date_open',
-                                'order' => 'ASC',
+//                                'meta_query'     => [
+//                                    'relation' => 'OR',
+//                                    // ① date_end が設定されている投稿：date_end >= today
+//                                    [
+//                                        'relation' => 'AND',
+//                                        [
+//                                            'key'     => 'date_end',
+//                                            'compare' => 'EXISTS',
+//                                        ],
+//                                        [
+//                                            'key'     => 'date_end',
+//                                            'value'   => $today,
+//                                            'compare' => '>=',
+//                                            'type'    => 'NUMERIC',
+//                                        ]
+//                                    ],
+//                                    // ② date_end が空の場合：date_open >= today を満たす投稿
+//                                    [
+//                                        'relation' => 'AND',
+//                                        [
+//                                            'key'     => 'date_end',
+//                                            'compare' => 'NOT EXISTS',
+//                                        ],
+//                                        [
+//                                            'key'     => 'date_open',
+//                                            'value'   => $today,
+//                                            'compare' => '>=',
+//                                            'type'    => 'NUMERIC',
+//                                        ]
+//                                    ],
+//                                ],
+//                                'orderby' => 'meta_value_num',
+//                                'meta_key' => 'date_open',
+//                                'order' => 'ASC',
                             ];
                             $wp_query = new WP_Query($args);
                             ?>
@@ -71,24 +77,25 @@
                             <?php wp_reset_query(); ?>
                         </div>
                     </div>
-                    <div class="p-top-creative__more1"><a class="c-btn-more" href="<?= home_url() ?>/posts/">
-                            <div class="c-btn-more__ico"><i class="c-btn-more__circle"></i><i class="c-btn-more__arrow">
-                                    <svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i></div><span class="c-btn-more__txt">NEWS一覧へ</span></a></div>
+                    <div class="p-top-creative__more1">
+                        <a class="c-btn-more" href="<?= home_url() ?>/posts/">
+                            <div class="c-btn-more__ico"><i class="c-btn-more__circle"></i><i class="c-btn-more__arrow"><svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i></div>
+                            <span class="c-btn-more__txt">NEWS一覧へ</span>
+                        </a>
+                    </div>
                     <div class="p-top-creative__more2"><a class="c-btn-square" href="<?= home_url() ?>/posts/"><span class="c-btn-square__bg"></span><span class="c-btn-square__txt">もっと見る</span></a></div>
                 </div>
             </div>
-            <p class="todo">TODO: 文化カテゴリーの作成</p>
             <div class="p-top-creative__category">
                 <ul>
-                    <li><a href="#">アート</a></li>
-                    <li><a href="#">写真</a></li>
-                    <li><a href="#">建築</a></li>
-                    <li><a href="#">パフォーマンス</a></li>
-                    <li><a href="#">陶芸</a></li>
-                    <li><a href="#">音楽</a></li>
-                    <li><a href="#">デザイン</a></li>
-                    <li><a href="#">都市デザイン</a></li>
-                    <li><a href="#">グラフィック</a></li>
+                    <?php
+                    foreach ($settings['cultures'] as $term) {
+                        echo sprintf('<li><a href="%s">#%s</a></li>',
+                            get_term_link($term),
+                            $term->name
+                        );
+                    }
+                    ?>
                 </ul>
             </div>
         </section>
@@ -167,7 +174,6 @@
                 <div class="p-top-creative__more"><a class="c-btn-square" href="<?= home_url() ?>/creative/"><span class="c-btn-square__bg"></span><span class="c-btn-square__txt">全てを見る</span></a></div>
             </div>
         </section>
-        <p class="todo">TODO: スポットとイベントの紐付けなど</p>
         <section class="p-top-map">
             <div class="p-top-map__wrap">
                 <div class="p-top-map__head">
@@ -272,7 +278,7 @@
                                     </dl>
                                 </div>
                                 <div class="cm-modal-spot-card__more">
-                                    <a class="c-btn-top-creative" href="#" id="spot_event"><span class="c-btn-top-creative__txt">関連イベントを見る</span><i class="c-btn-top-creative__arrow">
+                                    <a class="c-btn-top-creative" href="#" id="spot_event"><span class="c-btn-top-creative__txt" id="spot_event_title">関連イベントを見る</span><i class="c-btn-top-creative__arrow">
                                             <svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i>
                                     </a>
                                 </div>
@@ -320,7 +326,8 @@ if ($spots) {
             "x"         => get_field('x-url', $post->ID),
             "instagram" => get_field('instagram-url', $post->ID),
             "youtube"   => get_field('youtube-url', $post->ID),
-            "event"     => "",
+            "url"       => "",
+            "event_url" => get_field('関連イベントurl', $post->ID),
         ];
     }
     wp_reset_postdata();
