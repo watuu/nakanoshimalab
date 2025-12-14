@@ -24,6 +24,9 @@
     //     $bodyClass .= 'thanks';
     // }
     ?>
+    <script>
+        window.ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+    </script>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class($bodyClass); ?> id="body">

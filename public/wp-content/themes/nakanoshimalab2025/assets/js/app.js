@@ -29180,10 +29180,6 @@
       _classCallCheck(this, Page);
       gsapWithCSS.registerPlugin(ScrollTrigger$1, ScrollToPlugin);
       this.modalAbout();
-      if (document.querySelector('.cm-section-masonry')) {
-        //
-        this.cmSectionMasonry();
-      }
       if (document.querySelector('.p-top-mv')) {
         this.pTopMv();
       }
@@ -29394,30 +29390,52 @@
           });
         }
       }
-    }, {
+    }]);
+  }();
+
+  var Masonry = /*#__PURE__*/function () {
+    function Masonry() {
+      _classCallCheck(this, Masonry);
+      if (document.querySelector('.cm-section-masonry')) {
+        this.cmSectionMasonry();
+      }
+    }
+    return _createClass$1(Masonry, [{
       key: "cmSectionMasonry",
       value: function cmSectionMasonry() {
         var grid = document.querySelector('.cm-section-masonry');
         if (!grid) return;
-        function resizeGridItem(item) {
-          var rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-          var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-          var content = item.querySelector('.c-card-event__link');
-          var contentHeight = content.getBoundingClientRect().height;
-          var rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
-          item.style.gridRowEnd = 'span ' + rowSpan;
-        }
+
+        // function resizeGridItem(item) {
+        //     const rowHeight = parseInt(
+        //         window.getComputedStyle(grid).getPropertyValue('grid-auto-rows')
+        //     );
+        //     const rowGap = parseInt(
+        //         window.getComputedStyle(grid).getPropertyValue('grid-row-gap')
+        //     );
+        //     const content = item.querySelector('.c-card-event__link');
+        //     const contentHeight = content.getBoundingClientRect().height;
+        //     const rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
+        //     item.style.gridRowEnd = 'span ' + rowSpan;
+        // }
+
         function resizeAllGridItems() {
-          var allItems = document.querySelectorAll('.c-card-event');
-          allItems.forEach(function (item) {
-            return resizeGridItem(item);
+          var items = grid.querySelectorAll('.c-card-event');
+          var rowHeight = parseInt(getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+          var rowGap = parseInt(getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+          items.forEach(function (item) {
+            var content = item.querySelector('.c-card-event__link');
+            if (!content) return;
+            var h = content.getBoundingClientRect().height;
+            var span = Math.ceil((h + rowGap) / (rowHeight + rowGap));
+            item.style.gridRowEnd = "span ".concat(span);
+            item.classList.add('rendered');
           });
         }
 
         // ===== GSAP用 =====
         function animateCards() {
-          console.log(111);
-          var items = document.querySelectorAll('.c-card-event');
+          var items = grid.querySelectorAll('.c-card-event[data-animated="false"]');
           var gridRect = grid.getBoundingClientRect();
           var centerX = gridRect.left + gridRect.width / 2;
           var centerY = gridRect.top + gridRect.height / 2;
@@ -29429,32 +29447,103 @@
             var dy = y - centerY;
             var dist = Math.sqrt(dx * dx + dy * dy) || 1;
             var nx = dx / dist;
-            var ny = dy / dist;
 
             // 初期状態（中央寄せ）
-            console.log(item);
             gsapWithCSS.set(item, {
-              x: -nx * 40,
-              y: -ny * 40,
-              rotate: -6,
-              opacity: 0,
-              scale: 0.96
+              x: nx * 500,
+              // y: ny * 500,
+              y: 100,
+              rotate: nx < 0 ? -45 : 45,
+              opacity: 0
+            });
+            gsapWithCSS.to(item, {
+              scrollTrigger: {
+                trigger: item,
+                start: 'top 80%',
+                once: true,
+                onEnter: function onEnter() {
+                  item.dataset.animated = "true";
+                }
+              },
+              x: 0,
+              y: 0,
+              rotate: 0,
+              opacity: 1,
+              duration: 0.9,
+              ease: 'power3.out'
             });
           });
-          gsapWithCSS.to(items, {
-            x: 0,
-            y: 0,
-            rotate: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 0.9,
-            ease: 'power3.out',
-            stagger: {
-              each: 0.05,
-              from: 'center'
-            }
+        }
+
+        // ===== More =====
+        var page = 2;
+        document.getElementById('topCreativeMore');
+        var btn = document.getElementById('topCreativeMore');
+        var container = document.querySelector('.cm-section-masonry');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            btn.disabled = true;
+            fetch(ajaxurl, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+              body: new URLSearchParams({
+                action: 'load_more_posts',
+                page: page
+              })
+            }).then(function (res) {
+              return res.text();
+            }).then(function (html) {
+              if (!html.trim()) {
+                btn.style.display = 'none';
+                return;
+              }
+              container.insertAdjacentHTML('beforeend', html);
+
+              // Masonry 再計算
+              resizeAllGridItems();
+
+              // GSAP アニメーション（必要なら）
+              animateCards();
+              page++;
+              btn.disabled = false;
+            });
           });
         }
+        // if (moreBtn) {
+        //     moreBtn.addEventListener('click', async () => {
+        //         page++;
+        //
+        //         moreBtn.disabled = true;
+        //
+        //         try {
+        //             const res = await fetch(`./template/ajax-events.html?page=${page}`);
+        //             const html = await res.text();
+        //
+        //             const temp = document.createElement('div');
+        //             temp.innerHTML = html;
+        //
+        //             const newItems = temp.querySelectorAll('.c-card-event');
+        //             newItems.forEach(item => {
+        //                 item.dataset.animated = "false";
+        //                 grid.appendChild(item);
+        //             });
+        //
+        //             // masonry → animation
+        //             resizeAllGridItems();
+        //
+        //             requestAnimationFrame(() => {
+        //                 animateCards();
+        //             });
+        //
+        //         } catch (e) {
+        //             console.error(e);
+        //         } finally {
+        //             moreBtn.disabled = false;
+        //         }
+        //     });
+        // }
 
         // ===== 実行タイミング =====
         window.addEventListener('load', function () {
@@ -29468,6 +29557,170 @@
         window.addEventListener('resize', function () {
           resizeAllGridItems();
         });
+      }
+    }]);
+  }();
+
+  var Mv = /*#__PURE__*/function () {
+    function Mv() {
+      _classCallCheck(this, Mv);
+      if (document.querySelector('.p-top-mv-map')) {
+        this.draw();
+      }
+    }
+    return _createClass$1(Mv, [{
+      key: "draw",
+      value: function draw() {
+        var tl = gsapWithCSS.timeline({
+          delay: 0,
+          defaults: {
+            delay: 0
+          }
+        });
+        tl.add(function () {
+          // ===== LINE =====
+          var dom = document.querySelector('.p-top-mv-map');
+          var lines = dom.querySelectorAll('.p-top-mv-map__lines figure');
+          var domRect = dom.getBoundingClientRect();
+          var centerX = domRect.left + domRect.width / 2;
+          var centerY = domRect.top + domRect.height / 2;
+          lines.forEach(function (line) {
+            var rect = line.getBoundingClientRect();
+            var px = rect.left + rect.width / 2;
+            var py = rect.top + rect.height / 2;
+            var dx = px - centerX;
+            var dy = py - centerY;
+            var dist = Math.sqrt(dx * dx + dy * dy) || 1;
+            var nx = dx / dist;
+            var ny = dy / dist;
+            gsapWithCSS.set(line, {
+              x: -nx * window.innerWidth / 2,
+              y: -ny * window.innerWidth / 2,
+              rotate: nx < 0 ? -120 : 120,
+              opacity: 0,
+              scale: 0.2,
+              transformOrigin: '50% 50%'
+            });
+
+            // アニメーション
+            gsapWithCSS.to(line, {
+              // scrollTrigger: {
+              //     trigger: '.p-top-mv-map',
+              //     start: 'top top',
+              //     once: true,
+              // },
+              x: 0,
+              y: 0,
+              rotate: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 5,
+              delay: Math.random() * 0.5,
+              //ease: 'power3.out',
+              ease: "elastic.inOut(1,0.5)"
+            });
+          });
+        }).add(function () {
+          // ===== スポット =====
+          var spots = document.querySelectorAll('.p-top-mv-map__cultures li');
+          spots.forEach(function (spot) {
+            gsapWithCSS.to(spot, {
+              opacity: 1,
+              duration: 1
+            });
+            var title = spot.querySelector('.p-top-mv-map__title');
+            var originalText = title.textContent;
+            //const chars = '!@#$%^&*()_+-=<>?/|[]{}';
+            var chars = 'abcdefghijklmnopqrstuvwxyz';
+            var speed = 100; // 1文字確定ごとの間隔(ms)
+
+            var frame = 0;
+            var _scramble = function scramble() {
+              var result = originalText.split('').map(function (_char, index) {
+                if (index < frame) return _char;
+                return chars[Math.floor(Math.random() * chars.length)];
+              }).join('');
+              title.textContent = result;
+              if (frame <= originalText.length) {
+                frame++;
+                setTimeout(_scramble, speed);
+              }
+            };
+            _scramble();
+          });
+        }, "<+3").add(function () {
+          // ===== タイトル =====
+          var svg = Utility.isPC() ? document.querySelector('.p-top-mv-map__type svg.pc') : document.querySelector('.p-top-mv-map__type svg.sp-tab');
+          var paths = svg.querySelectorAll('path');
+          var svgRect = svg.getBoundingClientRect();
+          var svgCenterX = svgRect.left + svgRect.width / 2;
+          var svgCenterY = svgRect.top + svgRect.height / 2;
+          paths.forEach(function (path) {
+            var rect = path.getBoundingClientRect();
+            var px = rect.left + rect.width / 2;
+            var py = rect.top + rect.height / 2;
+            var dx = px - svgCenterX;
+            var dy = py - svgCenterY;
+            var dist = Math.sqrt(dx * dx + dy * dy) || 1;
+            var nx = dx / dist;
+            var ny = dy / dist;
+
+            // 初期状態
+            gsapWithCSS.set(path, {
+              x: nx * window.innerWidth / 2,
+              y: ny * window.innerWidth / 2,
+              rotate: -180,
+              opacity: 0,
+              transformOrigin: '50% 50%'
+            });
+
+            // アニメーション
+            gsapWithCSS.to(path, {
+              x: 0,
+              y: 0,
+              rotate: 0,
+              opacity: 1,
+              duration: 2,
+              delay: Math.random() * 0.6,
+              ease: 'power3.out'
+            });
+          });
+        }, "<").add(function () {
+          var picTl = createPicToggleTimeline();
+          picTl.play();
+        }, "+=0.5");
+        function createPicToggleTimeline() {
+          var pics = document.querySelectorAll('.p-top-mv-map__pic');
+          var picTl = gsapWithCSS.timeline({
+            repeat: -1,
+            repeatDelay: 0
+          });
+          pics.forEach(function (pic, i) {
+            picTl
+            // フェードイン
+            .to(pic, {
+              opacity: 1,
+              duration: 0.9,
+              ease: 'power3.out'
+            })
+            // フェードアウト
+            .to(pic, {
+              opacity: 0,
+              duration: 0.9,
+              ease: 'power3.out'
+            }, '+=1.5');
+
+            // 次の画像を「少し前から」出す
+            if (i < pics.length - 1) {
+              picTl.to(pics[i + 1], {
+                opacity: 1,
+                duration: 0.9,
+                ease: 'power3.out'
+              }, '-=0.9'); // ← ここがクロスフェードの肝
+            }
+          });
+          return picTl;
+        }
       }
     }]);
   }();
@@ -33022,11 +33275,11 @@
               if (href) {
                   entry.link = href;
               }
-              const description = fetch("summary", children) || fetch("content", children);
+              const description = fetch$1("summary", children) || fetch$1("content", children);
               if (description) {
                   entry.description = description;
               }
-              const pubDate = fetch("updated", children);
+              const pubDate = fetch$1("updated", children);
               if (pubDate) {
                   entry.pubDate = new Date(pubDate);
               }
@@ -33040,7 +33293,7 @@
           feed.link = href;
       }
       addConditionally(feed, "description", "subtitle", childs);
-      const updated = fetch("updated", childs);
+      const updated = fetch$1("updated", childs);
       if (updated) {
           feed.updated = new Date(updated);
       }
@@ -33066,7 +33319,7 @@
               addConditionally(entry, "title", "title", children);
               addConditionally(entry, "link", "link", children);
               addConditionally(entry, "description", "description", children);
-              const pubDate = fetch("pubDate", children) || fetch("dc:date", children);
+              const pubDate = fetch$1("pubDate", children) || fetch$1("dc:date", children);
               if (pubDate)
                   entry.pubDate = new Date(pubDate);
               return entry;
@@ -33075,7 +33328,7 @@
       addConditionally(feed, "title", "title", childs);
       addConditionally(feed, "link", "link", childs);
       addConditionally(feed, "description", "description", childs);
-      const updated = fetch("lastBuildDate", childs);
+      const updated = fetch$1("lastBuildDate", childs);
       if (updated) {
           feed.updated = new Date(updated);
       }
@@ -33140,7 +33393,7 @@
    * @param recurse Whether to recurse into child nodes.
    * @returns The text content of the element.
    */
-  function fetch(tagName, where, recurse = false) {
+  function fetch$1(tagName, where, recurse = false) {
       return textContent(getElementsByTagName(tagName, where, recurse, 1)).trim();
   }
   /**
@@ -33153,7 +33406,7 @@
    * @param recurse Whether to recurse into child nodes.
    */
   function addConditionally(obj, prop, tagName, where, recurse = false) {
-      const val = fetch(tagName, where, recurse);
+      const val = fetch$1(tagName, where, recurse);
       if (val)
           obj[prop] = val;
   }
@@ -42688,6 +42941,8 @@
     common$1.load();
     // new Barba();
     new Page();
+    new Masonry();
+    new Mv();
     new BudouX();
   });
   new APP();

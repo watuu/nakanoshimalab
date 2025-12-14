@@ -8,28 +8,230 @@
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .p-top-mv {
 	position: relative;
-	padding-top: var(--header-height);
+	padding: var(--header-height) 0 var(--padding-section-lg);
+	overflow: hidden;
 	@include config.pc {}
 }
+.p-top-mv-map {
+	margin-top: 80px;
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1440 / 1024;
+	@include config.pc {
+		margin-top: 0;
+		aspect-ratio: 1440 / 750;
+	}
+}
+.p-top-mv-map__lines {
+	figure {
+		position: absolute;
+		width: 10%;
+		z-index: 5;
+		opacity: 0;
+	}
+	figure:nth-child(1) {
+
+	}
+	figure:nth-child(1) {
+		width: #{385.5/1440*100%};
+		left: #{421/1440*100%};
+		top: #{(131-100)/750*100%};
+	}
+	figure:nth-child(2) {
+		width: #{334/1440*100%};
+		left: #{214/1440*100%};
+		top: #{(124-100)/750*100%};
+	}
+	figure:nth-child(3) {
+		width: #{590/1440*100%};
+		left: #{237/1440*100%};
+		top: #{(367-100)/750*100%};
+	}
+	figure:nth-child(4) {
+		width: #{139/1440*100%};
+		left: #{194/1440*100%};
+		top: #{(458-100)/750*100%};
+	}
+	figure:nth-child(5) {
+		width: #{276/1440*100%};
+		left: #{26/1440*100%};
+		top: #{(454-100)/750*100%};
+	}
+	figure:nth-child(6) {
+		width: #{493.5/1440*100%};
+		left: #{35/1440*100%};
+		top: #{(596-100)/750*100%};
+	}
+	figure:nth-child(7) {
+		width: #{372.5/1440*100%};
+		left: #{434/1440*100%};
+		top: #{(513-100)/750*100%};
+	}
+	figure:nth-child(8) {
+		width: #{662.5/1440*100%};
+		left: #{735/1440*100%};
+		top: #{(538-100)/750*100%};
+	}
+	figure:nth-child(9) {
+		width: #{374.5/1440*100%};
+		left: #{1034/1440*100%};
+		top: #{(446-100)/750*100%};
+	}
+	figure:nth-child(10) {
+		width: #{143.5/1440*100%};
+		left: #{994/1440*100%};
+		top: #{(260-100)/750*100%};
+	}
+	figure:nth-child(11) {
+		width: #{646.5/1440*100%};
+		left: #{464/1440*100%};
+		top: #{(133-100)/750*100%};
+	}
+	figure:nth-child(12) {
+		width: #{773/2/1440*100%};
+		left: #{481/1440*100%};
+		top: #{(688-100)/750*100%};
+	}
+	figure:nth-child(13) {
+		width: #{773/2/1440*100%};
+		left: #{818/1440*100%};
+		top: #{(682-100)/750*100%};
+	}
+	figure:nth-child(14) {
+		width: #{570/2/1440*100%};
+		left: #{1155/1440*100%};
+		top: #{(661-100)/750*100%};
+	}
+}
+
+.p-top-mv-map__cultures {
+	li {
+		position: absolute;
+		display: inline-flex;
+		justify-content: center;
+		font-size: 18/16+rem;
+		line-height: 1;
+		text-transform: capitalize;
+		opacity: 0;
+		._dot {
+			display: inline-flex;
+			width: 16/16+rem;
+			height: 16/16+rem;
+			border-radius: 100%;
+			background: #000;
+			margin-right: 10/16+rem;
+		}
+		@include config.pc {
+			font-size: 40/16+rem;
+			._dot {
+				width: 36/16+rem;
+				height: 36/16+rem;
+			}
+		}
+	}
+	._Art {
+		left: #{458/1440*100%};
+		top: #{(137-100)/750*100%};
+	}
+	._Sciences {
+		left: #{770/1440*100%};
+		top: #{(390-100)/750*100%};
+	}
+	._Music {
+		left: #{230/1440*100%};
+		top: #{(459-100)/750*100%};
+	}
+	._Theater {
+		left: #{290/1440*100%};
+		top: #{(560-100)/750*100%};
+	}
+	._history {
+		left: #{38/1440*100%};
+		top: #{(706-100)/750*100%};
+	}
+	._education {
+		left: #{436/1440*100%};
+		top: #{(638-100)/750*100%};
+	}
+	._Literature {
+		left: #{776/1440*100%};
+		top: #{(524-100)/750*100%};
+	}
+	._Ceramic {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: flex-end;
+		gap: 5/16+rem;
+		._dot {
+			margin-right: 0;
+		}
+		left: #{1243/1440*100%};
+		top: #{(659-96)/750*100%};
+	}
+	._Performing {
+		left: #{1073/1440*100%};
+		top: #{(441-96)/750*100%};
+	}
+	._Architecture {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 5/16+rem;
+		left: #{1030/1440*100%};
+		top: #{(255-96)/750*100%};
+	}
+	._Design {
+		left: #{843/1440*100%};
+		top: #{(676-96)/750*100%};
+	}
+}
+.p-top-mv-map__pic {
+	position: absolute;
+	top: 110%;
+	left: 0;
+	width: 105/16+rem;
+	max-width: none;
+	opacity: 0;
+	@include config.pc {
+		width: 200/16+rem;
+	}
+}
+.p-top-mv-map__type {
+	position: absolute;
+	width: 70%;
+	left: 2%;
+	top: -12%;
+	svg {
+	    width: 100%;
+	    height: auto;
+	}
+	path {
+		opacity: 0;
+	}
+	@include config.pc {
+		width: #{396/1440*100%};
+		left: #{56/1440*100%};
+		top: #{(90-90)/750*100%};
+	}
+}
 .p-top-mv__txt {
-	margin: 40px 0 0;
+	margin: 40/16+rem 0 0;
 	text-align: right;
 	svg {
-		width: 300px;
+		width: 300/16+rem;
 		height: auto;
 	}
 	@include config.pc {
 		text-align: left;
 		padding-left: calc(var(--col9) + var(--gap9));
 		svg {
-			width: 336px;
+			width: 336/16+rem;
 		}
 	}
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .p-top-news {
 	position: relative;
-	padding: var(--padding-section-lg) 0 0;
+	padding: 0;
 	overflow: hidden;
 	@include config.pc {}
 }

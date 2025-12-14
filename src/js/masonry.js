@@ -1,7 +1,4 @@
-import { loadDefaultJapaneseParser } from 'budoux';
 import {gsap} from "gsap";
-// import barba from "@barba/core";
-const parser = loadDefaultJapaneseParser();
 
 export default class Masonry {
     constructor() {
@@ -14,27 +11,39 @@ export default class Masonry {
         const grid = document.querySelector('.cm-section-masonry');
         if (!grid) return;
 
-        function resizeGridItem(item) {
-            const rowHeight = parseInt(
-                window.getComputedStyle(grid).getPropertyValue('grid-auto-rows')
-            );
-            const rowGap = parseInt(
-                window.getComputedStyle(grid).getPropertyValue('grid-row-gap')
-            );
-            const content = item.querySelector('.c-card-event__link');
-            const contentHeight = content.getBoundingClientRect().height;
-            const rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
-            item.style.gridRowEnd = 'span ' + rowSpan;
-        }
+        // function resizeGridItem(item) {
+        //     const rowHeight = parseInt(
+        //         window.getComputedStyle(grid).getPropertyValue('grid-auto-rows')
+        //     );
+        //     const rowGap = parseInt(
+        //         window.getComputedStyle(grid).getPropertyValue('grid-row-gap')
+        //     );
+        //     const content = item.querySelector('.c-card-event__link');
+        //     const contentHeight = content.getBoundingClientRect().height;
+        //     const rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
+        //     item.style.gridRowEnd = 'span ' + rowSpan;
+        // }
 
         function resizeAllGridItems() {
-            const allItems = document.querySelectorAll('.c-card-event');
-            allItems.forEach(item => resizeGridItem(item));
+            const items = grid.querySelectorAll('.c-card-event');
+
+            const rowHeight = parseInt(getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+            const rowGap = parseInt(getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+
+            items.forEach(item => {
+                const content = item.querySelector('.c-card-event__link');
+                if (!content) return;
+
+                const h = content.getBoundingClientRect().height;
+                const span = Math.ceil((h + rowGap) / (rowHeight + rowGap));
+                item.style.gridRowEnd = `span ${span}`;
+                item.classList.add('rendered')
+            });
         }
 
         // ===== GSAP用 =====
         function animateCards() {
-            const items = document.querySelectorAll('.c-card-event');
+            const items = grid.querySelectorAll('.c-card-event[data-animated="false"]');
             const gridRect = grid.getBoundingClientRect();
 
             const centerX = gridRect.left + gridRect.width / 2;
@@ -66,6 +75,9 @@ export default class Masonry {
                         trigger: item,
                         start: 'top 80%',
                         once: true,
+                        onEnter: () => {
+                            item.dataset.animated = "true";
+                        }
                     },
                     x: 0,
                     y: 0,
@@ -75,8 +87,82 @@ export default class Masonry {
                     ease: 'power3.out',
                 });
             });
-
         }
+
+        // ===== More =====
+        let page = 2;
+        const moreBtn = document.getElementById('topCreativeMore');
+        const btn = document.getElementById('topCreativeMore');
+        const container = document.querySelector('.cm-section-masonry');
+
+        if (btn) {
+            btn.addEventListener('click', () => {
+                btn.disabled = true;
+
+                fetch(ajaxurl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams({
+                        action: 'load_more_posts',
+                        page: page
+                    })
+                })
+                    .then(res => res.text())
+                    .then(html => {
+
+                        if (!html.trim()) {
+                            btn.style.display = 'none';
+                            return;
+                        }
+
+                        container.insertAdjacentHTML('beforeend', html);
+
+                        // Masonry 再計算
+                        resizeAllGridItems();
+
+                        // GSAP アニメーション（必要なら）
+                        animateCards();
+
+                        page++;
+                        btn.disabled = false;
+                    });
+            });
+        }
+        // if (moreBtn) {
+        //     moreBtn.addEventListener('click', async () => {
+        //         page++;
+        //
+        //         moreBtn.disabled = true;
+        //
+        //         try {
+        //             const res = await fetch(`./template/ajax-events.html?page=${page}`);
+        //             const html = await res.text();
+        //
+        //             const temp = document.createElement('div');
+        //             temp.innerHTML = html;
+        //
+        //             const newItems = temp.querySelectorAll('.c-card-event');
+        //             newItems.forEach(item => {
+        //                 item.dataset.animated = "false";
+        //                 grid.appendChild(item);
+        //             });
+        //
+        //             // masonry → animation
+        //             resizeAllGridItems();
+        //
+        //             requestAnimationFrame(() => {
+        //                 animateCards();
+        //             });
+        //
+        //         } catch (e) {
+        //             console.error(e);
+        //         } finally {
+        //             moreBtn.disabled = false;
+        //         }
+        //     });
+        // }
 
         // ===== 実行タイミング =====
         window.addEventListener('load', () => {

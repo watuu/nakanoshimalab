@@ -14,6 +14,7 @@
         'status'       => "",
         'status_class' => "",
         'status_char'  => "",
+        'is-animation'  => isset($args['is-animation'])??'',
     ];
     $settings['category'] = $settings['categories']? $settings['categories'][0]: [];
     $settings['date_end'] = $settings['date_end']?: $settings['date_open'];
@@ -29,7 +30,7 @@
         $settings['status'] = "終了";
     }
     ?>
-    <div class="c-card-event <?= $settings['status_class'] ?>">
+    <div class="c-card-event <?= $settings['status_class'] ?>" <?= $settings['is-animation']? 'data-animated="false"': ''; ?>>
         <a class="c-card-event__link" href="<?= get_the_permalink() ?>">
             <div class="c-card-event__meta">
                 <p class="c-card-event__type"><?= $settings['category']->name ?></p>

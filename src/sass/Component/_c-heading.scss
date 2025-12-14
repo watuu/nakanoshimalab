@@ -76,8 +76,8 @@
 	}
 	._o {
 		overflow: hidden;
-		width: 0.68em;
-		height: 0.68em;
+		width: 20/16+rem;
+		height: 20/16+rem;
 		background: var(--color);
 		border-radius: 100%;
 		text-indent: -1em;
@@ -85,8 +85,8 @@
 	@include config.pc {
 		font-size: 69/16+rem;
 		._o {
-			width: 0.55em;
-			height: 0.55em;
+			width: 30/16+rem;
+			height: 30/16+rem;
 		}
 	}
 }

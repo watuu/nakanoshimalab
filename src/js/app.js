@@ -5,6 +5,7 @@ import {default as Common} from './common';
 // import Barba from './barba';
 import Page from './page';
 import Masonry from './masonry';
+import Mv from './mv';
 import BudouX from './budoux';
 
 class APP {
@@ -14,6 +15,7 @@ class APP {
         // new Barba();
         new Page();
         new Masonry();
+        new Mv();
         new BudouX();
     }
 }

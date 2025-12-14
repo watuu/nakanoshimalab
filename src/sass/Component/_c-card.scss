@@ -141,6 +141,7 @@
 	width: 69%;
 	img {
 		width: 100%;
+		height: auto;
 	}
 	@include config.pc {}
 }

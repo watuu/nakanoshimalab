@@ -977,8 +977,8 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
 }
 .c-heading-section__en ._o {
   overflow: hidden;
-  width: 0.68em;
-  height: 0.68em;
+  width: 1.25rem;
+  height: 1.25rem;
   background: var(--color);
   border-radius: 100%;
   text-indent: -1em;
@@ -988,8 +988,8 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
     font-size: 4.3125rem;
   }
   .c-heading-section__en ._o {
-    width: 0.55em;
-    height: 0.55em;
+    width: 1.875rem;
+    height: 1.875rem;
   }
 }
 

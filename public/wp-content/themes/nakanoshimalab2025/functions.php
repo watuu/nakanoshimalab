@@ -38,6 +38,7 @@ require_once('functions/cf7.php');
 //    フロント側 初期設定
 // -------------------------------------------------------
 require_once('functions/front.php');
+require_once('functions/ajax.php');
 require_once('functions/sitemap.php');
 
 // -------------------------------------------------------
