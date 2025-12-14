@@ -4,6 +4,7 @@ window.constants = {
 import {default as Common} from './common';
 // import Barba from './barba';
 import Page from './page';
+import Masonry from './masonry';
 import BudouX from './budoux';
 
 class APP {
@@ -12,6 +13,7 @@ class APP {
         common.load();
         // new Barba();
         new Page();
+        new Masonry();
         new BudouX();
     }
 }

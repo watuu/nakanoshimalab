@@ -29180,10 +29180,6 @@
       _classCallCheck(this, Page);
       gsapWithCSS.registerPlugin(ScrollTrigger$1, ScrollToPlugin);
       this.modalAbout();
-      if (document.querySelector('.cm-section-masonry')) {
-        //
-        this.cmSectionMasonry();
-      }
       if (document.querySelector('.p-top-mv')) {
         this.pTopMv();
       }
@@ -29393,78 +29389,6 @@
             updateModal(nextOrder);
           });
         }
-      }
-    }, {
-      key: "cmSectionMasonry",
-      value: function cmSectionMasonry() {
-        var grid = document.querySelector('.cm-section-masonry');
-        if (!grid) return;
-        function resizeGridItem(item) {
-          var rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-          var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-          var content = item.querySelector('.c-card-event__link');
-          var contentHeight = content.getBoundingClientRect().height;
-          var rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
-          item.style.gridRowEnd = 'span ' + rowSpan;
-        }
-        function resizeAllGridItems() {
-          var allItems = document.querySelectorAll('.c-card-event');
-          allItems.forEach(function (item) {
-            return resizeGridItem(item);
-          });
-        }
-
-        // ===== GSAP用 =====
-        function animateCards() {
-          var items = document.querySelectorAll('.c-card-event');
-          var gridRect = grid.getBoundingClientRect();
-          var centerX = gridRect.left + gridRect.width / 2;
-          var centerY = gridRect.top + gridRect.height / 2;
-          items.forEach(function (item) {
-            var rect = item.getBoundingClientRect();
-            var x = rect.left + rect.width / 2;
-            var y = rect.top + rect.height / 2;
-            var dx = x - centerX;
-            var dy = y - centerY;
-            var dist = Math.sqrt(dx * dx + dy * dy) || 1;
-            var nx = dx / dist;
-
-            // 初期状態（中央寄せ）
-            gsapWithCSS.set(item, {
-              x: nx * 500,
-              // y: ny * 500,
-              y: 100,
-              rotate: nx < 0 ? -45 : 45,
-              opacity: 0
-            });
-            gsapWithCSS.to(item, {
-              scrollTrigger: {
-                trigger: item,
-                start: 'top 80%',
-                once: true
-              },
-              x: 0,
-              y: 0,
-              rotate: 0,
-              opacity: 1,
-              duration: 0.9,
-              ease: 'power3.out'
-            });
-          });
-        }
-
-        // ===== 実行タイミング =====
-        window.addEventListener('load', function () {
-          resizeAllGridItems();
-
-          // layout確定後に1フレーム待つ（重要）
-          requestAnimationFrame(function () {
-            animateCards();
-          });
-        });
-        window.addEventListener('resize', function () {
-          resizeAllGridItems();
-        });
       }
     }]);
   }();
@@ -42642,6 +42566,91 @@
   };
 
   // import barba from "@barba/core";
+  loadDefaultJapaneseParser();
+  var Masonry = /*#__PURE__*/function () {
+    function Masonry() {
+      _classCallCheck(this, Masonry);
+      if (document.querySelector('.cm-section-masonry')) {
+        //
+        this.cmSectionMasonry();
+      }
+    }
+    return _createClass$1(Masonry, [{
+      key: "cmSectionMasonry",
+      value: function cmSectionMasonry() {
+        var grid = document.querySelector('.cm-section-masonry');
+        if (!grid) return;
+        function resizeGridItem(item) {
+          var rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+          var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+          var content = item.querySelector('.c-card-event__link');
+          var contentHeight = content.getBoundingClientRect().height;
+          var rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
+          item.style.gridRowEnd = 'span ' + rowSpan;
+        }
+        function resizeAllGridItems() {
+          var allItems = document.querySelectorAll('.c-card-event');
+          allItems.forEach(function (item) {
+            return resizeGridItem(item);
+          });
+        }
+
+        // ===== GSAP用 =====
+        function animateCards() {
+          var items = document.querySelectorAll('.c-card-event');
+          var gridRect = grid.getBoundingClientRect();
+          var centerX = gridRect.left + gridRect.width / 2;
+          var centerY = gridRect.top + gridRect.height / 2;
+          items.forEach(function (item) {
+            var rect = item.getBoundingClientRect();
+            var x = rect.left + rect.width / 2;
+            var y = rect.top + rect.height / 2;
+            var dx = x - centerX;
+            var dy = y - centerY;
+            var dist = Math.sqrt(dx * dx + dy * dy) || 1;
+            var nx = dx / dist;
+
+            // 初期状態（中央寄せ）
+            gsapWithCSS.set(item, {
+              x: nx * 500,
+              // y: ny * 500,
+              y: 100,
+              rotate: nx < 0 ? -45 : 45,
+              opacity: 0
+            });
+            gsapWithCSS.to(item, {
+              scrollTrigger: {
+                trigger: item,
+                start: 'top 80%',
+                once: true
+              },
+              x: 0,
+              y: 0,
+              rotate: 0,
+              opacity: 1,
+              duration: 0.9,
+              ease: 'power3.out'
+            });
+          });
+        }
+
+        // ===== 実行タイミング =====
+        window.addEventListener('load', function () {
+          resizeAllGridItems();
+
+          // layout確定後に1フレーム待つ（重要）
+          requestAnimationFrame(function () {
+            animateCards();
+          });
+        });
+        window.addEventListener('resize', function () {
+          resizeAllGridItems();
+        });
+      }
+    }]);
+  }();
+
+  // import barba from "@barba/core";
   var parser = loadDefaultJapaneseParser();
   var BudouX = /*#__PURE__*/function () {
     function BudouX() {
@@ -42685,6 +42694,7 @@
     common$1.load();
     // new Barba();
     new Page();
+    new Masonry();
     new BudouX();
   });
   new APP();
