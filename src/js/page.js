@@ -11,16 +11,92 @@ Swiper.use([Navigation, Pagination, Autoplay, Scrollbar, EffectFade]);
 export default class Page {
     constructor() {
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+        this.modalAbout()
         if (document.querySelector('.cm-section-masonry')) {
             //
             this.cmSectionMasonry();
+        }
+        if (document.querySelector('.p-top-mv')) {
+            this.pTopMv();
         }
         if (document.querySelector('.p-top-map')) {
             //
             this.pTopMap();
             this.pTopMapModal();
         }
+    }
 
+    pTopMv() {
+        const svg = document.querySelector('.p-top-mv__txt svg');
+        const paths = svg.querySelectorAll('path');
+
+        const svgRect = svg.getBoundingClientRect();
+        const centerX = svgRect.left + svgRect.width / 2;
+        const centerY = svgRect.top + svgRect.height / 2;
+
+        paths.forEach((path) => {
+            const rect = path.getBoundingClientRect();
+
+            const px = rect.left + rect.width / 2;
+            const py = rect.top + rect.height / 2;
+
+            const dx = px - centerX;
+            const dy = py - centerY;
+            const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+
+            const nx = dx / dist;
+            const ny = dy / dist;
+
+            // 初期状態
+            gsap.set(path, {
+                x: nx * 200,
+                y: ny * 200,
+                rotate: -180,
+                opacity: 0,
+                transformOrigin: '50% 50%',
+            });
+
+            // アニメーション
+            gsap.to(path, {
+                scrollTrigger: {
+                    trigger: '.p-top-mv__txt',
+                    start: 'top 70%',
+                    once: true,
+                },
+                x: 0,
+                y: 0,
+                rotate: 0,
+                opacity: 1,
+                duration: 1.2,
+                delay: Math.random() * 0.6,
+                ease: 'power3.out',
+            });
+        });
+    }
+    modalAbout() {
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('modal-about');
+            const iframeContainer = modal.querySelector('#modal-about-youtube');
+
+            const triggers = document.querySelectorAll('button[data-micromodal-trigger="modal-about"]');
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', function () {
+                    const youtubeId = this.getAttribute('data-youtube-id') || 'E1t1riq_EKY';
+                    const src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+
+                    iframeContainer.innerHTML = `
+    <iframe width="560" height="315"
+      src="${src}"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  `;
+                });
+            });
+        });
     }
 
     pTopMap() {
@@ -181,8 +257,10 @@ export default class Page {
 
 
     cmSectionMasonry() {
+        const grid = document.querySelector('.cm-section-masonry');
+        if (!grid) return;
+
         function resizeGridItem(item) {
-            const grid = document.querySelector('.cm-section-masonry');
             const rowHeight = parseInt(
                 window.getComputedStyle(grid).getPropertyValue('grid-auto-rows')
             );
@@ -200,8 +278,65 @@ export default class Page {
             allItems.forEach(item => resizeGridItem(item));
         }
 
-        window.addEventListener('load', resizeAllGridItems);
-        window.addEventListener('resize', resizeAllGridItems);
+        // ===== GSAP用 =====
+        function animateCards() {
+            const items = document.querySelectorAll('.c-card-event');
+            const gridRect = grid.getBoundingClientRect();
+
+            const centerX = gridRect.left + gridRect.width / 2;
+            const centerY = gridRect.top + gridRect.height / 2;
+
+            items.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const x = rect.left + rect.width / 2;
+                const y = rect.top + rect.height / 2;
+
+                const dx = x - centerX;
+                const dy = y - centerY;
+                const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+
+                const nx = dx / dist;
+                const ny = dy / dist;
+
+                // 初期状態（中央寄せ）
+                gsap.set(item, {
+                    x: nx * 500,
+                    // y: ny * 500,
+                    y: 100,
+                    rotate: nx<0? -45: 45,
+                    opacity: 0,
+                });
+
+                gsap.to(item, {
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 80%',
+                        once: true,
+                    },
+                    x: 0,
+                    y: 0,
+                    rotate: 0,
+                    opacity: 1,
+                    duration: 0.9,
+                    ease: 'power3.out',
+                });
+            });
+
+        }
+
+        // ===== 実行タイミング =====
+        window.addEventListener('load', () => {
+            resizeAllGridItems();
+
+            // layout確定後に1フレーム待つ（重要）
+            requestAnimationFrame(() => {
+                animateCards();
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            resizeAllGridItems();
+        });
     }
 
 }

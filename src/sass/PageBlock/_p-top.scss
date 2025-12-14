@@ -11,10 +11,26 @@
 	padding-top: var(--header-height);
 	@include config.pc {}
 }
+.p-top-mv__txt {
+	margin: 40px 0 0;
+	text-align: right;
+	svg {
+		width: 300px;
+		height: auto;
+	}
+	@include config.pc {
+		text-align: left;
+		padding-left: calc(var(--col9) + var(--gap9));
+		svg {
+			width: 336px;
+		}
+	}
+}
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .p-top-news {
 	position: relative;
 	padding: var(--padding-section-lg) 0 0;
+	overflow: hidden;
 	@include config.pc {}
 }
 .p-top-news__bg {

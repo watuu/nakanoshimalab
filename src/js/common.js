@@ -57,8 +57,16 @@ export default class common {
 
         MicroModal.init({
             // disableScroll: true,
-            onClose: () => {
-                // モーダルclose時に is-current 解除
+            onClose: modal => {
+                // モーダルABOUT
+                if (modal.id === 'modal-about') {
+                    const iframe = modal.querySelector('iframe');
+                    if (iframe) {
+                        iframe.remove();
+                    }
+                }
+
+                // モーダルMAP
                 document.querySelectorAll('.p-top-map-area__btn').forEach(btn => {
                     btn.classList.remove('is-current');
                 });

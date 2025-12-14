@@ -9,7 +9,7 @@ add_filter('wpcf7_form_elements', function($html) {
     // 置換する送信ボタンの HTML
     $custom_button = '
     <button class="c-btn-square c-btn-square--contact">
-        <span class="c-btn-square__bg"></span>
+        <span class="c-btn-square__bg"></span><span class="c-btn-square__bg-dark"></span>
         <span class="c-btn-square__txt">送信する</span>
     </button>
     ';
