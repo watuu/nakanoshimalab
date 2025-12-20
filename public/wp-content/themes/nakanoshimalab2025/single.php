@@ -1,9 +1,12 @@
 <?php get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <?php
-    $eyeCatch = esc_url(get_the_post_thumbnail_url(null, 'full'));
-    $eyeCatch = $eyeCatch? $eyeCatch:
-        sprintf('%s/assets/img/500x500.webp', get_stylesheet_directory_uri());
+    $eyeCatch = wp_get_attachment_image(get_post_thumbnail_id(), 'medium', false, []);
+    $eyeCatch = $eyeCatch?
+        $eyeCatch:
+        sprintf('<img src="%s/assets/img/500x500.webp" alt="" loading="lazy">',
+            esc_url(get_stylesheet_directory_uri())
+        );
     $settings = [
         'categories'    => get_the_terms(null, 'category'),
         'cultures'      => get_the_terms(null, 'culture_cat'),
@@ -54,7 +57,9 @@
                 </div>
             </div>
             <div class="p-news-single__wrap">
-                <figure class="p-news-single__pic"><img src="<?= $eyeCatch ?>" alt=""/></figure>
+                <figure class="p-news-single__pic">
+                    <?= $eyeCatch ?>
+                </figure>
                 <div class="p-news-single__main">
                     <div class="cm-post">
                         <h1 class="c-heading-post"><?= get_the_title() ?></h1>
@@ -125,7 +130,7 @@
                     <div class="cm-nav-page__ctrl">
                         <?php if ($pages['prev']): ?>
                             <a class="cm-nav-page-link" href="<?= get_the_permalink($pages['prev']->ID) ?>">
-                                <span class="cm-nav-page-link__txt">前の記事</span>
+                                <span class="cm-nav-page-link__txt">次の記事</span>
                                 <i class="cm-nav-page-link__arrow"><svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i>
                             </a>
                         <?php endif; ?>

@@ -91,7 +91,6 @@ export default class Masonry {
 
         // ===== More =====
         let page = 2;
-        const moreBtn = document.getElementById('topCreativeMore');
         const btn = document.getElementById('topCreativeMore');
         const container = document.querySelector('.cm-section-masonry');
 

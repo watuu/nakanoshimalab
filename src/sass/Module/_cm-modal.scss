@@ -62,13 +62,13 @@
 #modal-spot.cm-modal {
 	position: relative;
 	@include config.pc {
-		position: absolute;
+		position: fixed;
 		right: 0;
 		top: 0;
 		left: auto;
 		bottom: auto;
 		width: 577/16+rem;
-		height: 800/16+rem;
+		height: 100vh;
 	}
 }
 /**************************\
@@ -216,9 +216,12 @@
 		font-size: 40/16+rem;
 		&:before,
 		&:after, {
-			content: "”";
+			content: "“";
 			position: relative;
 			font-size: 30/16+rem;
+		}
+		&:after {
+			content: "”";
 		}
 		&:before {
 			top: -0.3em;
@@ -242,6 +245,7 @@
 	font-feature-settings: 'palt' on;
 	font-size: 18/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	line-height: 150%;
 	letter-spacing: 0.02em;
 	@include config.pc {
@@ -289,6 +293,7 @@
 	padding: 20/16+rem 20/16+rem;
 	@include config.pc {
 		padding: 30/16+rem 40/16+rem;
+		height: 100vh;
 	}
 }
 .cm-modal-spot__close {
@@ -371,6 +376,7 @@
 	flex-direction: column;
 	font-size: 20/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	line-height: 1.5;
 	letter-spacing: -0.02em;
 	small {
@@ -397,6 +403,7 @@
 	font-feature-settings: 'palt' on;
 	font-size: 16/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	line-height: 1.5;
 	letter-spacing: 0.02em;
 	@include config.pc {}

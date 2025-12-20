@@ -2,7 +2,7 @@ extends ./_default
 block vars
     - var path = "./"
     - var title = ""
-    - var pageClass = ""
+    - var pageClass = "page-front"
 
 block content
 
@@ -10,35 +10,65 @@ block content
     .p-top
         section.p-top-mv
             .p-top-mv-map
+                //-.p-top-mv-map__bg
+                    img(src=img+"p-top-mv-sp.webp" alt="")
                 .p-top-mv-map__lines
                     figure
-                        img(src=img+"p-top-mv-map-line1.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line1-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line1.webp")
                     figure
-                        img(src=img+"p-top-mv-map-line2.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line2-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line2.webp")
                     figure
-                        img(src=img+"p-top-mv-map-line3.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line3-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line3.webp")
                     figure
-                        img(src=img+"p-top-mv-map-line4.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line4-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line4.webp")
                     figure
-                        img(src=img+"p-top-mv-map-line5.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line5-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line5.webp")
                     figure
-                        img(src=img+"p-top-mv-map-line6.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line6-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line6.webp")
                     figure
-                        img(src=img+"p-top-mv-map-line7.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line7-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line7.webp")
                     figure
-                        img(src=img+"p-top-mv-map-line8.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line8-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line8.webp")
                     figure
-                        img(src=img+"p-top-mv-map-line9.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line9-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line9.webp")
                     figure
-                        img(src=img+"p-top-mv-map-line10.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line10-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line10.webp")
                     figure
-                        img(src=img+"p-top-mv-map-line11.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line11-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line11.webp")
                     figure
-                        img(src=img+"p-top-mv-map-line12.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line12-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line12.webp")
                     figure
-                        img(src=img+"p-top-mv-map-line13.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line13-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line13.webp")
                     figure
-                        img(src=img+"p-top-mv-map-line14.webp")
+                        picture
+                            source(srcset=img + "p-top-mv-map-line14-sp.webp" media="(max-width: 1023px)")
+                            img(src=img+"p-top-mv-map-line14.webp")
 
                 ul.p-top-mv-map__cultures
                     li._Art
@@ -61,7 +91,10 @@ block content
                         span.p-top-mv-map__title history
                     li._education
                         span._dot
-                        span.p-top-mv-map__title education
+                        span.p-top-mv-map__title Academic
+                    li._research
+                        span._dot
+                        span.p-top-mv-map__title Research
                     li._Literature
                         span._dot
                         span.p-top-mv-map__title Literature
@@ -117,6 +150,7 @@ block content
             //-picture
                 source(srcset=img + "p-top-mv-sp.webp" media="(max-width: 1023px)")
                 img(src=img+"p-top-mv.webp" alt="")
+
             .l-container
                 .p-top-mv__txt
                     <svg width="336" height="103" viewBox="0 0 336 103" overflow="visible" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -166,8 +200,8 @@ block content
                 source(srcset=img + "p-top-news-bg-sp.webp" media="(max-width: 1023px)")
                 img(src=img + "p-top-news-bg.webp" alt="")
             .l-container.l-container--md
-                .p-top-creative__wrap
-                    .p-top-creative__head
+                .p-top-news__wrap
+                    .p-top-news__head
                         .c-heading-section
                             h2.c-heading-section__ja ニュース
                             .c-heading-section__en
@@ -181,7 +215,7 @@ block content
                                     | 中之島で行われている
                                     br
                                     | 展示会やイベント
-                    .p-top-creative__list
+                    .p-top-news__list
                         .cm-section-masonry
                             - for (var x = 1; x <= 3; x++)
                                 .c-card-event.c-card-event--teaser(data-animated="false")
@@ -191,7 +225,7 @@ block content
                                             ul.c-card-event__category
                                                 li 現代アート
                                         p.c-card-event__status
-                                            | 予
+                                            | 開催<br>予定
                                         figure.c-card-event__pic
                                             img(src=img + "500x620_2.webp" alt="")
                                         h3.c-card-event__title
@@ -206,7 +240,7 @@ block content
                                             ul.c-card-event__category
                                                 li 現代アート
                                         p.c-card-event__status
-                                            | 予
+                                            | 開催<br>予定
                                         figure.c-card-event__pic
                                             img(src=img + "500x260.webp" alt="")
                                         h3.c-card-event__title
@@ -221,7 +255,7 @@ block content
                                             ul.c-card-event__category
                                                 li 現代アート
                                         p.c-card-event__status
-                                            | 予
+                                            | 開催<br>予定
                                         figure.c-card-event__pic
                                             img(src=img + "500x620_2.webp" alt="")
                                         h3.c-card-event__title
@@ -236,7 +270,7 @@ block content
                                             ul.c-card-event__category
                                                 li 現代アート
                                         p.c-card-event__status
-                                            | 開
+                                            | 開催中
                                         figure.c-card-event__pic
                                             img(src=img + "500x700.webp" alt="")
                                         h3.c-card-event__title
@@ -251,7 +285,7 @@ block content
                                             ul.c-card-event__category
                                                 li 現代アート
                                         p.c-card-event__status
-                                            | 予
+                                            | 開催<br>予定
                                         figure.c-card-event__pic
                                             img(src=img + "500x700_2.webp" alt="")
                                         h3.c-card-event__title
@@ -259,12 +293,12 @@ block content
                                         ul.c-card-event__place
                                             li graf studio
                                             li アートエリアB1
-                    .p-top-creative__more2
+                    .p-top-news__more2
                         button.c-btn-square#topCreativeMore
                             span.c-btn-square__bg
                             span.c-btn-square__bg-dark
                             span.c-btn-square__txt もっと見る
-            .p-top-creative__category
+            .p-top-news__category
                 ul
                     li
                         a(href="#") アート
@@ -419,6 +453,12 @@ block content
 
                         .p-top-map-area__map
                             img(src=img+"p-top-map.svg" alt="")
+                        p.p-top-map-area__help
+                            span Swipe
+                            i
+                                svg(width=26 height=26).js-clone
+                                    use(href="#ico-arrow")
+
                 .p-top-map__spots
                     #modal-spot.cm-modal(aria-hidden='true')
                         .cm-modal-spot

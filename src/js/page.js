@@ -24,51 +24,7 @@ export default class Page {
     }
 
     pTopMv() {
-        const svg = document.querySelector('.p-top-mv__txt svg');
-        const paths = svg.querySelectorAll('path');
 
-        const svgRect = svg.getBoundingClientRect();
-        const centerX = svgRect.left + svgRect.width / 2;
-        const centerY = svgRect.top + svgRect.height / 2;
-
-        paths.forEach((path) => {
-            const rect = path.getBoundingClientRect();
-
-            const px = rect.left + rect.width / 2;
-            const py = rect.top + rect.height / 2;
-
-            const dx = px - centerX;
-            const dy = py - centerY;
-            const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-
-            const nx = dx / dist;
-            const ny = dy / dist;
-
-            // 初期状態
-            gsap.set(path, {
-                x: nx * 200,
-                y: ny * 200,
-                rotate: -180,
-                opacity: 0,
-                transformOrigin: '50% 50%',
-            });
-
-            // アニメーション
-            gsap.to(path, {
-                scrollTrigger: {
-                    trigger: '.p-top-mv__txt',
-                    start: 'top 70%',
-                    once: true,
-                },
-                x: 0,
-                y: 0,
-                rotate: 0,
-                opacity: 1,
-                duration: 1.2,
-                delay: Math.random() * 0.6,
-                ease: 'power3.out',
-            });
-        });
     }
     modalAbout() {
         document.addEventListener('DOMContentLoaded', function () {
@@ -98,6 +54,7 @@ export default class Page {
 
     pTopMap() {
         const container = document.querySelector('.p-top-map-area');
+        const helpText = document.querySelector('.p-top-map-area__help');
         let isDown = false;
         let startX;
         let scrollLeft;
@@ -132,6 +89,9 @@ export default class Page {
             container.classList.add('active');
             startX = e.touches[0].pageX;
             scrollLeft = container.scrollLeft;
+            if (helpText) {
+                helpText.classList.add('scrolled');
+            }
         });
 
         container.addEventListener('touchend', () => {

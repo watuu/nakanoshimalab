@@ -3,6 +3,9 @@
 	ヘッダー
 ----------------------------------------------------*/
 .l-header {
+	.page-front & {
+		opacity: 0;
+	}
 }
 .l-header__wrap {
 	display: flex;

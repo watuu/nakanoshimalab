@@ -59,6 +59,7 @@
 	display: none;
 	gap: 17/16+rem;
 	font-size: 13/16+rem;
+	font-family: var(--Mona);
 	li {
 		position: relative;
 	}
@@ -92,7 +93,7 @@
 		height: auto;
 	}
 	@include config.pc {
-		margin-top: 10/16+rem;
+		margin-top: 24/16+rem;
 		grid-area: logo;
 		svg {
 			width: 372/16+rem;
@@ -168,16 +169,16 @@
 	}
 }
 .l-footer-copyright {
-	margin-top: 45px;
-	width: 233px;
+	margin-top: 45/16+rem;
+	width: 233/16+rem;
 	font-family: var(--Mona);
-	font-size: 9px;
+	font-size: 9/16+rem;
 	line-height: 1.35;
 	opacity: 0.5;
 	@include config.pc {
 		width: auto;
 		grid-area: copyright;
-		font-size: 11px;
+		font-size: 11/16+rem;
 	}
 }
 .l-footer__pagetop {

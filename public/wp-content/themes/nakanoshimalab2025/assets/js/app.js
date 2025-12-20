@@ -23136,6 +23136,11 @@
         this.isVisibleType();
         l$1.init({
           // disableScroll: true,
+          onShow: function onShow(modal) {
+            if (window.FONTPLUS) {
+              FONTPLUS.reload();
+            }
+          },
           onClose: function onClose(modal) {
             // モーダルABOUT
             if (modal.id === 'modal-about') {
@@ -29191,48 +29196,7 @@
     }
     return _createClass$1(Page, [{
       key: "pTopMv",
-      value: function pTopMv() {
-        var svg = document.querySelector('.p-top-mv__txt svg');
-        var paths = svg.querySelectorAll('path');
-        var svgRect = svg.getBoundingClientRect();
-        var centerX = svgRect.left + svgRect.width / 2;
-        var centerY = svgRect.top + svgRect.height / 2;
-        paths.forEach(function (path) {
-          var rect = path.getBoundingClientRect();
-          var px = rect.left + rect.width / 2;
-          var py = rect.top + rect.height / 2;
-          var dx = px - centerX;
-          var dy = py - centerY;
-          var dist = Math.sqrt(dx * dx + dy * dy) || 1;
-          var nx = dx / dist;
-          var ny = dy / dist;
-
-          // 初期状態
-          gsapWithCSS.set(path, {
-            x: nx * 200,
-            y: ny * 200,
-            rotate: -180,
-            opacity: 0,
-            transformOrigin: '50% 50%'
-          });
-
-          // アニメーション
-          gsapWithCSS.to(path, {
-            scrollTrigger: {
-              trigger: '.p-top-mv__txt',
-              start: 'top 70%',
-              once: true
-            },
-            x: 0,
-            y: 0,
-            rotate: 0,
-            opacity: 1,
-            duration: 1.2,
-            delay: Math.random() * 0.6,
-            ease: 'power3.out'
-          });
-        });
-      }
+      value: function pTopMv() {}
     }, {
       key: "modalAbout",
       value: function modalAbout() {
@@ -29253,6 +29217,7 @@
       key: "pTopMap",
       value: function pTopMap() {
         var container = document.querySelector('.p-top-map-area');
+        var helpText = document.querySelector('.p-top-map-area__help');
         var isDown = false;
         var startX;
         var scrollLeft;
@@ -29283,6 +29248,9 @@
           container.classList.add('active');
           startX = e.touches[0].pageX;
           scrollLeft = container.scrollLeft;
+          if (helpText) {
+            helpText.classList.add('scrolled');
+          }
         });
         container.addEventListener('touchend', function () {
           container.classList.remove('active');
@@ -29477,7 +29445,6 @@
 
         // ===== More =====
         var page = 2;
-        document.getElementById('topCreativeMore');
         var btn = document.getElementById('topCreativeMore');
         var container = document.querySelector('.cm-section-masonry');
         if (btn) {
@@ -29572,12 +29539,40 @@
       key: "draw",
       value: function draw() {
         var tl = gsapWithCSS.timeline({
-          delay: 0,
+          delay: 1,
           defaults: {
             delay: 0
           }
         });
         tl.add(function () {
+          // ===== スポット =====
+          var spots = document.querySelectorAll('.p-top-mv-map__cultures li');
+          spots.forEach(function (spot) {
+            gsapWithCSS.to(spot, {
+              opacity: 1,
+              duration: 2
+            });
+            var title = spot.querySelector('.p-top-mv-map__title');
+            var originalText = title.textContent;
+            //const chars = '!@#$%^&*()_+-=<>?/|[]{}';
+            var chars = 'abcdefghijklmnopqrstuvwxyz';
+            var speed = 200; // 1文字確定ごとの間隔(ms)
+
+            var frame = 0;
+            var _scramble = function scramble() {
+              var result = originalText.split('').map(function (_char, index) {
+                if (index < frame) return _char;
+                return chars[Math.floor(Math.random() * chars.length)];
+              }).join('');
+              title.textContent = result;
+              if (frame <= originalText.length) {
+                frame++;
+                setTimeout(_scramble, speed);
+              }
+            };
+            _scramble();
+          });
+        }).add(function () {
           // ===== LINE =====
           var dom = document.querySelector('.p-top-mv-map');
           var lines = dom.querySelectorAll('.p-top-mv-map__lines figure');
@@ -29594,8 +29589,8 @@
             var nx = dx / dist;
             var ny = dy / dist;
             gsapWithCSS.set(line, {
-              x: -nx * window.innerWidth / 2,
-              y: -ny * window.innerWidth / 2,
+              x: -nx * window.innerWidth / 4,
+              y: -ny * window.innerWidth / 4,
               rotate: nx < 0 ? -120 : 120,
               opacity: 0,
               scale: 0.2,
@@ -29617,38 +29612,10 @@
               duration: 5,
               delay: Math.random() * 0.5,
               //ease: 'power3.out',
-              ease: "elastic.inOut(1,0.5)"
+              ease: "elastic.out(1,0.5)"
             });
           });
-        }).add(function () {
-          // ===== スポット =====
-          var spots = document.querySelectorAll('.p-top-mv-map__cultures li');
-          spots.forEach(function (spot) {
-            gsapWithCSS.to(spot, {
-              opacity: 1,
-              duration: 1
-            });
-            var title = spot.querySelector('.p-top-mv-map__title');
-            var originalText = title.textContent;
-            //const chars = '!@#$%^&*()_+-=<>?/|[]{}';
-            var chars = 'abcdefghijklmnopqrstuvwxyz';
-            var speed = 100; // 1文字確定ごとの間隔(ms)
-
-            var frame = 0;
-            var _scramble = function scramble() {
-              var result = originalText.split('').map(function (_char, index) {
-                if (index < frame) return _char;
-                return chars[Math.floor(Math.random() * chars.length)];
-              }).join('');
-              title.textContent = result;
-              if (frame <= originalText.length) {
-                frame++;
-                setTimeout(_scramble, speed);
-              }
-            };
-            _scramble();
-          });
-        }, "<+3").add(function () {
+        }, '<').add(function () {
           // ===== タイトル =====
           var svg = Utility.isPC() ? document.querySelector('.p-top-mv-map__type svg.pc') : document.querySelector('.p-top-mv-map__type svg.sp-tab');
           var paths = svg.querySelectorAll('path');
@@ -29685,10 +29652,57 @@
               ease: 'power3.out'
             });
           });
-        }, "<").add(function () {
+        }, "<+1").add(function () {
+          // MV下部テキスト
+          var svg = document.querySelector('.p-top-mv__txt svg');
+          var paths = svg.querySelectorAll('path');
+          var svgRect = svg.getBoundingClientRect();
+          var centerX = svgRect.left + svgRect.width / 2;
+          var centerY = svgRect.top + svgRect.height / 2;
+          paths.forEach(function (path) {
+            var rect = path.getBoundingClientRect();
+            var px = rect.left + rect.width / 2;
+            var py = rect.top + rect.height / 2;
+            var dx = px - centerX;
+            var dy = py - centerY;
+            var dist = Math.sqrt(dx * dx + dy * dy) || 1;
+            var nx = dx / dist;
+            var ny = dy / dist;
+
+            // 初期状態
+            gsapWithCSS.set(path, {
+              x: nx * 200,
+              y: ny * 200,
+              rotate: -180,
+              opacity: 0,
+              transformOrigin: '50% 50%'
+            });
+
+            // アニメーション
+            gsapWithCSS.to(path, {
+              scrollTrigger: {
+                trigger: '.p-top-mv__txt',
+                start: 'top 70%',
+                once: true
+              },
+              x: 0,
+              y: 0,
+              rotate: 0,
+              opacity: 1,
+              duration: 1.2,
+              delay: Math.random() * 0.6,
+              ease: 'power3.out'
+            });
+          });
+        }).add(function () {
           var picTl = createPicToggleTimeline();
           picTl.play();
-        }, "+=0.5");
+          gsapWithCSS.to('.l-header', {
+            opacity: 1,
+            duration: 0.5,
+            ease: 'power3.out'
+          });
+        }, "+=2");
         function createPicToggleTimeline() {
           var pics = document.querySelectorAll('.p-top-mv-map__pic');
           var picTl = gsapWithCSS.timeline({

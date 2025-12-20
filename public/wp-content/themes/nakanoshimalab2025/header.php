@@ -93,21 +93,15 @@
                                         <div class="c-card-recommend__body">
                                             <h3 class="c-card-recommend__title"><?= get_the_title() ?></h3>
                                             <ul class="c-card-recommend__tag">
-                                                <?php if($settings['tags']): foreach($settings['tags'] as $term): ?>
+                                                <?php if($settings['categories']): foreach($settings['categories'] as $term): if ($term->parent == 0): ?>
                                                     <li>#<?= $term->name ?></li>
-                                                <?php endforeach; endif; ?>
+                                                <?php endif; endforeach; endif; ?>
                                             </ul>
                                         </div>
                                     </a>
                                 </div>
                             <?php endwhile; endif;  endif; wp_reset_query(); ?>
                         </div>
-                    </div>
-                    <div class="l-header-drawer__cta">
-                        <a class="c-btn-ticket" href="https://www.tabione.com/nakanoshimapavilion/" target="_blank">
-                            <span class="c-btn-ticket__txt">Ticket購入</span><i class="c-btn-ticket__arrow">
-                                <svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i>
-                        </a>
                     </div>
                 </div>
             </div>

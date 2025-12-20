@@ -43,6 +43,7 @@
 .c-card-recommend__title {
 	font-size: 14/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	line-height: 1.35;
 	letter-spacing: 0.02em;
 	@include config.pc {
@@ -59,6 +60,10 @@
 .c-card-event {
 	position: relative;
 }
+//.c-card-event::after {
+//	content: attr(style);
+//	font-size: 10px;
+//}
 .c-card-event__link {
 	display: flex;
 	flex-direction: column;
@@ -84,6 +89,7 @@
 .c-card-event__type {
 	color: #008CD6;
 	font-size: 12/16+rem;
+	font-family: var(--Mona);
 	@include config.pc {
 		font-size: 18/16+rem;
 	}
@@ -121,8 +127,10 @@
 	width: 55/16+rem;
 	height: 55/16+rem;
 	color: #ED668A;
-	font-size: 13/16+rem;
+	font-size: 10/16+rem;
+	line-height: 1;
 	font-weight: 600;
+	font-family: var(--sans600);
 	background: url(../img/card-event-open.webp) center center /contain no-repeat;
 	.c-card-event--teaser & {
 		background-image: url(../img/card-event-teaser.webp);
@@ -133,7 +141,7 @@
 		top: 37/16+rem;
 		width: 85/16+rem;
 		height: 85/16+rem;
-		font-size: 20/16+rem;
+		font-size: 14/16+rem;
 	}
 }
 .c-card-event__pic {
@@ -149,10 +157,11 @@
 	align-self: stretch;
 	font-size: 13/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	line-height: 1.2;
 	letter-spacing: 0.02em;
 	@include config.pc {
-		font-size: 22/16+rem;
+		font-size: 20/16+rem;
 		line-height: 1.35;
 	}
 }

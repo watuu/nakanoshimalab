@@ -47,6 +47,7 @@
 .p-aboutus-about-group__title {
 	font-size: 13/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	letter-spacing: 0.02em;
 	@include config.pc {
 		width: 434/16+rem;
@@ -55,6 +56,9 @@
 }
 .p-aboutus-about-group__list {
 	flex: 1;
+	img {
+		mix-blend-mode: multiply;
+	}
 	@include config.pc {}
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
@@ -104,6 +108,7 @@
 	align-items: flex-start;
 	font-size: 16/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	letter-spacing: 0.02em;
 	.u-char-circle {
 		margin-right: 5/16+rem;
@@ -241,6 +246,7 @@
 .p-aboutus-concept-item__ja {
 	font-size: 18/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	font-feature-settings: 'palt' on;
 	@include config.pc {
 		font-size: 26/16+rem;
@@ -265,6 +271,7 @@
 	position: relative;
 	font-size: 16/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	line-height: 1.35;
 	letter-spacing: 0.02em;
 	@include config.pc {
@@ -310,7 +317,7 @@
 			font-weight: 440;
 			line-height: 1.35;
 			letter-spacing: -0.01em;
-
+			font-family: var(--Mona);
 		}
 		._subject {
 			flex: 1;

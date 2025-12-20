@@ -3,8 +3,12 @@
 // CSS 変数
 // ===================================================================
 :root {
-	--sans : "Mona Sans", "FOT-セザンヌ Pro M", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "メイリオ", "Meiryo", sans-serif;
-	--sans600 : "Mona Sans", "FOT-セザンヌ Pro DB", "FOT-セザンヌ Pro M", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "メイリオ", "Meiryo", sans-serif;
+	//--sans : "Mona Sans", "FOT-セザンヌ Pro M", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "メイリオ", "Meiryo", sans-serif;
+	//--sans600 : "Mona Sans", "FOT-セザンヌ Pro DB", "FOT-セザンヌ Pro M", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "メイリオ", "Meiryo", sans-serif;
+
+	--sans :"FOT-セザンヌ Pro M", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "メイリオ", "Meiryo", sans-serif;
+	--sans600 :"FOT-セザンヌ Pro DB", "FOT-セザンヌ Pro M", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "メイリオ", "Meiryo", sans-serif;
+
 	--serif: "游明朝", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "HG明朝E", "ＭＳ 明朝", serif;
 	--font : var(--sans);
 	--Mona: "Mona Sans", var(--sans);

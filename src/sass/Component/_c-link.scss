@@ -1,5 +1,5 @@
 @use '../Base/config' as config;
-@use '../Component/c-btn' as btn;
+//@use '../Component/c-btn' as btn;
 /*----------------------------------------------------
 	...
 ----------------------------------------------------*/
@@ -9,6 +9,8 @@
 	background-position: 100% 0;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	button:hover &,
+	a:hover &,
 	&:hover {
 		background-position: 0 0;
 	}
@@ -58,6 +60,7 @@
 	display: flex;
 	gap: 11/16+rem;
 	font-size: 13/16+rem;
+	font-family: var(--Mona);
 	li {
 		position: relative;
 		p,a {

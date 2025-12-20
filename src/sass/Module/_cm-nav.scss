@@ -36,6 +36,7 @@
 }
 .cm-nav-main-block__head {
 	font-size: 20/16+rem;
+	font-family: var(--Mona);
 	line-height: 1.1;
 	span {
 		opacity: 0.4;
@@ -128,6 +129,7 @@
 		justify-content: center;
 
 		font-size: 14/16+rem;
+		font-family: var(--Mona);
 		&.is-current,
 		&:hover {
 			color: var(--color-accent);
@@ -175,13 +177,14 @@
 	}
 }
 .cm-nav-category__place {
+	margin-top: 4/16+rem;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 5/16+rem 23/16+rem;
 	overflow: hidden;
 	li {
 		position: relative;
-		font-size: 13/16+rem;
+		font-size: 10/16+rem;
 		&:before {
 			content: '／';
 			display: block;
@@ -201,7 +204,7 @@
 		}
 	}
 	a {
-		font-size: 13/16+rem;
+		font-size: 10/16+rem;
 		letter-spacing: 0.02em;
 		&.is-current,
 		&:hover {
@@ -210,10 +213,10 @@
 	}
 	@include config.pc {
 		li {
-			font-size: 16/16+rem;
+			font-size: 14/16+rem;
 		}
 		a {
-			font-size: 16/16+rem;
+			font-size: 14/16+rem;
 		}
 	}
 }
@@ -262,6 +265,7 @@
 		height: 28/16+rem;
 		border-radius: 100/16+rem;
 		font-size: 15/16+rem;
+		font-family: var(--Mona);
 		color: var(--color-accent);
 		border: var(--border-accent);
 		border-color: transparent;
@@ -287,6 +291,7 @@
 }
 .cm-nav-paginate__dotted {
 	font-size: 15/16+rem;
+	font-family: var(--Mona);
 	span {
 		display: inline-flex;
 		align-items: center;

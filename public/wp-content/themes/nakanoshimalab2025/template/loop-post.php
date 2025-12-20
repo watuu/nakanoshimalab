@@ -21,11 +21,11 @@
     if ($settings['today'] < $settings['date_open']) {
         $settings['status'] = "開催予定";
         $settings['status_class'] = "c-card-event--teaser";
-        $settings['status_char'] = "予";
+        $settings['status_char'] = "開催<br>予定";
     } elseif ($settings['today'] >= $settings['date_open'] && $settings['today'] <= $settings['date_end']) {
         $settings['status_class'] = "c-card-event--open";
         $settings['status'] = "開催中";
-        $settings['status_char'] = "開";
+        $settings['status_char'] = "開催中";
     } else {
         $settings['status'] = "終了";
     }

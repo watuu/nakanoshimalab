@@ -147,13 +147,6 @@
                     </li>
                 </ul>
             </section>
-            <div class="p-aboutus__pager">
-                <div class="cm-nav-page">
-                    <div class="cm-nav-page__index"></div>
-                    <div class="cm-nav-page__ctrl"><a class="cm-nav-page-link" href="<?= home_url() ?>/single-news/"><span class="cm-nav-page-link__txt">このサイトについて</span><i class="cm-nav-page-link__arrow">
-                                <svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i></a></div>
-                </div>
-            </div>
         </div>
     </div>
 <?php endwhile; endif; ?>

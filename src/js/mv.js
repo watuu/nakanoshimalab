@@ -9,13 +9,45 @@ export default class Mv {
     }
     draw() {
         const tl = gsap.timeline({
-            delay: 0,
+            delay: 1,
             defaults: {
                 delay: 0
             }
         })
-
         tl.add(()=>{
+            // ===== スポット =====
+            const spots = document.querySelectorAll('.p-top-mv-map__cultures li');
+            spots.forEach((spot) => {
+                gsap.to(spot, {opacity: 1, duration: 2})
+                const title = spot.querySelector('.p-top-mv-map__title');
+
+                const originalText = title.textContent;
+                //const chars = '!@#$%^&*()_+-=<>?/|[]{}';
+                const chars = 'abcdefghijklmnopqrstuvwxyz';
+                const speed = 200; // 1文字確定ごとの間隔(ms)
+
+                let frame = 0;
+
+                const scramble = () => {
+                    const result = originalText
+                        .split('')
+                        .map((char, index) => {
+                            if (index < frame) return char;
+                            return chars[Math.floor(Math.random() * chars.length)];
+                        })
+                        .join('');
+
+                    title.textContent = result;
+
+                    if (frame <= originalText.length) {
+                        frame++;
+                        setTimeout(scramble, speed);
+                    }
+                };
+                scramble();
+            })
+        })
+        .add(()=>{
             // ===== LINE =====
             const dom = document.querySelector('.p-top-mv-map');
             const lines = dom.querySelectorAll('.p-top-mv-map__lines figure');
@@ -38,8 +70,8 @@ export default class Mv {
                 const ny = dy / dist;
 
                 gsap.set(line, {
-                    x: -nx * window.innerWidth/2,
-                    y: -ny * window.innerWidth/2,
+                    x: -nx * window.innerWidth/4,
+                    y: -ny * window.innerWidth/4,
                     rotate: nx<0? -120: 120,
                     opacity: 0,
                     scale: 0.2,
@@ -62,43 +94,11 @@ export default class Mv {
                     duration: 5,
                     delay: Math.random() * 0.5,
                     //ease: 'power3.out',
-                    ease: "elastic.inOut(1,0.5)",
+                    ease: "elastic.out(1,0.5)",
                 });
             });
-        })
-            .add(()=>{
-                // ===== スポット =====
-                const spots = document.querySelectorAll('.p-top-mv-map__cultures li');
-                spots.forEach((spot) => {
-                    gsap.to(spot, {opacity: 1, duration: 1})
-                    const title = spot.querySelector('.p-top-mv-map__title');
+        }, '<')
 
-                    const originalText = title.textContent;
-                    //const chars = '!@#$%^&*()_+-=<>?/|[]{}';
-                    const chars = 'abcdefghijklmnopqrstuvwxyz';
-                    const speed = 100; // 1文字確定ごとの間隔(ms)
-
-                    let frame = 0;
-
-                    const scramble = () => {
-                        const result = originalText
-                            .split('')
-                            .map((char, index) => {
-                                if (index < frame) return char;
-                                return chars[Math.floor(Math.random() * chars.length)];
-                            })
-                            .join('');
-
-                        title.textContent = result;
-
-                        if (frame <= originalText.length) {
-                            frame++;
-                            setTimeout(scramble, speed);
-                        }
-                    };
-                    scramble();
-                })
-            }, "<+3")
             .add(()=>{
                 // ===== タイトル =====
                 const svg = Utility.isPC()?
@@ -143,11 +143,64 @@ export default class Mv {
                         ease: 'power3.out',
                     });
                 });
-            }, "<")
+            }, "<+1")
+            .add(() => {
+                // MV下部テキスト
+                const svg = document.querySelector('.p-top-mv__txt svg');
+                const paths = svg.querySelectorAll('path');
+
+                const svgRect = svg.getBoundingClientRect();
+                const centerX = svgRect.left + svgRect.width / 2;
+                const centerY = svgRect.top + svgRect.height / 2;
+
+                paths.forEach((path) => {
+                    const rect = path.getBoundingClientRect();
+
+                    const px = rect.left + rect.width / 2;
+                    const py = rect.top + rect.height / 2;
+
+                    const dx = px - centerX;
+                    const dy = py - centerY;
+                    const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+
+                    const nx = dx / dist;
+                    const ny = dy / dist;
+
+                    // 初期状態
+                    gsap.set(path, {
+                        x: nx * 200,
+                        y: ny * 200,
+                        rotate: -180,
+                        opacity: 0,
+                        transformOrigin: '50% 50%',
+                    });
+
+                    // アニメーション
+                    gsap.to(path, {
+                        scrollTrigger: {
+                            trigger: '.p-top-mv__txt',
+                            start: 'top 70%',
+                            once: true,
+                        },
+                        x: 0,
+                        y: 0,
+                        rotate: 0,
+                        opacity: 1,
+                        duration: 1.2,
+                        delay: Math.random() * 0.6,
+                        ease: 'power3.out',
+                    });
+                });
+            })
             .add(() => {
                 const picTl = createPicToggleTimeline();
                 picTl.play();
-            }, "+=0.5");
+                gsap.to('.l-header', {
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: 'power3.out'
+                })
+            }, "+=2");
 
 
         function createPicToggleTimeline() {

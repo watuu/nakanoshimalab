@@ -57,6 +57,11 @@ export default class common {
 
         MicroModal.init({
             // disableScroll: true,
+            onShow: modal => {
+                if (window.FONTPLUS) {
+                    FONTPLUS.reload();
+                }
+            },
             onClose: modal => {
                 // モーダルABOUT
                 if (modal.id === 'modal-about') {

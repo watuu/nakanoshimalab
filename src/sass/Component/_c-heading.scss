@@ -12,6 +12,7 @@
 }
 .c-heading-page__title {
 	font-size: 48/16+rem;
+	font-family: var(--Mona);
 	letter-spacing: -0.03em;
 	font-feature-settings: 'palt' on;
 	@include config.pc {
@@ -23,6 +24,7 @@
 	position: relative;
 	top: 0.4em;
 	font-size: 11/16+rem;
+	font-family: var(--Mona);
 	@include config.pc {
 		font-size: 15/16+rem;
 	}
@@ -47,6 +49,7 @@
 	font-feature-settings: 'palt' on;
 	font-size: 14/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	line-height: 1.5;
 	@include config.pc {}
 }
@@ -56,6 +59,7 @@
 	align-items: flex-start;
 	font-size: 35/16+rem;
 	font-weight: 500;
+	font-family: var(--Mona);
 	line-height: 0.9;
 	letter-spacing: -0.02em;
 	p {
@@ -99,6 +103,7 @@
 	font-feature-settings: 'palt' on;
 	font-size: 14/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	line-height: 1.35;
 	svg {
 		position: absolute;
@@ -120,6 +125,7 @@
 	color: var(--black, #1B1B1B);
 	font-size: 22/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	letter-spacing: 0.06em;
 	line-height: 1.35;
 	@include config.pc {
@@ -132,6 +138,7 @@
 	color: var(--blue, #008CD6);
 	font-size: 11/16+rem;
 	font-weight: 600;
+	font-family: var(--Mona);
 	line-height: 1.35;
 	@include config.pc {
 		font-size: 15/16+rem;
@@ -150,6 +157,7 @@
 	color: #0086CE;
 	font-size: 24/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	line-height: 1.35;
 	@include config.pc {
 		font-size: 38/16+rem;
@@ -159,6 +167,7 @@
 .c-heading-txt {
 	font-size: 22/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	letter-spacing: 0.02em;
 	@include config.pc {
 		font-size: 32/16+rem;
@@ -167,6 +176,7 @@
 .c-heading-txt-sm {
 	font-size: 16/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	letter-spacing: 0.02em;
 	@include config.pc {
 		font-size: 22/16+rem;

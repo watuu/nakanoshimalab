@@ -86,7 +86,7 @@
                 <div class="cm-modal-about__movie">
                     <div id="modal-about-youtube"></div>
                     <div class="cm-modal-about__more"><a class="c-btn-youtube" href="#" target="_blank" rel="noopener"><i class="c-btn-youtube__arrow">
-                                <svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i><span class="c-btn-youtube__txt">Youtubeで見る</span></a></div>
+                                <svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i><span class="c-btn-youtube__txt">YouTubeで見る</span></a></div>
                 </div>
             </div>
         </div>

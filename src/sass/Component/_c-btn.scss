@@ -1,4 +1,5 @@
 @use '../Base/config' as config;
+@use '../Component/c-link' as link;
 /*----------------------------------------------------
 	c-btn
 ----------------------------------------------------*/
@@ -97,7 +98,7 @@
 	font-size: 16/16+rem;
 	letter-spacing: 0.02em;
 	&:hover {
-		color: var(--color-accent);
+		//color: var(--color-accent);
 		.c-btn-header-about__plus {
 			background: var(--color-assort);
 		}
@@ -110,6 +111,8 @@
 }
 .c-btn-header-about__txt {
 	position: relative;
+	transition: var(--easeDuration) var(--easeTheme);
+	@extend .c-link-gradient;
 }
 .c-btn-header-about__plus {
 	display: inline-flex;
@@ -142,6 +145,11 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+
+	font-size: 15/16+rem;
+	font-weight: 600;
+	font-family: var(--sans600);
+	letter-spacing: 0.02em;
 	&:hover {
 		//color: var(--color-accent);
 		.c-btn-more__ico {
@@ -150,7 +158,9 @@
 			}
 		}
 	}
-	@include config.pc {}
+	@include config.pc {
+		font-size: 20/16+rem;
+	}
 }
 .c-btn-more__ico {
 	position: relative;
@@ -159,14 +169,9 @@
 	justify-content: center;
 	width: 50/16+rem;
 	height: 50/16+rem;
-
-	font-size: 15/16+rem;
-	font-weight: 600;
-	letter-spacing: 0.02em;
 	@include config.pc {
 		width: 76/16+rem;
 		height: 76/16+rem;
-		font-size: 20/16+rem;
 	}
 }
 .c-btn-more__circle {
@@ -207,14 +212,16 @@
 	@extend .c-btn-arrow;
 	@extend .c-btn-arrow--accent;
 	@include config.pc {
-		width: 32/16+rem;
-		height: 32/16+rem;
+		width: 40/16+rem;
+		height: 40/16+rem;
 	}
 }
 .c-btn-more__txt {
 	position: relative;
 	margin-left: -8/16+rem;
-	@include config.pc {}
+	@include config.pc {
+		margin-left: -12/16+rem;
+	}
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
@@ -229,6 +236,7 @@
 	color: var(--white, #FFF);
 	font-size: 15/16+rem;
 	font-weight: 600;
+	font-family: var(--sans600);
 	letter-spacing: 0.02em;
 	position: relative;
 	@include config.pc {
@@ -441,6 +449,7 @@
 	justify-content: center;
 	align-items: center;
 	font-size: 18/16+rem;
+	font-family: var(--Mona);
 	border-radius: 100/16+rem;
 	background: var(--color-accent);
 	color: #fff;
@@ -469,6 +478,7 @@
 	}
 	span {
 		position: relative;
+		padding-bottom: 1px;
 		transition: .3s var(--easeTheme);
 	}
 	span:nth-child(2) {

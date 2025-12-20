@@ -60,11 +60,9 @@
 		padding: 169/16+rem 104/16+rem;
 		grid-template-areas:
 			"recommend nav"
-			"recommend cta"
 		;
 		gap: 90/16+rem 104/16+rem;
 		grid-template-columns: 519/16+rem 1fr;
-		grid-template-rows: auto 1fr;
 	}
 }
 .l-header-drawer__nav {
@@ -90,6 +88,7 @@
 	span:nth-child(2) {
 		font-size: 12/16+rem;
 		font-weight: 600;
+		font-family: var(--sans600);
 		letter-spacing: 0.02em;
 	}
 	@include config.pc {

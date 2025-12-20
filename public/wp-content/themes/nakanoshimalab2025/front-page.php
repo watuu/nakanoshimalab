@@ -9,20 +9,90 @@
         <section class="p-top-mv">
             <div class="p-top-mv-map">
                 <div class="p-top-mv-map__lines">
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line1.webp"/></figure>
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line2.webp"/></figure>
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line3.webp"/></figure>
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line4.webp"/></figure>
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line5.webp"/></figure>
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line6.webp"/></figure>
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line7.webp"/></figure>
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line8.webp"/></figure>
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line9.webp"/></figure>
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line10.webp"/></figure>
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line11.webp"/></figure>
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line12.webp"/></figure>
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line13.webp"/></figure>
-                    <figure><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line14.webp"/></figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line1-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line1.webp"/>
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line2-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line2.webp"/>
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line3-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line3.webp"/>
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line4-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line4.webp"/>
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line5-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line5.webp"/>
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line6-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line6.webp"/>
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line7-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line7.webp"/>
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line8-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line8.webp"/>
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line9-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line9.webp"/>
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line10-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line10.webp"/>
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line11-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line11.webp"/>
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line12-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line12.webp"/>
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line13-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line13.webp"/>
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line14-sp.webp" media="(max-width: 1023px)"/>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-line14.webp"/>
+                        </picture>
+                    </figure>
                 </div>
                 <ul class="p-top-mv-map__cultures">
                     <li class="_Art"><span class="_dot"></span><span class="p-top-mv-map__title">Art</span><img class="p-top-mv-map__pic" src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-art.webp"/></li>
@@ -30,7 +100,8 @@
                     <li class="_Music"><span class="_dot"></span><span class="p-top-mv-map__title">Music</span></li>
                     <li class="_Theater"><span class="_dot"></span><span class="p-top-mv-map__title">Theater</span><img class="p-top-mv-map__pic" src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-theater.webp"/></li>
                     <li class="_history"><span class="_dot"></span><span class="p-top-mv-map__title">history</span></li>
-                    <li class="_education"><span class="_dot"></span><span class="p-top-mv-map__title">education</span></li>
+                    <li class="_education"><span class="_dot"></span><span class="p-top-mv-map__title">Academic</span></li>
+                    <li class="_research"><span class="_dot"></span><span class="p-top-mv-map__title">Research</span></li>
                     <li class="_Literature"><span class="_dot"></span><span class="p-top-mv-map__title">Literature</span><img class="p-top-mv-map__pic" src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-mv-map-literature.webp"/></li>
                     <li class="_Ceramic"><span class="_dot"></span><span class="p-top-mv-map__title">Ceramic</span></li>
                     <li class="_Performing"><span><span class="p-top-mv-map__title">Performing</span><br/><span class="_dot"></span><span class="p-top-mv-map__title">Arts</span></span></li>
@@ -119,8 +190,8 @@
                 <source srcset="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-news-bg-sp.webp" media="(max-width: 1023px)"/><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-news-bg.webp" alt=""/>
             </picture>
             <div class="l-container l-container--md">
-                <div class="p-top-creative__wrap">
-                    <div class="p-top-creative__head">
+                <div class="p-top-news__wrap">
+                    <div class="p-top-news__head">
                         <div class="c-heading-section">
                             <h2 class="c-heading-section__ja">ニュース</h2>
                             <div class="c-heading-section__en">
@@ -131,7 +202,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="p-top-creative__list">
+                    <div class="p-top-news__list">
                         <div class="cm-section-masonry">
                             <?php
                             $today = date('Ymd');
@@ -179,16 +250,16 @@
                             <?php wp_reset_query(); ?>
                         </div>
                     </div>
-                    <div class="p-top-creative__more1">
+                    <div class="p-top-news__more1">
                         <a class="c-btn-more" href="<?= home_url() ?>/posts/">
                             <div class="c-btn-more__ico"><i class="c-btn-more__circle"></i><i class="c-btn-more__arrow"><svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i></div>
                             <span class="c-btn-more__txt">NEWS一覧へ</span>
                         </a>
                     </div>
-                    <div class="p-top-creative__more2"><button id="topCreativeMore" class="c-btn-square"><span class="c-btn-square__bg"></span><span class="c-btn-square__bg-dark"></span><span class="c-btn-square__txt">もっと見る</span></button></div>
+                    <div class="p-top-news__more2"><button id="topCreativeMore" class="c-btn-square"><span class="c-btn-square__bg"></span><span class="c-btn-square__bg-dark"></span><span class="c-btn-square__txt">もっと見る</span></button></div>
                 </div>
             </div>
-            <div class="p-top-creative__category">
+            <div class="p-top-news__category">
                 <ul>
                     <?php
                     foreach ($settings['cultures'] as $term) {
@@ -323,6 +394,9 @@
                             </li>
                         </ul>
                         <div class="p-top-map-area__map"><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/p-top-map.svg" alt=""/></div>
+                        <p class="p-top-map-area__help">
+                            <span>Swipe</span><i><svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i>
+                        </p>
                     </div>
                 </div>
                 <div class="p-top-map__spots">
