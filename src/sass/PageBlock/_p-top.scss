@@ -275,6 +275,7 @@
 	._Architecture {
 		display: flex;
 		flex-direction: column-reverse;
+		align-items: flex-start;
 		gap: 5/16+rem;
 		left: #{258/550*100%};
 		top: #{(103)/440*100%};
@@ -298,7 +299,6 @@
 			flex-direction: column-reverse;
 			align-items: flex-end;
 		}
-
 	}
 	@include config.pc {
 		._Art {
