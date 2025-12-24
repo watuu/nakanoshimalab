@@ -45,7 +45,13 @@
 		color: var(--color-accent);
 	}
 	@include config.sp-tab {
-		flex-wrap: wrap;
+		//flex-wrap: wrap;
+		li:last-child {
+			display: -webkit-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
 	}
 	@include config.pc {
 		font-size: 14/16+rem;
@@ -72,6 +78,16 @@
 		p {
 			opacity: 0.4;
 		}
+	}
+	html[lang="ja"] & a[data-lang="ja"] {
+		pointer-events: none;
+		color: var(--color);
+		opacity: 0.4;
+	}
+	html[lang="en"] & a[data-lang="en"] {
+		pointer-events: none;
+		color: var(--color);
+		opacity: 0.4;
 	}
 	li:not(:first-child):before {
 		content: '';

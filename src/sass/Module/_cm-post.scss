@@ -104,6 +104,7 @@ body figure {
 	margin-top: 40/16+rem;
 	display: flex;
 	justify-content: flex-end;
+	flex-wrap: wrap;
 	gap: 5/16+rem;
 	li {
 		width: 55/16+rem;

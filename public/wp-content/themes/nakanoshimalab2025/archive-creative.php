@@ -19,17 +19,36 @@
 
             ?>
             <div class="p-creative__head">
-                <div class="cm-nav-category">
-                    <div class="cm-nav-category__title">
-                        <div class="c-heading-page">
-                            <h1 class="c-heading-page__title">Creative Contents</h1>
-                            <span class="c-heading-page__count"><?= $wp_query->found_posts ?></span>
-                        </div>
+                <?php if ( is_tax( 'creative_cat' ) || is_tax( 'creative_tag' )): ?>
+                    <?php $query_object = get_queried_object(); ?>
+                    <div class="c-heading-page c-heading-page--sm">
+                        <h1 class="c-heading-page__title"><?= $query_object->name ?></h1>
+                        <span class="c-heading-page__count"><?= $wp_query->found_posts ?></span>
                     </div>
-                    <div class="cm-nav-category__list">
-                        <ul class="cm-nav-category__category">
-                            <?php
-                                foreach ($settings['categories'] as $term) {
+                <?php else: ?>
+                    <div class="cm-nav-category">
+                        <div class="cm-nav-category__title">
+                            <div class="c-heading-page">
+                                <h1 class="c-heading-page__title">Creative Contents</h1>
+                                <span class="c-heading-page__count"><?= $wp_query->found_posts ?></span>
+                            </div>
+                        </div>
+                        <div class="cm-nav-category__list">
+                            <ul class="cm-nav-category__category">
+                                <?php
+                                    foreach ($settings['categories'] as $term) {
+                                        $class = $term->slug == $current_term? ' is-current': '';
+                                        echo sprintf('<li><a class="%s" href="%s">%s</a></li>',
+                                            $class,
+                                            get_term_link($term),
+                                            $term->name
+                                        );
+                                    }
+                                ?>
+                            </ul>
+                            <ul class="cm-nav-category__place">
+                                <?php
+                                foreach ($settings['tags'] as $term) {
                                     $class = $term->slug == $current_term? ' is-current': '';
                                     echo sprintf('<li><a class="%s" href="%s">%s</a></li>',
                                         $class,
@@ -37,22 +56,11 @@
                                         $term->name
                                     );
                                 }
-                            ?>
-                        </ul>
-                        <ul class="cm-nav-category__place">
-                            <?php
-                            foreach ($settings['tags'] as $term) {
-                                $class = $term->slug == $current_term? ' is-current': '';
-                                echo sprintf('<li><a class="%s" href="%s">%s</a></li>',
-                                    $class,
-                                    get_term_link($term),
-                                    $term->name
-                                );
-                            }
-                            ?>
-                        </ul>
+                                ?>
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             </div>
             <div class="p-creative__list">
                 <div class="cm-section-masonry">

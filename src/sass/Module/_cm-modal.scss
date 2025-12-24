@@ -337,6 +337,7 @@
 }
 .cm-modal-spot-card__head {
 	display: flex;
+	align-items: flex-start;
 	gap: 15/16+rem;
 	@include config.pc {}
 }
@@ -379,11 +380,13 @@
 	font-family: var(--sans600);
 	line-height: 1.5;
 	letter-spacing: -0.02em;
+	padding-top: 2/16+rem;
 	small {
 		font-size: 16/16+rem;
 	}
 	@include config.pc {
-		font-size: 25/16+rem;
+		padding-top: 3/16+rem;
+		font-size: 26/16+rem;
 		small {
 			font-size: 20/16+rem;
 		}
@@ -401,12 +404,14 @@
 	color: var(--black, #1B1B1B);
 	text-align: justify;
 	font-feature-settings: 'palt' on;
-	font-size: 16/16+rem;
+	font-size: 13/16+rem;
 	font-weight: 600;
 	font-family: var(--sans600);
 	line-height: 1.5;
 	letter-spacing: 0.02em;
-	@include config.pc {}
+	@include config.pc {
+		font-size: 16/16+rem;
+	}
 }
 .cm-modal-spot-card__info {
 	padding-top: 20/16+rem;
@@ -418,12 +423,13 @@
 		display: flex;
 		gap: 30/16+rem;
 		//font-family: "Roc Grotesk";
-		font-size: 14/16+rem;
+		font-size: 12/16+rem;
 		line-height: 1.75;
 		letter-spacing: 0.02em;
+		color: #444648;
 	}
 	dt {
-		width: 62/16+rem;
+		width: 52/16+rem;
 		display: flex;
 		align-items: baseline;
 		span._c3 {
@@ -442,11 +448,21 @@
 	.cm-modal-spot-card__sns {
 		display: flex;
 		gap: 20/16+rem;
+		img {
+			width: 14/16+rem;
+		}
 		li:has(a[href=""]) {
 			display: none;
 		}
 	}
-	@include config.pc {}
+	@include config.pc {
+		dl {
+			font-size: 14/16+rem;
+		}
+		dt {
+			width: 62/16+rem;
+		}
+	}
 }
 .cm-modal-spot-card__more {
 	margin-top: 15/16+rem;

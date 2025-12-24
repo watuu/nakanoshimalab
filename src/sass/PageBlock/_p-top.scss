@@ -10,7 +10,12 @@
 	position: relative;
 	padding: var(--header-height) 0 var(--padding-section-lg);
 	overflow: hidden;
-	@include config.pc {}
+	@include config.pc {
+
+		position: relative;
+		padding: 8rem 0 3rem;
+		overflow: hidden;
+	}
 }
 .p-top-mv-map {
 	margin-top: 30/16+rem;
@@ -193,8 +198,10 @@
 		position: absolute;
 		display: inline-flex;
 		justify-content: center;
+		align-items: center;
 		font-size: 18/16+rem;
 		font-family: var(--Mona);
+		font-weight: 400;
 		line-height: 1;
 		text-transform: capitalize;
 		opacity: 0;
@@ -213,8 +220,8 @@
 		@include config.pc {
 			font-size: 40/16+rem;
 			._dot {
-				width: 36/16+rem;
-				height: 36/16+rem;
+				width: 30/16+rem;
+				height: 30/16+rem;
 			}
 		}
 	}
@@ -436,7 +443,9 @@
 	@include config.sp-tab {
 		margin-top: -20px;
 	}
-	@include config.pc {}
+	@include config.pc {
+		padding-top: 3rem;
+	}
 }
 .p-top-news__more1 {
 	margin-top: 20/16+rem;
@@ -452,11 +461,17 @@
 	padding: 40/16+rem 0;
 	border-top: var(--border-gray);
 	border-bottom: var(--border-gray);
+	overflow: hidden;
+	display: flex;
 	ul {
 		display: flex;
-		flex-wrap: wrap;
 		gap: 5/16+rem 0;
 		padding-left: 6/16+rem;
+		flex-shrink: 0;
+		margin-left: -6/16+rem;
+
+		will-change: transform;
+		backface-visibility: hidden;
 		li {
 			margin-left: -6/16+rem;
 		}
@@ -524,6 +539,7 @@
 	font-weight: 500;
 	line-height: 2;
 	letter-spacing: 0.02em;
+	text-align: justify;
 	span:first-child {
 		display: block;
 		text-align: right;
@@ -639,6 +655,44 @@
 			left: calc(50% + #{70/16+rem});
 		}
 		.p-top-creative-item__desc {}
+	}
+}
+@include config.tab {
+	.p-top-creative-item:nth-child(1) {
+		.p-top-creative-item__pic {
+			width: 310*1.5/16+rem;
+		}
+		.p-top-creative-item__btn {
+			left: calc(50% + #{100*1.5/16+rem});
+			top: 185*1.5/16+rem;
+		}
+	}
+	.p-top-creative-item:nth-child(2) {
+		.p-top-creative-item__pic {
+			width: 280*1.5/16+rem;
+		}
+		.p-top-creative-item__btn {
+			top: 136*1.5/16+rem;
+			left: calc(50% + #{70*1.5/16+rem});
+		}
+	}
+	.p-top-creative-item:nth-child(3) {
+		.p-top-creative-item__pic {
+			width: 270*1.5/16+rem;
+		}
+		.p-top-creative-item__btn {
+			top: 190*1.5/16+rem;
+			left: calc(50% + #{80*1.5/16+rem});
+		}
+	}
+	.p-top-creative-item:nth-child(4) {
+		.p-top-creative-item__pic {
+			width: 270*1.5/16+rem;
+		}
+		.p-top-creative-item__btn {
+			top: 180*1.5/16+rem;
+			left: calc(50% + #{70*1.5/16+rem});
+		}
 	}
 }
 @include config.pc {

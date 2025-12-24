@@ -260,7 +260,17 @@
                 </div>
             </div>
             <div class="p-top-news__category">
-                <ul>
+                <ul class="js-clone">
+                    <?php
+                    foreach ($settings['cultures'] as $term) {
+                        echo sprintf('<li><a href="%s">#%s</a></li>',
+                            get_term_link($term),
+                            $term->name
+                        );
+                    }
+                    ?>
+                </ul>
+                <ul class="js-clone">
                     <?php
                     foreach ($settings['cultures'] as $term) {
                         echo sprintf('<li><a href="%s">#%s</a></li>',
@@ -419,7 +429,6 @@
                                     </div>
                                     <p class="cm-modal-spot-card__name">
                                         <span id="spot_name"></span>
-                                        <small id="spot_name2"></small>
                                     </p>
                                 </div>
                                 <figure class="cm-modal-spot-card__pic"><img src="" id="spot_pic"/></figure>
@@ -446,7 +455,7 @@
                                         <dd>
                                             <ul class="cm-modal-spot-card__sns" id="spot_sns">
                                                 <li id="spot_x"><a href="" target="_blank"><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/ico-x.svg" alt=""/></a></li>
-                                                <li id="spot_instagram"><a href="" target="_blank"><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/ico-instagram.svg" alt=""/></a></li>
+                                                <li id="spot_instagram"><a href="" target="_blank"><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/ico-instagram.webp" alt=""/></a></li>
                                                 <li id="spot_facebook"><a href="" target="_blank"><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/ico-facebook.svg" alt=""/></a></li>
                                                 <li id="spot_youtube"><a href="" target="_blank"><img src="<?= get_stylesheet_directory_uri() ?>/assets/img/ico-youtube.svg" alt=""/></a></li>
                                             </ul>
@@ -474,6 +483,7 @@ $spots = get_posts([
 ]);
 
 $data = [];
+$text_for_webfont = "";
 
 if ($spots) {
     foreach ($spots as $i => $post) {
@@ -491,7 +501,7 @@ if ($spots) {
         $data[] = [
             "no"        => $i + 1,
             "name"      => get_the_title($post->ID),
-            "name2"     => "",
+            //"name2"     => "",
             "pic"       => $pic,
             "desc"      => $desc,
             "address"   => get_field('住所', $post->ID),
@@ -505,6 +515,7 @@ if ($spots) {
             "url"       => "",
             "event_url" => get_field('関連イベントurl', $post->ID),
         ];
+        $text_for_webfont .= get_the_title($post->ID) . $desc;
     }
     wp_reset_postdata();
 }
@@ -513,5 +524,7 @@ if ($spots) {
     <script id="spotData" type="application/json">
 <?= json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
 </script>
-
+<div style="font-family: var(--sans600); display: none;">
+    <?= $text_for_webfont ?>
+</div>
 <?php get_footer(); ?>

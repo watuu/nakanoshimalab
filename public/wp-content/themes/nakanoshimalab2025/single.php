@@ -8,9 +8,9 @@
             esc_url(get_stylesheet_directory_uri())
         );
     $settings = [
-        'categories'    => get_the_terms(null, 'category'),
-        'cultures'      => get_the_terms(null, 'culture_cat'),
-        'tags'          => get_the_terms(null, 'post_tag'),
+        'categories'    => get_the_terms(null, 'category') ?: [],
+        'cultures'      => get_the_terms(null, 'culture_cat') ?: [],
+        'tags'          => get_the_terms(null, 'post_tag') ?: [],
         'tags_has_logo' => [],
         'category'      => [],
         'date_open'     => get_field('date_open'),

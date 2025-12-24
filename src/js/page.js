@@ -16,6 +16,9 @@ export default class Page {
         if (document.querySelector('.p-top-mv')) {
             this.pTopMv();
         }
+        if (document.querySelector('.p-top-news')) {
+            this.pTopNews();
+        }
         if (document.querySelector('.p-top-map')) {
             //
             this.pTopMap();
@@ -52,6 +55,17 @@ export default class Page {
         });
     }
 
+    pTopNews() {
+        const lists = document.querySelectorAll('.p-top-news__category ul')
+        lists.forEach((list) => {
+            gsap.to(list, {
+                xPercent: -100,
+                duration: 20,
+                ease: 'none',
+                repeat: -1,
+            })
+        })
+    }
     pTopMap() {
         const container = document.querySelector('.p-top-map-area');
         const helpText = document.querySelector('.p-top-map-area__help');
@@ -157,7 +171,7 @@ export default class Page {
                         document.querySelector(".cm-modal-spot #spot_pic").src = spot['pic'];
                         document.querySelector(".cm-modal-spot #spot_no").textContent = spot.no;
                         document.querySelector(".cm-modal-spot #spot_name").textContent = spot.name;
-                        document.querySelector(".cm-modal-spot #spot_name2").textContent = spot.name2;
+                        // document.querySelector(".cm-modal-spot #spot_name2").textContent = spot.name2;
                         document.querySelector(".cm-modal-spot #spot_desc").textContent = spot.desc;
                         document.querySelector(".cm-modal-spot #spot_address").textContent = spot.address;
                         document.querySelector(".cm-modal-spot #spot_tel").textContent = spot.tel;

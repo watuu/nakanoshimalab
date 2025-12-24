@@ -44,9 +44,11 @@
                 </ul>
                 <ul class="l-header-nav__locale c-link-local">
                     <li>
-                        <p class="js-split-text">JP</p>
+                        <a class="js-split-text" data-lang="ja" href="https://nakanoshimalab.jp/">JP</a>
                     </li>
-                    <li><a class="js-split-text" href="#">EN</a></li>
+                    <li>
+                        <a class="js-split-text" data-lang="en" href="https://en.nakanoshimalab.jp/">EN</a>
+                    </li>
                 </ul>
             </nav>
             <button class="l-header-menu c-btn-menu" aria-label="メニューを開く"><span>Menu</span><span>Close</span></button>

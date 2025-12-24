@@ -4,10 +4,10 @@
         <div class="l-footer__wrap">
             <div class="l-footer-nav">
                 <?php get_template_part('template/cm-nav-main') ?>
-                <div class="l-footer-nav__locale">
-                    <li><a href="#">JP</a></li>
-                    <li><a href="#">EN</a></li>
-                </div>
+                <ul class="l-footer-nav__locale">
+                    <li><a href="https://nakanoshimalab.jp/" data-lang="ja">JP</a></li>
+                    <li><a href="https://en.nakanoshimalab.jp/" data-lang="en">EN</a></li>
+                </ul>
             </div>
             <div class="l-footer-logo">
                 <svg width="372" height="108" viewBox="0 0 372 108" fill="none" xmlns="http://www.w3.org/2000/svg">

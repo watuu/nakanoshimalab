@@ -140,9 +140,11 @@ button:hover .c-link-gradient, button:hover .c-btn-header-about__txt, a:hover .c
   color: var(--color-accent);
 }
 @media screen and (max-width: 1023px) {
-  .c-link-bc {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+  .c-link-bc li:last-child {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -171,6 +173,16 @@ button:hover .c-link-gradient, button:hover .c-btn-header-about__txt, a:hover .c
   top: 0.2em;
 }
 .c-link-local li p {
+  opacity: 0.4;
+}
+html[lang=ja] .c-link-local a[data-lang=ja] {
+  pointer-events: none;
+  color: var(--color);
+  opacity: 0.4;
+}
+html[lang=en] .c-link-local a[data-lang=en] {
+  pointer-events: none;
+  color: var(--color);
   opacity: 0.4;
 }
 .c-link-local li:not(:first-child):before {
@@ -1262,6 +1274,8 @@ body figure {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 0.3125rem;
 }
 .cm-post-meta__logo li {
@@ -2077,9 +2091,9 @@ body figure {
       -ms-grid-row-align: stretch;
       align-self: stretch;
   overflow: hidden;
-  color: var(--deepgray, #2C2E2F);
-  font-size: 0.6875rem;
-  line-height: 1.75;
+  color: #444648;
+  font-size: 0.625rem;
+  line-height: 1.35;
 }
 .c-card-event__place li {
   position: relative;
