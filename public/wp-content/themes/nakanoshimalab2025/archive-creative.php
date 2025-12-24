@@ -38,11 +38,13 @@
                                 <?php
                                     foreach ($settings['categories'] as $term) {
                                         $class = $term->slug == $current_term? ' is-current': '';
-                                        echo sprintf('<li><a class="%s" href="%s">%s</a></li>',
-                                            $class,
-                                            get_term_link($term),
-                                            $term->name
-                                        );
+                                        if ($term->slug !== 'report') {
+                                            echo sprintf('<li><a class="%s" href="%s">%s</a></li>',
+                                                $class,
+                                                get_term_link($term),
+                                                $term->name
+                                            );
+                                        }
                                     }
                                 ?>
                             </ul>

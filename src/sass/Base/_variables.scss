@@ -115,7 +115,8 @@
 	--easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 	--easeDuration: .4s;
-	--easeTheme: cubic-bezier(0.22, 0.61, 0.36, 1);
+	//--easeTheme: cubic-bezier(0.22, 0.61, 0.36, 1);
+	--easeTheme: cubic-bezier(0.4, 0.52, 0.36, 1);
 }
 
 .is-nav-open,
