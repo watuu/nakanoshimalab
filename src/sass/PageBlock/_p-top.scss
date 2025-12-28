@@ -45,7 +45,7 @@
 		position: absolute;
 		width: 10%;
 		z-index: 5;
-		opacity: 0;
+		//opacity: 0;
 	}
 	figure:nth-child(1) {
 		width: #{159/552*100%};
@@ -367,7 +367,8 @@
 	left: 0;
 	width: 105/16+rem;
 	max-width: none;
-	opacity: 0;
+	//opacity: 0;
+	clip-path: inset(0 100% 0 0);
 	._Architecture & {
 		top: calc(100% - #{50/16+rem});
 	}

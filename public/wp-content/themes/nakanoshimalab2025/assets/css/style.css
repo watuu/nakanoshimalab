@@ -485,10 +485,6 @@ body {
 /*----------------------------------------------------
 	ヘッダー
 ----------------------------------------------------*/
-.page-front .l-header {
-  opacity: 0;
-}
-
 .l-header__wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1804,7 +1800,6 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
   position: absolute;
   width: 10%;
   z-index: 5;
-  opacity: 0;
 }
 .p-top-mv-map__lines figure:nth-child(1) {
   width: 28.8043478261%;
@@ -2052,6 +2047,9 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 0.3125rem;
   left: 46.9090909091%;
   top: 23.4090909091%;
@@ -2169,7 +2167,7 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
   left: 0;
   width: 6.5625rem;
   max-width: none;
-  opacity: 0;
+  clip-path: inset(0 100% 0 0);
 }
 ._Architecture .p-top-mv-map__pic {
   top: calc(100% - 3.125rem);
