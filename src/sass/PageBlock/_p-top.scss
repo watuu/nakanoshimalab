@@ -45,7 +45,7 @@
 		position: absolute;
 		width: 10%;
 		z-index: 5;
-		//opacity: 0;
+		opacity: 0;
 	}
 	figure:nth-child(1) {
 		width: #{159/552*100%};
@@ -192,7 +192,27 @@
 
 	}
 }
-
+.p-top-mv-map__title {
+	position: relative;
+	color: transparent;
+	&:before {
+		content: '|';
+		display: inline-block;
+		animation: blink 1s steps(1) infinite;
+		color: var(--color);
+	}
+	&.is-scrambling {
+		color: var(--color);
+		&:before {
+			content: '';
+		}
+	}
+}
+@keyframes blink {
+	0%   { opacity: 1; }
+	50%  { opacity: 0; }
+	100% { opacity: 1; }
+}
 .p-top-mv-map__cultures {
 	li {
 		position: absolute;
@@ -204,7 +224,7 @@
 		font-weight: 400;
 		line-height: 1;
 		text-transform: capitalize;
-		opacity: 0;
+		//opacity: 0;
 		span {
 			position: relative;
 			z-index: 2;

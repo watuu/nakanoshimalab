@@ -1,8 +1,23 @@
 <?php while (have_posts()) : the_post(); ?>
     <?php
-    $eyeCatch = esc_url(get_the_post_thumbnail_url(null, 'thumbnail'));
-    $eyeCatch = $eyeCatch? $eyeCatch:
-        sprintf('%s/assets/img/500x500.webp', get_stylesheet_directory_uri());
+    // $eyeCatch = esc_url(get_the_post_thumbnail_url(null, 'thumbnail'));
+    // $eyeCatch = $eyeCatch? $eyeCatch:
+    //     sprintf('%s/assets/img/500x500.webp', get_stylesheet_directory_uri());
+    $thumb_id = get_post_thumbnail_id();
+    if ($thumb_id) {
+        $img = wp_get_attachment_image_src($thumb_id, 'thumbnail');
+
+        $eyeCatch = $img[0];
+        $width  = $img[1];
+        $height = $img[2];
+    } else {
+        $eyeCatch = sprintf(
+            '%s/assets/img/500x500.webp',
+            get_stylesheet_directory_uri()
+        );
+        $width = 500;
+        $height = 500;
+    }
     $settings = [
         'categories'   => get_the_terms(null, 'category'),
         'cultures'     => get_the_terms(null, 'culture_cat'),
@@ -31,25 +46,31 @@
     }
     ?>
     <div class="c-card-event <?= $settings['status_class'] ?>" <?= $settings['is-animation']? 'data-animated="false"': ''; ?>>
-        <a class="c-card-event__link" href="<?= get_the_permalink() ?>">
-            <div class="c-card-event__meta">
-                <p class="c-card-event__type"><?= $settings['category']->name ?></p>
-                <ul class="c-card-event__category">
-                    <?php if ($settings['cultures']): foreach ($settings['cultures'] as $term): ?>
+        <div class="c-card-event__wrap">
+            <a class="c-card-event__link" href="<?= get_the_permalink() ?>">
+                <div class="c-card-event__meta">
+                    <p class="c-card-event__type"><?= $settings['category']->name ?></p>
+                    <ul class="c-card-event__category">
+                        <?php if ($settings['cultures']): foreach ($settings['cultures'] as $term): ?>
+                            <li><?= $term->name ?></li>
+                        <?php break; endforeach; endif; ?>
+                    </ul>
+                </div>
+                <?php if ($settings['status_char']): ?>
+                    <p class="c-card-event__status"><?= $settings['status_char'] ?></p>
+                <?php endif; ?>
+                <figure class="c-card-event__pic"><img
+                            src="<?= esc_url($eyeCatch); ?>"
+                            width="<?= esc_attr($width); ?>"
+                            height="<?= esc_attr($height); ?>"
+                    /></figure>
+                <h3 class="c-card-event__title"><?= get_the_title() ?></h3>
+                <ul class="c-card-event__place">
+                    <?php if ($settings['tags']): foreach($settings['tags'] as $term): ?>
                         <li><?= $term->name ?></li>
-                    <?php break; endforeach; endif; ?>
+                    <?php endforeach; endif; ?>
                 </ul>
-            </div>
-            <?php if ($settings['status_char']): ?>
-                <p class="c-card-event__status"><?= $settings['status_char'] ?></p>
-            <?php endif; ?>
-            <figure class="c-card-event__pic"><img src="<?= $eyeCatch ?>" alt=""/></figure>
-            <h3 class="c-card-event__title"><?= get_the_title() ?></h3>
-            <ul class="c-card-event__place">
-                <?php if ($settings['tags']): foreach($settings['tags'] as $term): ?>
-                    <li><?= $term->name ?></li>
-                <?php endforeach; endif; ?>
-            </ul>
-        </a>
+            </a>
+        </div>
     </div>
 <?php endwhile; ?>

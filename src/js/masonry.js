@@ -31,11 +31,12 @@ export default class Masonry {
             const rowGap = parseInt(getComputedStyle(grid).getPropertyValue('grid-row-gap'));
 
             items.forEach(item => {
-                const content = item.querySelector('.c-card-event__link');
+                const content = item.querySelector('.c-card-event__wrap');
                 if (!content) return;
 
-                const h = content.getBoundingClientRect().height;
-                const span = Math.ceil((h + rowGap) / (rowHeight + rowGap));
+                // const h = content.getBoundingClientRect().height;
+                const h = content.scrollHeight;
+                const span = Math.ceil((h - rowGap) / (rowHeight + rowGap));
                 item.style.gridRowEnd = `span ${span}`;
                 item.classList.add('rendered')
             });
@@ -173,8 +174,12 @@ export default class Masonry {
             });
         });
 
+        let resizeTimer;
         window.addEventListener('resize', () => {
-            resizeAllGridItems();
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                resizeAllGridItems();
+            }, 150);
         });
     }
 }

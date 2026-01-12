@@ -69,10 +69,12 @@
 		&:first-child:before {
 			content: '';
 			display: block;
-			width: calc(100% - 0.25em);
+			//width: calc(100% - 0.25em);
+			width: 100%;
 			height: 0.7em;
 			position: absolute;
-			left: 0.25em;
+			//left: 0.25em;
+			left: 0;
 			top: 0.1em;
 			pointer-events: none;
 			background: url(../img/c-heading-section-bg.webp) center center /cover;
@@ -80,8 +82,8 @@
 	}
 	._o {
 		overflow: hidden;
-		width: 20/16+rem;
-		height: 20/16+rem;
+		width: 24/16+rem;
+		height: 24/16+rem;
 		background: var(--color);
 		border-radius: 100%;
 		text-indent: -1em;
@@ -89,8 +91,8 @@
 	@include config.pc {
 		font-size: 69/16+rem;
 		._o {
-			width: 30/16+rem;
-			height: 30/16+rem;
+			width: 38/16+rem;
+			height: 38/16+rem;
 		}
 	}
 }

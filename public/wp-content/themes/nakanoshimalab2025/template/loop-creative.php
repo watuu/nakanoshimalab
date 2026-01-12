@@ -7,21 +7,23 @@
     $terms = get_the_terms(null, 'creative_tag');
     ?>
     <div class="c-card-event c-card-event--square">
-        <a class="c-card-event__link" href="<?= get_the_permalink() ?>">
-            <figure class="c-card-event__pic"><img src="<?= $eyeCatch ?>" alt=""/></figure>
-            <ul class="c-card-event__category">
-                <?php if($categories): foreach ($categories as $category): ?>
-                    <li><?= $category->name ?></li>
-                <?php break; endforeach; endif; ?>
-            </ul>
-            <h3 class="c-card-event__title"><?= get_the_title() ?></h3>
-            <?php if ($terms): ?>
-            <ul class="c-card-event__place">
-                <?php if($terms): foreach($terms as $term): ?>
-                    <li><?= $term->name ?></li>
-                <?php endforeach; endif; ?>
-            </ul>
-            <?php endif; ?>
-        </a>
+        <div class="c-card-event__wrap">
+            <a class="c-card-event__link" href="<?= get_the_permalink() ?>">
+                <figure class="c-card-event__pic"><img src="<?= $eyeCatch ?>" alt=""/></figure>
+                <ul class="c-card-event__category">
+                    <?php if($categories): foreach ($categories as $category): ?>
+                        <li><?= $category->name ?></li>
+                    <?php break; endforeach; endif; ?>
+                </ul>
+                <h3 class="c-card-event__title"><?= get_the_title() ?></h3>
+                <?php if ($terms): ?>
+                <ul class="c-card-event__place">
+                    <?php if($terms): foreach($terms as $term): ?>
+                        <li><?= $term->name ?></li>
+                    <?php endforeach; endif; ?>
+                </ul>
+                <?php endif; ?>
+            </a>
+        </div>
     </div>
 <?php endwhile; ?>

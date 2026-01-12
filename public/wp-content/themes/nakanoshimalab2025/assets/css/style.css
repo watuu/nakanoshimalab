@@ -1800,6 +1800,7 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
   position: absolute;
   width: 10%;
   z-index: 5;
+  opacity: 0;
 }
 .p-top-mv-map__lines figure:nth-child(1) {
   width: 28.8043478261%;
@@ -1944,6 +1945,47 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
   }
 }
 
+.p-top-mv-map__title {
+  position: relative;
+  color: transparent;
+}
+.p-top-mv-map__title:before {
+  content: "|";
+  display: inline-block;
+  -webkit-animation: blink 1s steps(1) infinite;
+          animation: blink 1s steps(1) infinite;
+  color: var(--color);
+}
+.p-top-mv-map__title.is-scrambling {
+  color: var(--color);
+}
+.p-top-mv-map__title.is-scrambling:before {
+  content: "";
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .p-top-mv-map__cultures li {
   position: absolute;
   display: -webkit-inline-box;
@@ -1960,7 +2002,6 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
   font-weight: 400;
   line-height: 1;
   text-transform: capitalize;
-  opacity: 0;
 }
 .p-top-mv-map__cultures li span {
   position: relative;
@@ -3688,8 +3729,9 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-  grid-auto-rows: 0.625rem;
-  grid-gap: 0.9375rem;
+  grid-auto-rows: 6px;
+  grid-row-gap: 0;
+  grid-column-gap: 15px;
   min-height: 100vh;
 }
 .cm-section-masonry .c-card-event {
@@ -3709,7 +3751,8 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
 @media screen and (min-width: 1024px) {
   .cm-section-masonry {
     grid-template-columns: repeat(auto-fill, minmax(20.125rem, 1fr));
-    grid-gap: 1.5rem;
+    grid-row-gap: 0;
+    grid-column-gap: 20px;
   }
 }
 
@@ -3893,7 +3936,7 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
     gap: 0.9375rem;
     padding: 1.875rem 0 2.5rem;
     margin-inline: auto;
-    width: 52.875rem;
+    width: 70rem;
   }
 }
 
@@ -4287,18 +4330,18 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
 .c-heading-section__en p:first-child:before {
   content: "";
   display: block;
-  width: calc(100% - 0.25em);
+  width: 100%;
   height: 0.7em;
   position: absolute;
-  left: 0.25em;
+  left: 0;
   top: 0.1em;
   pointer-events: none;
   background: url(../img/c-heading-section-bg.webp) center center/cover;
 }
 .c-heading-section__en ._o {
   overflow: hidden;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background: var(--color);
   border-radius: 100%;
   text-indent: -1em;
@@ -4308,8 +4351,8 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
     font-size: 4.3125rem;
   }
   .c-heading-section__en ._o {
-    width: 1.875rem;
-    height: 1.875rem;
+    width: 2.375rem;
+    height: 2.375rem;
   }
 }
 
@@ -4854,6 +4897,15 @@ body figure {
   background: var(--color-accent);
   text-decoration: none;
 }
+.editor-styles-wrapper.editor-styles-wrapper.editor-styles-wrapper .wp-embed-aspect-16-9 iframe,
+.cm-post-editor .wp-embed-aspect-16-9 iframe,
+.cm-post-editor .cm-post-report__body .wp-embed-aspect-16-9 iframe,
+.cm-post-editor .cm-post-report__body .cm-post-report__body .wp-embed-aspect-16-9 iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto;
+}
+
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .cm-post-archive,
 .cm-post-outline {
@@ -6227,7 +6279,7 @@ body figure {
 .c-card-recommend__title {
   font-size: 0.875rem;
   font-weight: 600;
-  font-family: var(--sans600);
+  font-family: YakuHanJP, var(--sans600);
   line-height: 1.35;
   letter-spacing: 0.02em;
 }
@@ -6249,6 +6301,21 @@ body figure {
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .c-card-event {
   position: relative;
+}
+
+.c-card-event__wrap {
+  height: 100%;
+}
+.cm-section-masonry .c-card-event__wrap {
+  height: auto;
+}
+.cm-section-masonry .c-card-event__wrap {
+  padding-bottom: 0.9375rem;
+}
+@media screen and (min-width: 1024px) {
+  .cm-section-masonry .c-card-event__wrap {
+    padding-bottom: 1.25rem;
+  }
 }
 
 .c-card-event__link {
@@ -6382,7 +6449,7 @@ body figure {
       align-self: stretch;
   font-size: 0.8125rem;
   font-weight: 600;
-  font-family: var(--sans600);
+  font-family: YakuHanJP, var(--sans600);
   line-height: 1.2;
   letter-spacing: 0.02em;
 }

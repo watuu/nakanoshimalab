@@ -64,7 +64,7 @@
                     </div>
                     <div class="cm-nav-page__index">
                         <a class="cm-nav-page-link" href="<?= home_url() ?>/creative/">
-                            <span class="cm-nav-page-link__txt">Creative Contents一覧に戻る</span>
+                            <span class="cm-nav-page-link__txt">一覧に戻る</span>
                         </a>
                     </div>
                     <div class="cm-nav-page__ctrl">

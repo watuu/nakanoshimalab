@@ -35,38 +35,40 @@
     if ($settings['today'] < $settings['date_open']) {
         $settings['status'] = "開催予定";
         $settings['status_class'] = "c-card-event--teaser";
-        $settings['status_char'] = "予";
+        $settings['status_char'] = "開催<br>予定";
     } elseif ($settings['today'] >= $settings['date_open'] && $settings['today'] <= $settings['date_end']) {
         $settings['status_class'] = "c-card-event--open";
         $settings['status'] = "開催中";
-        $settings['status_char'] = "開";
+        $settings['status_char'] = "開催中";
     } else {
         $settings['status'] = "終了";
     }
     ?>
     <div class="c-card-event <?= $settings['status_class'] ?>" <?= $settings['is-animation']? 'data-animated="false"': ''; ?>>
-        <a class="c-card-event__link" href="<?= get_the_permalink() ?>">
-            <div class="c-card-event__meta">
-                <p class="c-card-event__type"><?= $settings['category']->name ?></p>
-                <ul class="c-card-event__category">
-                    <?php if ($settings['cultures']): foreach ($settings['cultures'] as $term): ?>
+        <div class="c-card-event__wrap">
+            <a class="c-card-event__link" href="<?= get_the_permalink() ?>">
+                <div class="c-card-event__meta">
+                    <p class="c-card-event__type"><?= $settings['category']->name ?></p>
+                    <ul class="c-card-event__category">
+                        <?php if ($settings['cultures']): foreach ($settings['cultures'] as $term): ?>
+                            <li><?= $term->name ?></li>
+                        <?php break; endforeach; endif; ?>
+                    </ul>
+                </div>
+                <?php if ($settings['status_char']): ?>
+                    <p class="c-card-event__status"><?= $settings['status_char'] ?></p>
+                <?php endif; ?>
+                <figure class="c-card-event__pic"><img
+                            src="<?= esc_url($eyeCatch); ?>"
+                            width="<?= esc_attr($width); ?>"
+                            height="<?= esc_attr($height); ?>"
+                    /></figure>
+                <h3 class="c-card-event__title"><?= get_the_title() ?></h3>
+                <ul class="c-card-event__place">
+                    <?php if ($settings['tags']): foreach($settings['tags'] as $term): ?>
                         <li><?= $term->name ?></li>
-                    <?php break; endforeach; endif; ?>
+                    <?php endforeach; endif; ?>
                 </ul>
-            </div>
-            <?php if ($settings['status_char']): ?>
-                <p class="c-card-event__status"><?= $settings['status_char'] ?></p>
-            <?php endif; ?>
-            <figure class="c-card-event__pic"><img
-                        src="<?= esc_url($eyeCatch); ?>"
-                        width="<?= esc_attr($width); ?>"
-                        height="<?= esc_attr($height); ?>"
-                /></figure>
-            <h3 class="c-card-event__title"><?= get_the_title() ?></h3>
-            <ul class="c-card-event__place">
-                <?php if ($settings['tags']): foreach($settings['tags'] as $term): ?>
-                    <li><?= $term->name ?></li>
-                <?php endforeach; endif; ?>
-            </ul>
-        </a>
+            </a>
+        </div>
     </div>

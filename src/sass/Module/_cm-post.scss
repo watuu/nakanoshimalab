@@ -305,6 +305,13 @@ body figure {
 	//blockquote
 	blockquote.wp-block-quote {
 	}
+	.wp-embed-aspect-16-9 {
+		iframe {
+			aspect-ratio: 16 / 9;
+			width: 100%;
+			height: auto;
+		}
+	}
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .cm-post-archive,
@@ -370,6 +377,7 @@ body figure {
 		margin-inline: auto;
 	}
 }
+
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .editor-styles-wrapper.editor-styles-wrapper.editor-styles-wrapper,
 .cm-post-editor {

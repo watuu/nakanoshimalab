@@ -43,7 +43,7 @@
 .c-card-recommend__title {
 	font-size: 14/16+rem;
 	font-weight: 600;
-	font-family: var(--sans600);
+	font-family: YakuHanJP, var(--sans600);
 	line-height: 1.35;
 	letter-spacing: 0.02em;
 	@include config.pc {
@@ -64,6 +64,20 @@
 //	content: attr(style);
 //	font-size: 10px;
 //}
+.c-card-event__wrap {
+	height: 100%;
+	.cm-section-masonry & {
+		height: auto;
+	}
+	.cm-section-masonry & {
+		padding-bottom: 15/16+rem;
+	}
+	@include config.pc {
+		.cm-section-masonry & {
+			padding-bottom: 20/16+rem;
+		}
+	}
+}
 .c-card-event__link {
 	display: flex;
 	flex-direction: column;
@@ -157,7 +171,7 @@
 	align-self: stretch;
 	font-size: 13/16+rem;
 	font-weight: 600;
-	font-family: var(--sans600);
+	font-family: YakuHanJP, var(--sans600);
 	line-height: 1.2;
 	letter-spacing: 0.02em;
 	@include config.pc {
