@@ -13,8 +13,8 @@ class APP {
         const common = new Common();
         common.load();
         // new Barba();
-        new Page();
         new Masonry();
+        new Page();
         new Mv();
         new BudouX();
     }

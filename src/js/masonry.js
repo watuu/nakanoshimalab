@@ -85,7 +85,8 @@ export default class Masonry {
                     rotate: 0,
                     opacity: 1,
                     duration: 0.9,
-                    ease: 'power3.out',
+                    // ease: 'power3.out',
+                    ease: 'steps(3)',
                 });
             });
         }

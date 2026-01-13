@@ -130,11 +130,17 @@ export default class Page {
 
             const preloadedImages = {};
             if (spotData) {
-                spotData.forEach(spot => {
-                    if (spot['pic']) {
-                        const img = new Image();
-                        img.src = spot['pic'];
-                        preloadedImages[spot.order] = img;
+                window.addEventListener('load', () => {
+                    if ('requestIdleCallback' in window) {
+                        requestIdleCallback(() => {
+                            spotData.forEach(spot => {
+                                if (spot['pic']) {
+                                    const img = new Image();
+                                    img.src = spot['pic'];
+                                    preloadedImages[spot.order] = img;
+                                }
+                            });
+                        });
                     }
                 });
             }
