@@ -320,7 +320,7 @@
                                 <div class="c-btn-more__ico"><i class="c-btn-more__circle"></i><i class="c-btn-more__arrow">
                                         <svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i></div>
                             </div>
-                            <p class="p-top-creative-item__desc c-paragraph">エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味</p>
+                            <p class="p-top-creative-item__desc c-paragraph">13 の文化施設や機関と連携して各機関が有する固有の資源（人・コレクション・歴史・取組み）を活かし、その資源を施設間で交換することで、新たな価値を掘り起こします。</p>
                         </a>
                     </div>
                     <div class="p-top-creative-item">
@@ -330,7 +330,7 @@
                                 <div class="c-btn-more__ico"><i class="c-btn-more__circle"></i><i class="c-btn-more__arrow">
                                         <svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i></div>
                             </div>
-                            <p class="p-top-creative-item__desc c-paragraph">エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味</p>
+                            <p class="p-top-creative-item__desc c-paragraph">東西3.3キロの中之島を回遊・散策していただくために、2021年から中之島にある15施設のロビー等にミーティンポイント（サインスタンド）を設置。中之島の文化情報と出会う場として活用しています。</p>
                         </a>
                     </div>
                     <div class="p-top-creative-item">
@@ -340,7 +340,7 @@
                                 <div class="c-btn-more__ico"><i class="c-btn-more__circle"></i><i class="c-btn-more__arrow">
                                         <svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i></div>
                             </div>
-                            <p class="p-top-creative-item__desc c-paragraph">エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味</p>
+                            <p class="p-top-creative-item__desc c-paragraph">国内外で活躍するアーティストが独自の視点で中之島を捉え直すリサーチを実施。このリサーチプログラムを通じて、中之島の有形・無形の文化資産を掘り起こし、中之島の地の利を活かした新たな作品の構想を練ります。</p>
                         </a>
                     </div>
                     <div class="p-top-creative-item">
@@ -350,7 +350,7 @@
                                 <div class="c-btn-more__ico"><i class="c-btn-more__circle"></i><i class="c-btn-more__arrow">
                                         <svg class="js-clone" width="26" height="26"><use href="#ico-arrow"></use></svg></i></div>
                             </div>
-                            <p class="p-top-creative-item__desc c-paragraph">エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味エクスチェンジプログラムってどういう意味</p>
+                            <p class="p-top-creative-item__desc c-paragraph">中之島のユニークベニューを舞台に、国内外で活躍するアーティストがリサーチを経て作品を創作。都市風景とアーティストの創造性の化学反応によって、中之島の魅力を世界に発信します。</p>
                         </a>
                     </div>
                 </div>
