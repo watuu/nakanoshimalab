@@ -31,7 +31,7 @@
 
             ?>
             <div class="p-news__head">
-                <?php if ( is_category() || is_tag()): ?>
+                <?php if ( is_category() || is_tag() || is_tax('culture_cat')): ?>
                     <?php $query_object = get_queried_object(); ?>
                     <div class="c-heading-page c-heading-page--sm">
                         <h1 class="c-heading-page__title"><?= $query_object->name ?></h1>

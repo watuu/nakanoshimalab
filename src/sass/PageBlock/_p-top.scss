@@ -428,7 +428,7 @@
 		text-align: left;
 		padding-left: calc(var(--col9) + var(--gap9));
 		svg {
-			width: 336/16+rem;
+			width: 344/16+rem;
 		}
 	}
 }
@@ -867,51 +867,51 @@
 	}
 	button[data-spot-id="1"] {
 		left: 16.5%;
-		top: 43.5%;
+		top: (43.5-3)*1%;
 	}
 	button[data-spot-id="2"] {
 		left: 31.5%;
-		top: 41%;
+		top: (41-3)*1%;
 	}
 	button[data-spot-id="3"] {
 		left: 32%;
-		top: 33%;
+		top: (33-3)*1%;
 	}
 	button[data-spot-id="4"] {
 		left: 35%;
-		top: 29%;
+		top: (29-3)*1%;
 	}
 	button[data-spot-id="5"] {
 		left: 30.5%;
-		top: 20%;
+		top: (22-3)*1%;
 	}
 	button[data-spot-id="6"] {
 		left: 33.2%;
-		top: 17%;
+		top: (19-3)*1%;
 	}
 	button[data-spot-id="7"] {
 		left: 44.5%;
-		top: 19%;
+		top: (19-3)*1%;
 	}
 	button[data-spot-id="8"] {
 		left: 48%;
-		top: 19%;
+		top: (19-3)*1%;
 	}
 	button[data-spot-id="9"] {
 		left: 68%;
-		top: 29%;
+		top: (29-3)*1%;
 	}
 	button[data-spot-id="10"] {
 		left: 69.8%;
-		top: 37%;
+		top: (37-3)*1%;
 	}
 	button[data-spot-id="11"] {
 		left: 72.5%;
-		top: 29%;
+		top: (29-3)*1%;
 	}
 	button[data-spot-id="12"] {
 		left: 75.2%;
-		top: 34%;
+		top: (34-3)*1%;
 	}
 	@include config.pc {
 		button {

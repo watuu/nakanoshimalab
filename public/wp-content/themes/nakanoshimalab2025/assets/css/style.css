@@ -2257,7 +2257,7 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
     padding-left: calc(var(--col9) + var(--gap9));
   }
   .p-top-mv__txt svg {
-    width: 21rem;
+    width: 21.5rem;
   }
 }
 
@@ -2738,51 +2738,51 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
 }
 .p-top-map-area__list button[data-spot-id="1"] {
   left: 16.5%;
-  top: 43.5%;
+  top: 40.5%;
 }
 .p-top-map-area__list button[data-spot-id="2"] {
   left: 31.5%;
-  top: 41%;
+  top: 38%;
 }
 .p-top-map-area__list button[data-spot-id="3"] {
   left: 32%;
-  top: 33%;
+  top: 30%;
 }
 .p-top-map-area__list button[data-spot-id="4"] {
   left: 35%;
-  top: 29%;
+  top: 26%;
 }
 .p-top-map-area__list button[data-spot-id="5"] {
   left: 30.5%;
-  top: 20%;
+  top: 19%;
 }
 .p-top-map-area__list button[data-spot-id="6"] {
   left: 33.2%;
-  top: 17%;
+  top: 16%;
 }
 .p-top-map-area__list button[data-spot-id="7"] {
   left: 44.5%;
-  top: 19%;
+  top: 16%;
 }
 .p-top-map-area__list button[data-spot-id="8"] {
   left: 48%;
-  top: 19%;
+  top: 16%;
 }
 .p-top-map-area__list button[data-spot-id="9"] {
   left: 68%;
-  top: 29%;
+  top: 26%;
 }
 .p-top-map-area__list button[data-spot-id="10"] {
   left: 69.8%;
-  top: 37%;
+  top: 34%;
 }
 .p-top-map-area__list button[data-spot-id="11"] {
   left: 72.5%;
-  top: 29%;
+  top: 26%;
 }
 .p-top-map-area__list button[data-spot-id="12"] {
   left: 75.2%;
-  top: 34%;
+  top: 31%;
 }
 @media screen and (min-width: 1024px) {
   .p-top-map-area__list button {

@@ -25,7 +25,7 @@
         <h3 class="cm-nav-main-block__head"><a href="<?= home_url() ?>/posts/">All News</a></h3>
         <div class="cm-nav-main-block__list">
             <ul>
-                <li><a href="<?= home_url() ?>/news/">News</a></li>
+                <li><a href="<?= home_url() ?>/news/">Information</a></li>
                 <li><a href="<?= home_url() ?>/events/">Events</a></li>
                 <li><a href="<?= home_url() ?>/exhibitions/">Exhibitions</a></li>
             </ul>
