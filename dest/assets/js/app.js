@@ -29350,11 +29350,17 @@
           var spotData = JSON.parse(jsonDataElement.textContent);
           var preloadedImages = {};
           if (spotData) {
-            spotData.forEach(function (spot) {
-              if (spot['pic']) {
-                var img = new Image();
-                img.src = spot['pic'];
-                preloadedImages[spot.order] = img;
+            window.addEventListener('load', function () {
+              if ('requestIdleCallback' in window) {
+                requestIdleCallback(function () {
+                  spotData.forEach(function (spot) {
+                    if (spot['pic']) {
+                      var img = new Image();
+                      img.src = spot['pic'];
+                      preloadedImages[spot.order] = img;
+                    }
+                  });
+                });
               }
             });
           }
@@ -29408,10 +29414,12 @@
           var rowHeight = parseInt(getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
           var rowGap = parseInt(getComputedStyle(grid).getPropertyValue('grid-row-gap'));
           items.forEach(function (item) {
-            var content = item.querySelector('.c-card-event__link');
+            var content = item.querySelector('.c-card-event__wrap');
             if (!content) return;
-            var h = content.getBoundingClientRect().height;
-            var span = Math.ceil((h + rowGap) / (rowHeight + rowGap));
+
+            // const h = content.getBoundingClientRect().height;
+            var h = content.scrollHeight;
+            var span = Math.ceil((h - rowGap) / (rowHeight + rowGap));
             item.style.gridRowEnd = "span ".concat(span);
             item.classList.add('rendered');
           });
@@ -29454,7 +29462,8 @@
               rotate: 0,
               opacity: 1,
               duration: 0.9,
-              ease: 'power3.out'
+              // ease: 'power3.out',
+              ease: 'steps(3)'
             });
           });
         }
@@ -29537,8 +29546,12 @@
             animateCards();
           });
         });
+        var resizeTimer;
         window.addEventListener('resize', function () {
-          resizeAllGridItems();
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(function () {
+            resizeAllGridItems();
+          }, 150);
         });
       }
     }]);
@@ -29563,47 +29576,15 @@
         tl.add(function () {
           // ===== スポット =====
           var spots = document.querySelectorAll('.p-top-mv-map__cultures li');
-          var dom = document.querySelector('.p-top-mv-map');
-          var domRect = dom.getBoundingClientRect();
-          var centerX = domRect.left + domRect.width / 2;
-          var centerY = domRect.top + domRect.height / 2;
+
+          //gsap.set('.p-top-mv-map__title', {opacity: 1})
+
           spots.forEach(function (spot) {
-            var rect = spot.getBoundingClientRect();
-            var px = rect.left + rect.width / 2;
-            var py = rect.top + rect.height / 2;
-            var dx = px - centerX;
-            var dy = py - centerY;
-            var dist = Math.sqrt(dx * dx + dy * dy) || 1;
-            var nx = dx / dist;
-            var ny = dy / dist;
-            gsapWithCSS.set(spot, {
-              x: -nx * window.innerWidth / 4,
-              y: -ny * window.innerWidth / 4,
-              rotate: nx < 0 ? -120 : 120,
-              opacity: 0,
-              scale: 0.2,
-              transformOrigin: '50% 50%'
-            });
-
-            // アニメーション
-            gsapWithCSS.to(spot, {
-              x: 0,
-              y: 0,
-              rotate: 0,
-              opacity: 1,
-              scale: 1,
-              duration: 4,
-              delay: Math.random() * 0.5,
-              //ease: 'power3.out',
-              ease: "elastic.out(1,0.5)"
-            });
-
-            // gsap.to(spot, {opacity: 1, duration: 2})
             var title = spot.querySelector('.p-top-mv-map__title');
             var originalText = title.textContent;
             //const chars = '!@#$%^&*()_+-=<>?/|[]{}';
             var chars = 'abcdefghijklmnopqrstuvwxyz';
-            var speed = 300; // 1文字確定ごとの間隔(ms)
+            var speed = 150; // 1文字確定ごとの間隔(ms)
 
             var frame = 0;
             var _scramble = function scramble() {
@@ -29617,61 +29598,55 @@
                 setTimeout(_scramble, speed);
               }
             };
+            spot.querySelectorAll('.p-top-mv-map__title').forEach(function (el) {
+              return el.classList.add('is-scrambling');
+            });
             _scramble();
           });
-        })
-        // .add(()=>{
-        //     // ===== LINE =====
-        //     const dom = document.querySelector('.p-top-mv-map');
-        //     const lines = dom.querySelectorAll('.p-top-mv-map__lines figure');
-        //
-        //     const domRect = dom.getBoundingClientRect();
-        //     const centerX = domRect.left + domRect.width / 2;
-        //     const centerY = domRect.top + domRect.height / 2;
-        //
-        //     lines.forEach((line) => {
-        //         const rect = line.getBoundingClientRect();
-        //
-        //         const px = rect.left + rect.width / 2;
-        //         const py = rect.top + rect.height / 2;
-        //
-        //         const dx = px - centerX;
-        //         const dy = py - centerY;
-        //         const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-        //
-        //         const nx = dx / dist;
-        //         const ny = dy / dist;
-        //
-        //         gsap.set(line, {
-        //             x: -nx * window.innerWidth/4,
-        //             y: -ny * window.innerWidth/4,
-        //             rotate: nx<0? -120: 120,
-        //             opacity: 0,
-        //             scale: 0.2,
-        //             transformOrigin: '50% 50%',
-        //         });
-        //
-        //
-        //         // アニメーション
-        //         gsap.to(line, {
-        //             // scrollTrigger: {
-        //             //     trigger: '.p-top-mv-map',
-        //             //     start: 'top top',
-        //             //     once: true,
-        //             // },
-        //             x: 0,
-        //             y: 0,
-        //             rotate: 0,
-        //             opacity: 1,
-        //             scale: 1,
-        //             duration: 5,
-        //             delay: Math.random() * 0.5,
-        //             //ease: 'power3.out',
-        //             ease: "elastic.out(1,0.5)",
-        //         });
-        //     });
-        // }, '<')
-        .add(function () {
+        }).add(function () {
+          // ===== LINE =====
+          var dom = document.querySelector('.p-top-mv-map');
+          var lines = dom.querySelectorAll('.p-top-mv-map__lines figure');
+          var domRect = dom.getBoundingClientRect();
+          var centerX = domRect.left + domRect.width / 2;
+          var centerY = domRect.top + domRect.height / 2;
+          lines.forEach(function (line) {
+            var rect = line.getBoundingClientRect();
+            var px = rect.left + rect.width / 2;
+            var py = rect.top + rect.height / 2;
+            var dx = px - centerX;
+            var dy = py - centerY;
+            var dist = Math.sqrt(dx * dx + dy * dy) || 1;
+            var nx = dx / dist;
+            var ny = dy / dist;
+            gsapWithCSS.set(line, {
+              x: -nx * window.innerWidth / 4,
+              y: -ny * window.innerWidth / 4,
+              rotate: nx < 0 ? -120 : 120,
+              opacity: 0,
+              scale: 0.2,
+              transformOrigin: '50% 50%'
+            });
+
+            // アニメーション
+            gsapWithCSS.to(line, {
+              // scrollTrigger: {
+              //     trigger: '.p-top-mv-map',
+              //     start: 'top top',
+              //     once: true,
+              // },
+              x: 0,
+              y: 0,
+              rotate: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 5,
+              delay: Math.random() * 0.5,
+              //ease: 'power3.out',
+              ease: "elastic.out(1,0.5)"
+            });
+          });
+        }, '<').add(function () {
           // ===== タイトル =====
           var svg = Utility.isPC() ? document.querySelector('.p-top-mv-map__type svg.pc') : document.querySelector('.p-top-mv-map__type svg.sp-tab');
           var paths = svg.querySelectorAll('path');
@@ -29761,14 +29736,18 @@
         }, "+=2");
         function createPicToggleTimeline() {
           var pics = document.querySelectorAll('.p-top-mv-map__pic');
-          gsapWithCSS.set(pics, {
+          var arrPics = Array.from(pics);
+          arrPics.sort(function (a, b) {
+            return Number(a.dataset.sort) - Number(b.dataset.sort);
+          });
+          gsapWithCSS.set(arrPics, {
             clipPath: 'inset(0 100% 0 0)'
           });
           var picTl = gsapWithCSS.timeline({
             repeat: -1,
             repeatDelay: 0
           });
-          pics.forEach(function (pic, i) {
+          arrPics.forEach(function (pic, i) {
             picTl
             // 表示
             .to(pic, {
@@ -29790,8 +29769,8 @@
             });
 
             // 次の画像を少し前から出す
-            if (i < pics.length - 1) {
-              picTl.to(pics[i + 1], {
+            if (i < arrPics.length - 1) {
+              picTl.to(arrPics[i + 1], {
                 clipPath: 'inset(0 0% 0 0)',
                 duration: 0.3,
                 ease: 'power3.out'
@@ -43019,8 +42998,8 @@
     var common$1 = new common();
     common$1.load();
     // new Barba();
-    new Page();
     new Masonry();
+    new Page();
     new Mv();
     new BudouX();
   });

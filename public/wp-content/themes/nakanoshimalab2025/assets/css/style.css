@@ -139,11 +139,29 @@ article, main, aside, details, figcaption, figure, footer, header, hgroup, menu,
   --color-assort: #008CD6;
   --color-accent: #084CC2;
   --header-height: 4rem;
+}
+@media screen and (min-width: 1024px) {
+  :root {
+    --header-height: 5.625rem;
+  }
+}
+:root {
   --gap: 0.9375rem;
   --padding-section: 2.625rem;
   --padding-section-md: 3.75rem;
   --padding-section-lg: 4.5rem;
   --padding-page: 4.5rem;
+}
+@media screen and (min-width: 1024px) {
+  :root {
+    --gap: 1.875rem;
+    --padding-section: 4.125rem;
+    --padding-section-md: 5.375rem;
+    --padding-section-lg: 7.5rem;
+    --padding-page: 11.1875rem;
+  }
+}
+:root {
   --col1: 4.125rem;
   --col2: 8.25rem;
   --col3: 12.375rem;
@@ -180,20 +198,6 @@ article, main, aside, details, figcaption, figure, footer, header, hgroup, menu,
   --border-accent: 1px solid var(--color-accent);
   --border-gray: 1px solid #444648;
   --border-gray-light: 1px solid rgba(186, 189, 191, 0.40);
-}
-@media screen and (min-width: 1024px) {
-  :root {
-    --header-height: 5.625rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  :root {
-    --gap: 1.875rem;
-    --padding-section: 4.125rem;
-    --padding-section-md: 5.375rem;
-    --padding-section-lg: 7.5rem;
-    --padding-page: 11.1875rem;
-  }
 }
 
 :root {
@@ -393,6 +397,10 @@ a {
   transition: var(--easeDuration) var(--easeTheme);
   cursor: pointer;
 }
+a:where(:not(.wp-element-button)) {
+  text-decoration: none;
+}
+
 @media (hover: hover) {
   a[href^="tel:"] {
     pointer-events: none;
@@ -2070,11 +2078,13 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
       -ms-flex-align: end;
           align-items: flex-end;
   gap: 0.3125rem;
-  left: 61.0909090909%;
-  top: 82.2727272727%;
 }
 .p-top-mv-map__cultures ._Ceramic ._dot {
   margin-right: 0;
+}
+.p-top-mv-map__cultures ._Ceramic {
+  left: 61.0909090909%;
+  top: 82.2727272727%;
 }
 .p-top-mv-map__cultures ._Performing {
   left: 61.2727272727%;
@@ -2174,11 +2184,13 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
         -ms-flex-align: end;
             align-items: flex-end;
     gap: 0.3125rem;
-    left: 86.3194444444%;
-    top: 75.0666666667%;
   }
   .p-top-mv-map__cultures ._Ceramic ._dot {
     margin-right: 0;
+  }
+  .p-top-mv-map__cultures ._Ceramic {
+    left: 86.3194444444%;
+    top: 75.0666666667%;
   }
   .p-top-mv-map__cultures ._Performing {
     left: 74.5138888889%;
@@ -2257,7 +2269,7 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
     padding-left: calc(var(--col9) + var(--gap9));
   }
   .p-top-mv__txt svg {
-    width: 21.5rem;
+    width: 22.625rem;
   }
 }
 
@@ -2683,16 +2695,18 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.p-top-map-area::-webkit-scrollbar {
+  display: none;
+  -webkit-appearance: none;
+}
+.p-top-map-area {
   cursor: -webkit-grab;
   cursor: grab;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-.p-top-map-area::-webkit-scrollbar {
-  display: none;
-  -webkit-appearance: none;
 }
 .p-top-map-area.active {
   cursor: -webkit-grabbing;

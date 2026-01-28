@@ -17,7 +17,9 @@ a {
 		}
 	}
 }
-
+a:where(:not(.wp-element-button)) {
+	text-decoration: none;
+}
 @media (hover: hover) {
 	a[href^='tel:'] {
 		pointer-events: none;

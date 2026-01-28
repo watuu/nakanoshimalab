@@ -210,8 +210,13 @@ export default class Mv {
 
         function createPicToggleTimeline() {
             const pics = document.querySelectorAll('.p-top-mv-map__pic');
+            const arrPics = Array.from(pics);
 
-            gsap.set(pics, {
+            arrPics.sort((a, b) => {
+                return Number(a.dataset.sort) - Number(b.dataset.sort);
+            });
+
+            gsap.set(arrPics, {
                 clipPath: 'inset(0 100% 0 0)'
             });
 
@@ -220,7 +225,7 @@ export default class Mv {
                 repeatDelay: 0
             });
 
-            pics.forEach((pic, i) => {
+            arrPics.forEach((pic, i) => {
                 picTl
                     // 表示
                     .to(pic, {
@@ -240,8 +245,8 @@ export default class Mv {
                     });
 
                 // 次の画像を少し前から出す
-                if (i < pics.length - 1) {
-                    picTl.to(pics[i + 1], {
+                if (i < arrPics.length - 1) {
+                    picTl.to(arrPics[i + 1], {
                         clipPath: 'inset(0 0% 0 0)',
                         duration: 0.3,
                         ease: 'power3.out'

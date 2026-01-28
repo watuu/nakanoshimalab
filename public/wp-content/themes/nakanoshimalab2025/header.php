@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no"/>
 
-    <!-- css -->
-    <link href="<?= get_stylesheet_directory_uri() ?>/assets/css/style.css" rel="stylesheet"/>
+
 
     <!-- vendor -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.1.1/dist/css/yakuhanjp.css">
@@ -28,6 +27,8 @@
         window.ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
     </script>
     <?php wp_head(); ?>
+    <!-- css -->
+    <link href="<?= get_stylesheet_directory_uri() ?>/assets/css/style.css" rel="stylesheet"/>
 </head>
 <body <?php body_class($bodyClass); ?> id="body">
 <a id="top"></a>
