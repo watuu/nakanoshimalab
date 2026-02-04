@@ -28,7 +28,7 @@
     </script>
     <?php wp_head(); ?>
     <!-- css -->
-    <link href="<?= get_stylesheet_directory_uri() ?>/assets/css/style.css" rel="stylesheet"/>
+    <link href="<?= get_stylesheet_directory_uri() ?>/assets/css/style.css?260204" rel="stylesheet"/>
 </head>
 <body <?php body_class($bodyClass); ?> id="body">
 <a id="top"></a>
@@ -45,10 +45,10 @@
                 </ul>
                 <ul class="l-header-nav__locale c-link-local">
                     <li>
-                        <a class="js-split-text" data-lang="ja" href="https://nakanoshimalab.jp/">JP</a>
+                        <a class="js-split-text cl-norewrite" data-lang="ja" href="https://nakanoshimalab.jp/">JP</a>
                     </li>
                     <li>
-                        <a class="js-split-text" data-lang="en" href="https://en.nakanoshimalab.jp/">EN</a>
+                        <a class="js-split-text cl-norewrite" data-lang="en" href="https://en.nakanoshimalab.jp/">EN</a>
                     </li>
                 </ul>
             </nav>

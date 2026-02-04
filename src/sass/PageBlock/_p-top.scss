@@ -560,7 +560,9 @@
 	font-weight: 500;
 	line-height: 2;
 	letter-spacing: 0.02em;
-	text-align: justify;
+	:lang(ja) & {
+		text-align: justify;
+	}
 	span:first-child {
 		display: block;
 		text-align: right;

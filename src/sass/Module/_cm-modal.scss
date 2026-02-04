@@ -402,7 +402,9 @@
 }
 .cm-modal-spot-card__desc {
 	color: var(--black, #1B1B1B);
-	text-align: justify;
+	:lang(ja) & {
+		text-align: justify;
+	}
 	font-feature-settings: 'palt' on;
 	font-size: 13/16+rem;
 	font-weight: 600;

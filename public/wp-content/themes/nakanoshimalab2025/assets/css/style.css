@@ -285,6 +285,7 @@ input[type=submit],
 button {
   cursor: pointer;
   border: none;
+  font-size: inherit;
 }
 
 button {
@@ -2412,6 +2413,8 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
   font-weight: 500;
   line-height: 2;
   letter-spacing: 0.02em;
+}
+:lang(ja) .p-top-about__body {
   text-align: justify;
 }
 .p-top-about__body span:first-child {
@@ -3135,7 +3138,7 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
   }
 }
 
-.p-aboutus-about__body {
+:lang(ja) .p-aboutus-about__body {
   text-align: justify;
 }
 @media screen and (min-width: 1024px) {
@@ -3259,6 +3262,8 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.9375rem;
+}
+:lang(ja) .p-aboutus-purpose-item {
   text-align: justify;
 }
 .p-aboutus-purpose-item__title {
@@ -3515,6 +3520,8 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
 .p-aboutus-concept-item__desc.p-aboutus-concept-item__desc {
   margin-top: 0.9375rem;
   line-height: 1.5;
+}
+:lang(ja) .p-aboutus-concept-item__desc.p-aboutus-concept-item__desc {
   text-align: justify;
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
@@ -3574,7 +3581,11 @@ a:hover .c-btn-square__bg-dark, button:hover .c-btn-square__bg-dark {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+:lang(ja) .p-aboutus-history__list li ._subject {
   text-align: justify;
+}
+.p-aboutus-history__list li ._subject {
   -webkit-font-feature-settings: "palt" on;
           font-feature-settings: "palt" on;
 }
@@ -6143,7 +6154,11 @@ body figure {
 
 .cm-modal-spot-card__desc {
   color: var(--black, #1B1B1B);
+}
+:lang(ja) .cm-modal-spot-card__desc {
   text-align: justify;
+}
+.cm-modal-spot-card__desc {
   -webkit-font-feature-settings: "palt" on;
           font-feature-settings: "palt" on;
   font-size: 0.8125rem;

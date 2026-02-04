@@ -59,8 +59,8 @@
         <p>レポートの内容が入ります。レポートの内容が入ります。レポートの内容が入ります。レポートの内容が入ります。レポートの内容が入ります。レポートの内容が入ります。レポートの内容が入ります。レポートの内容が入ります。レポートの内容が入ります。レポートの内容が入ります。</p>
         <!-- /wp:paragraph -->
 
-        <!-- wp:image {"id":1334,"sizeSlug":"full","linkDestination":"none"} -->
-        <figure class="wp-block-image size-full"><img src="http://localhost/nakanoshimalab/public/wp-content/uploads/2025/01/kokusaikaigijo01.jpg" alt="" class="wp-image-1334"/></figure>
+        <!-- wp:image {"id":1282,"sizeSlug":"full","linkDestination":"none"} -->
+        <figure class="wp-block-image size-full"><img src="https://nakanoshimalab.jp/wp/wp-content/uploads/2025/01/kaigijyo.jpg" alt="" class="wp-image-1282"/></figure>
         <!-- /wp:image -->
 
         <!-- wp:paragraph -->

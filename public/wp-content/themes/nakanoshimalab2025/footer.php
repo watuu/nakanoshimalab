@@ -5,8 +5,8 @@
             <div class="l-footer-nav">
                 <?php get_template_part('template/cm-nav-main') ?>
                 <ul class="l-footer-nav__locale">
-                    <li><a href="https://nakanoshimalab.jp/" data-lang="ja">JP</a></li>
-                    <li><a href="https://en.nakanoshimalab.jp/" data-lang="en">EN</a></li>
+                    <li><a href="https://nakanoshimalab.jp/" class="cl-norewrite" data-lang="ja">JP</a></li>
+                    <li><a href="https://en.nakanoshimalab.jp/" class="cl-norewrite" data-lang="en">EN</a></li>
                 </ul>
             </div>
             <div class="l-footer-logo">
