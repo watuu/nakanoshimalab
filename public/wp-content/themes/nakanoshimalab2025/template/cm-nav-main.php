@@ -18,6 +18,7 @@
                 <li><a href="<?= home_url() ?>/creative/creative_cat/exchange-program/">エクスチェンジプログラム</a></li>
                 <li><a href="<?= home_url() ?>/creative/creative_cat/meeting-point/">ミーティングポイント</a></li>
                 <li><a href="<?= home_url() ?>/creative/creative_cat/promotion/">中之島プロモーション</a></li>
+                <li><a href="<?= home_url() ?>/creative/creative_cat/cruising/">クルージング</a></li>
             </ul>
         </div>
     </div>
