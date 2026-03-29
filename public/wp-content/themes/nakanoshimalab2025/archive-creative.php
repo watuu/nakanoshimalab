@@ -63,6 +63,34 @@
                         </div>
                     </div>
                 <?php endif; ?>
+                <?php if ( is_tax('creative_cat', 'meeting-point') ): ?>
+                    <div class="cm-block-category-desc">
+                        <div class="cm-block-category-desc__txt">
+                            <p>国内外で活躍するアーティストが独自の視点で中之島を捉え直すリサーチを実施。このリサーチプログラムを通じて、中之島の有形・無形の文化資産を掘り起こし、中之島の地の利を活かした新たな作品の構想を練ります。</p>
+                        </div>
+                        <div class="cm-block-category-desc__help">
+                            <button data-micromodal-trigger="modal-content"><svg width="34" height="34"><use href="#ico-help"></use></svg></button>
+                        </div>
+                    </div>
+                <?php elseif ( is_tax('creative_cat', 'promotion') ): ?>
+                    <div class="cm-block-category-desc">
+                        <div class="cm-block-category-desc__txt">
+                            <p>国内外で活躍するアーティストが独自の視点で中之島を捉え直すリサーチを実施。このリサーチプログラムを通じて、中之島の有形・無形の文化資産を掘り起こし、中之島の地の利を活かした新たな作品の構想を練ります。</p>
+                        </div>
+                        <div class="cm-block-category-desc__help">
+                            <button data-micromodal-trigger="modal-content"><svg width="34" height="34"><use href="#ico-help"></use></svg></button>
+                        </div>
+                    </div>
+                <?php elseif ( is_tax('creative_cat', 'cruising') ): ?>
+                    <div class="cm-block-category-desc">
+                        <div class="cm-block-category-desc__txt">
+                            <p>国内外で活躍するアーティストが独自の視点で中之島を捉え直すリサーチを実施。このリサーチプログラムを通じて、中之島の有形・無形の文化資産を掘り起こし、中之島の地の利を活かした新たな作品の構想を練ります。</p>
+                        </div>
+                        <div class="cm-block-category-desc__help">
+                            <button data-micromodal-trigger="modal-content"><svg width="34" height="34"><use href="#ico-help"></use></svg></button>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="p-creative__list">
                 <div class="cm-section-masonry">

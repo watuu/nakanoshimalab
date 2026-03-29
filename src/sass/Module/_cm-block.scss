@@ -1,6 +1,50 @@
 @use '../Base/config' as config;
+@use '../Component/c-paragraph' as paragraph;
 /*----------------------------------------------------
 	...
 ----------------------------------------------------*/
 
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.cm-block-category-desc {
+	margin-top: 20/16+rem;
+	display: flex;
+	flex-direction: column;
+	gap: 20/16+rem;
+	@include config.pc {
+		margin-top: 32/16+rem;
+		flex-direction: row;
+		align-items: flex-end;
+	}
+}
+.cm-block-category-desc__txt {
+	@extend .c-paragraph-category-desc;
+	@include config.pc {
+		width: 670/16+rem;
+	}
+}
+.cm-block-category-desc__help {
+	button {
+		display: flex;
+		width: 34/16+rem;
+		height: 34/16+rem;
+		padding: 0;
+		justify-content: center;
+		align-items: center;
+		gap: 10/16+rem;
+		aspect-ratio: 1/1;
+		border-radius: 100/16+rem;
+		background: var(--blue, #084CC2);
+		svg {
+		    width: 100%;
+		    height: auto;
+		}
+		&:hover {
+			background: var(--color-assort);
+		}
+	}
+	@include config.pc {
+		margin-left: auto;
+		padding-bottom: 0.2em;
+	}
+}
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
