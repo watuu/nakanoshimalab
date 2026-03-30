@@ -63,6 +63,34 @@
                         </div>
                     </div>
                 <?php endif; ?>
+                <?php if ( is_tax('creative_cat', 'meeting-point') ): ?>
+                    <div class="cm-block-category-desc">
+                        <div class="cm-block-category-desc__txt">
+                            <p>東西3.3キロの中之島を回遊・散策していただくために、2021年から中之島にある15施設のロビー等にミーティンポイント（サインスタンド）を設置。中之島の文化情報と出会う場として活用しています。</p>
+                        </div>
+                        <div class="cm-block-category-desc__help">
+                            <button data-micromodal-trigger="modal-content"><svg width="34" height="34"><use href="#ico-help"></use></svg></button>
+                        </div>
+                    </div>
+                <?php elseif ( is_tax('creative_cat', 'promotion') ): ?>
+                    <div class="cm-block-category-desc">
+                        <div class="cm-block-category-desc__txt">
+                            <p>国内外で活躍するアーティストが独自の視点で中之島を捉え直すリサーチを実施。このリサーチプログラムを通じて、中之島の有形・無形の文化資産を掘り起こし、中之島の地の利を活かした新たな作品の構想を練ります。</p>
+                        </div>
+                        <div class="cm-block-category-desc__help">
+                            <button data-micromodal-trigger="modal-content"><svg width="34" height="34"><use href="#ico-help"></use></svg></button>
+                        </div>
+                    </div>
+                <?php elseif ( is_tax('creative_cat', 'cruising') ): ?>
+                    <div class="cm-block-category-desc">
+                        <div class="cm-block-category-desc__txt">
+                            <p>中世から現代に至る歴史文化と名建築群、自然を感じる公園や水辺の景色を眺めて、中之島をぐるりと一周できるオリジナルクルーズ。歴史、建築、アートにまつわるエピソードを音楽とともに紹介します。</p>
+                        </div>
+                        <div class="cm-block-category-desc__help">
+                            <button data-micromodal-trigger="modal-content"><svg width="34" height="34"><use href="#ico-help"></use></svg></button>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="p-creative__list">
                 <div class="cm-section-masonry">

@@ -55,6 +55,13 @@
 		top: calc(var(--header-height) + #{80/16+rem});
 	}
 }
+.cm-modal__close {
+	.cm-modal--content & {
+		@include config.pc {
+			top: calc(50% - min(#{350/16+rem}, calc(50vh + var(--header-height))) + #{80/16+rem});
+		}
+	}
+}
 #modal-spot.cm-modal[aria-hidden="true"] {
 	display: none;
 	pointer-events: none;
@@ -141,6 +148,7 @@
 }
 
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.cm-modal-content,
 .cm-modal-about {
 	display: flex;
 	width: calc(100% - #{40/16+rem});
@@ -168,6 +176,12 @@
 		height: calc(100% - (var(--header-height)) * 2);
 	}
 }
+.cm-modal-content {
+	@include config.pc {
+		max-height: 700/16+rem;
+	}
+}
+.cm-modal-content__wrap,
 .cm-modal-about__wrap {
 	display: flex;
 	flex-direction: column;
@@ -190,6 +204,62 @@
 		padding: 100/16+rem 100/16+rem;
 	}
 }
+.cm-modal-content-map {
+	width: 100%;
+	padding: 20/16+rem;
+	position: relative;
+	opacity: 0;
+	.cm-modal[aria-hidden="false"] & {
+		will-change: opacity, transform;
+		backface-visibility: hidden;
+		animation: modalAbout3 var(--easeDuration) var(--easeTheme) forwards;
+		animation-delay: 0.3s;
+	}
+	img {
+		width: 100%;
+	}
+	figcaption {
+		position: absolute;
+		left: 40/16+rem;
+		top: 40/16+rem;
+		color: var(--black, #1B1B1B);
+		font-feature-settings: 'palt' on;
+		font-size: 16/16+rem;
+		font-weight: 500;
+	}
+
+	@include config.pc {
+		padding: 50/16+rem;
+		figcaption {
+			left: 95/16+rem;
+			top: 85/16+rem;
+			font-size: 32/16+rem;
+		}
+	}
+}
+.cm-modal-content-map__pic {
+	padding: 20/16+rem;
+	background: #fff;
+	@include config.sp-tab {
+		white-space: nowrap;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		&::-webkit-scrollbar {
+			display: none;
+			-webkit-appearance: none;
+		}
+		img {
+			width: 800/16+rem;
+			max-width: none;
+		}
+	}
+	@include config.pc {
+		padding: 50/16+rem;
+	}
+}
+.cm-modal-content__content,
+.cm-modal-content__movie,
 .cm-modal-about__content,
 .cm-modal-about__movie {
 	transform: translateY(#{25/16+rem});
@@ -200,12 +270,24 @@
 
 	}
 }
+.cm-modal-content__content,
 .cm-modal-about__content {
 	flex: 1;
 }
+.cm-modal-content__head,
 .cm-modal-about__head {
 
 }
+.cm-modal-content__title {
+	font-family: var(--Mona);
+	font-size: 30/16+rem;
+	font-weight: 500;
+	line-height: 1.35;
+	@include config.pc {
+		font-size: 40/16+rem;
+	}
+}
+.cm-modal-content__title1,
 .cm-modal-about__title1 {
 	font-feature-settings: 'palt' on;
 	font-size: 30/16+rem;
@@ -241,6 +323,7 @@
 		}
 	}
 }
+.cm-modal-content__title2,
 .cm-modal-about__title2 {
 	font-feature-settings: 'palt' on;
 	font-size: 18/16+rem;
@@ -252,6 +335,7 @@
 		font-size: 20/16+rem;
 	}
 }
+.cm-modal-content__body,
 .cm-modal-about__body {
 	margin-top: 20/16+rem;
 	@extend .c-paragraph;
@@ -259,6 +343,12 @@
 		margin-top: 55/16+rem;
 	}
 }
+.cm-modal-content__body {
+	@include config.pc {
+		margin-top: 30/16+rem;
+	}
+}
+.cm-modal-content__foot,
 .cm-modal-about__foot {
 	margin-top: 20/16+rem;
 	font-size: 13/16+rem;
@@ -268,6 +358,7 @@
 		font-size: 14/16+rem;
 	}
 }
+.cm-modal-content__movie,
 .cm-modal-about__movie {
 	display: flex;
 	flex-direction: column;
@@ -282,9 +373,9 @@
 		width: 500/16+rem;
 	}
 }
-.cm-modal-about__more {
-
-}
+.cm-modal-content__more ,
+.cm-modal-about__more {}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 .cm-modal-spot {
