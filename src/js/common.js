@@ -61,15 +61,30 @@ export default class common {
                 if (window.FONTPLUS) {
                     FONTPLUS.reload();
                 }
+                // 保存した src を復元（静的 YouTube iframe 対応）
+                modal.querySelectorAll('iframe[data-original-src]').forEach(iframe => {
+                    iframe.src = iframe.dataset.originalSrc;
+                    iframe.removeAttribute('data-original-src');
+                });
             },
             onClose: modal => {
-                // モーダルABOUT
-                if (modal.id === 'modal-about') {
-                    const iframe = modal.querySelector('iframe');
-                    if (iframe) {
+                // video 停止
+                modal.querySelectorAll('video').forEach(video => {
+                    video.pause();
+                });
+
+                // YouTube iframe 停止
+                modal.querySelectorAll('iframe').forEach(iframe => {
+                    const src = iframe.src;
+                    if (!src.includes('youtube.com') && !src.includes('youtu.be')) return;
+                    // 動的生成（modal-about など）はそのまま削除、静的は src を退避して空にする
+                    if (iframe.dataset.dynamic === 'true') {
                         iframe.remove();
+                    } else {
+                        iframe.dataset.originalSrc = src;
+                        iframe.src = '';
                     }
-                }
+                });
 
                 // モーダルMAP
                 document.querySelectorAll('.p-top-map-area__btn').forEach(btn => {

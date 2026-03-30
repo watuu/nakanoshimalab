@@ -116,7 +116,11 @@
                             <p>水都大阪のシンボルである中之島。中世から現代に至る歴史文化と名建築群、自然を感じる公園や水辺の景色を眺めて、中之島をぐるりと一周できるオリジナルクルーズ。ラジオ番組のように、歴史・建築・アートにまつわるエピソードを音楽とともに紹介します。音声ガイドは英語版／日本語版からお選びいただける1時間程度のプログラムです。海外からのお客様への大阪観光のショートトリップとしてもオススメのコンテンツです。</p>
                         </div>
                     </div>
-                    <div class="cm-modal-content__movie"><div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1176145223?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="英語版PR_0323"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script></div>
+                    <div class="cm-modal-content__movie">
+                        <video controls="controls" preload="metadata" width="100%" playsinline="playsinline">
+                            <source src="<?= get_stylesheet_directory_uri() ?>/assets/video/nakanoshima-pr.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
                 </div>
             </div>
         </div>

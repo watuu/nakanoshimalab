@@ -65,7 +65,7 @@ block content
                         button
                             svg(width=34 height=34)
                                 use(href="#ico-help")
-                #modal-content.cm-modal.cm-modal--content(aria-hidden='false')
+                //-#modal-content.cm-modal.cm-modal--content(aria-hidden='false')
                     .cm-modal__overlay(tabindex='-1' data-micromodal-close='')
                         button.cm-modal__close(aria-label='Close modal' data-micromodal-close='')
                             span
@@ -100,9 +100,11 @@ block content
                                         p
                                             | 水都大阪のシンボルである中之島。中世から現代に至る歴史文化と名建築群、自然を感じる公園や水辺の景色を眺めて、中之島をぐるりと一周できるオリジナルクルーズ。ラジオ番組のように、歴史・建築・アートにまつわるエピソードを音楽とともに紹介します。音声ガイドは英語版／日本語版からお選びいただける1時間程度のプログラムです。海外からのお客様への大阪観光のショートトリップとしてもオススメのコンテンツです。
                                 .cm-modal-content__movie
-                                    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1176145223?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="英語版PR_0323"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                                    video(controls, preload='metadata', width='100%' playsinline=true)
+                                        source(src='../assets/video/nakanoshima-pr.mp4', type='video/mp4')
+                                    //-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1176145223?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="英語版PR_0323"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
-                #modal-content.cm-modal.cm-modal--content(aria-hidden='false')
+                //-#modal-content.cm-modal.cm-modal--content(aria-hidden='false')
                     .cm-modal__overlay(tabindex='-1' data-micromodal-close='')
                         button.cm-modal__close(aria-label='Close modal' data-micromodal-close='')
                             span
